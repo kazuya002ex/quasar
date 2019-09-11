@@ -12,7 +12,7 @@ html
       ul 
         li = link_to "Top", root_path
         - if user_signed_in?
-          li = link_to "MyProfile", user_path(current_user)
+          li = link_to "#{current_user.name}のプロフィール", user_path(current_user)
           li = link_to "Logout", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
         - else
           li = link_to "Signin", new_user_session_path

@@ -1,8 +1,9 @@
 h1 = @post.title
 
-ul
-  li = link_to '概要を変更', edit_post_path(@post)
-  li = link_to '依頼を削除', @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' }
+- if user_signed_in? && @post.user_id == current_user.id
+  ul
+    li = link_to '概要を変更', edit_post_path(@post)
+    li = link_to '依頼を削除', @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' }
 
 p ・あらすじ
 = @post.story
@@ -10,13 +11,17 @@ p ・あらすじ
 p ・依頼人
 = link_to "#{@post.user.name}", "/users/#{@post.user_id}"
 
-p ・著者達に求める展開
-= @post.order
+- if user_signed_in?
+  p ・著者達に求める展開
+  = @post.order
 
-= form_for [@post, @micropost] do |f|
-  = f.text_field :content
-  br
-  = f.submit '追加', data: { confirm: "投稿しますか？"}
+- if user_signed_in?
+  = form_for [@post, @micropost] do |f|
+    = f.text_field :content
+    br
+    = f.submit '追加', data: { confirm: "投稿しますか？"}
+- else
+  p 物語作成に参加するには、#{link_to "ログイン", new_user_session_path}してください
 
 h2 本文
 

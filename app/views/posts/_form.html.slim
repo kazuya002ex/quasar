@@ -1,0 +1,19 @@
+= form_with(model: @post, local: true) do |f|
+  
+  .field 
+    = f.label :title
+    br
+    = f.text_field :title, class: 'form-control'
+
+  .field 
+    = f.label :story
+    br
+    = f.text_area :story, class: 'form-control'
+
+  .field 
+    = f.label :order
+    br
+    = f.text_area :order, class: 'form-control'
+  
+  .submit
+    = f.submit '作成', class: 'btn btn-primary'

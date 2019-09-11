@@ -1,0 +1,10 @@
+h1 一覧ページ
+
+p = link_to '作成依頼', new_post_path
+
+- @posts.each do |post|
+  
+  ul
+    li = post.title
+    li = post.story
+    li = link_to "詳細", post

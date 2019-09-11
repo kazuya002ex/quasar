@@ -1,0 +1,13 @@
+h1 = @post.title
+
+ul
+  li = link_to '概要を変更', edit_post_path(@post)
+  li = link_to '依頼を削除', @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' }
+
+p ・あらすじ
+= @post.story
+
+p ・著者達に求める展開
+= @post.order
+
+h2 本文

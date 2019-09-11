@@ -7,7 +7,25 @@ ul
 p ・あらすじ
 = @post.story
 
+p ・依頼人
+= link_to "#{@post.user.name}", "/users/#{@post.user_id}"
+
 p ・著者達に求める展開
 = @post.order
 
+= form_for [@post, @micropost] do |f|
+  = f.text_field :content
+  br
+  = f.submit '追加', data: { confirm: "投稿しますか？"}
+
 h2 本文
+
+p = link_to '読んでみる', novel_path
+
+- @microposts.each do |micropost|
+  p = micropost.content
+  = link_to "#{micropost.user.name}", "/users/#{micropost.user_id}"
+  / 何時間前表示
+  - if user_signed_in? && micropost.user_id == current_user.id
+    = link_to "削除", [@post, micropost], method: :delete, data: { confirm: '削除?' }
+  br

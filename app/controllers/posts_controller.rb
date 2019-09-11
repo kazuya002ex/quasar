@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @q = Post.ransack(params[:q])
@@ -7,6 +8,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @microposts = @post.microposts
+    @micropost = Micropost.new
   end
 
   def new
@@ -15,6 +18,7 @@ class PostsController < ApplicationController
 
   def create
   	@post = Post.new(post_params)
+    @post.user_id = current_user.id
   	if @post.save
   	  redirect_to root_path
   	else
@@ -36,6 +40,11 @@ class PostsController < ApplicationController
   def destroy
   	@post.destroy
   	redirect_to root_path
+  end
+
+  def confirm_new
+    @post = current_user.posts.new(post_params)
+    render :new unless @post.valid?
   end
 
   private

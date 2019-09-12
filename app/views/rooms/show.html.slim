@@ -1,0 +1,22 @@
+h1 DM
+
+h4 トーク参加者
+
+- @entries.each do |e|
+  h5 = link_to "#{e.user.name}", e.user
+
+= form_for @message do |f|
+  = f.text_field :talk, :placeholder => "メッセージを入力して下さい"
+  = f.hidden_field :room_id, :value => @room.id
+  br
+  = f.submit "投稿"
+
+- if @messages.present?
+  - @messages.each do |m|
+    p = simple_format text_url_to_link(h(m.talk)).html_safe
+    small by#{m.user.name}
+    hr
+- else 
+  h3 メッセージはまだありません
+
+

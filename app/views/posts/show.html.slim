@@ -17,7 +17,7 @@ p ・依頼人
 
 - if user_signed_in?
   = form_for [@post, @micropost] do |f|
-    = f.text_field :content
+    = f.text_field :content, :placeholder => "55文字以内で文章を作成"
     br
     = f.submit '追加', data: { confirm: "投稿しますか？"}
 - else
@@ -35,5 +35,5 @@ h2 投稿ログ
   - if user_signed_in? && micropost.user_id == current_user.id
     span |
     = link_to "削除", [@post, micropost], method: :delete, data: { confirm: '削除?' }
-  / 何時間前表示
-  br
+  p = "#{time_ago_in_words(micropost.created_at)}前"
+  hr

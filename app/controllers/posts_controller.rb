@@ -4,11 +4,11 @@ class PostsController < ApplicationController
 
   def index
     @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true)
+    @posts = @q.result(distinct: true).order(id: "DESC")
   end
 
   def show
-    @microposts = @post.microposts
+    @microposts = @post.microposts.order(id: "DESC")
     @micropost = Micropost.new
   end
 

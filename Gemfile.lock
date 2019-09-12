@@ -24,6 +24,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_bootstrap_skin (0.1.5)
+      bootstrap-sass (~> 3.4.1)
     activeadmin (2.2.0)
       arbre (~> 1.2, >= 1.2.1)
       formtastic (~> 3.1)
@@ -64,6 +66,8 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    autoprefixer-rails (9.6.1.1)
+      execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -72,6 +76,9 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.29.0)
@@ -286,9 +293,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_bootstrap_skin
   activeadmin
   annotate
   bootsnap (>= 1.1.0)
+  bootstrap-sass
   byebug
   capybara (>= 2.15)
   chromedriver-helper

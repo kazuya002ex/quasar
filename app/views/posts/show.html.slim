@@ -13,7 +13,7 @@ p ・依頼人
 
 - if user_signed_in?
   p ・著者達に求める展開
-  = @post.order
+  = simple_format text_url_to_link(h(@post.order)).html_safe
 
 - if user_signed_in?
   = form_for [@post, @micropost] do |f|
@@ -27,10 +27,13 @@ h2 本文
 
 p = link_to '読んでみる', novel_path
 
+h2 投稿ログ
+
 - @microposts.each do |micropost|
   p = micropost.content
   = link_to "#{micropost.user.name}", "/users/#{micropost.user_id}"
-  / 何時間前表示
   - if user_signed_in? && micropost.user_id == current_user.id
+    span |
     = link_to "削除", [@post, micropost], method: :delete, data: { confirm: '削除?' }
+  / 何時間前表示
   br

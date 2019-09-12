@@ -72,3 +72,8 @@ gem 'devise-i18n-views'
 gem 'activeadmin'
 gem 'bootstrap-sass'
 gem 'active_bootstrap_skin'
+
+
+group :production do
+  gem 'pg'
+end

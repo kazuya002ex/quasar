@@ -1,29 +1,39 @@
-ul
-  li = @user.my_title
-  li = @user.name
+= provide(:title, "#{@user.name}のページ")
 
-- if @user.id == current_user.id
-
-- else
-
-  - if @isRoom == true
-    p
-      a href="/rooms/#{@roomId}"  ダイレクトメッセージ
-  - else 
-    = form_for @room do |f| 
-      = fields_for @entry do |e|
-        = e.hidden_field :user_id, :value=> @user.id
-    = f.submit "チャットを始める"
-
-p = simple_format text_url_to_link(h(@user.profile)).html_safe
-
-- if user_signed_in? && @user.id == current_user.id  
-  = link_to 'プロフィールを編集', edit_user_registration_path
-
-h3 依頼した小説
-- @user.posts.each do |post|
+.profile-wrapper
   ul
-    li = post.title
-    li = post.story
-    li = link_to "詳細を見る", post
+    li.mytitle = @user.my_title
+    li.myname = @user.name
+
+  p.profile = simple_format text_url_to_link(h(@user.profile)).html_safe
+
+  .kaigi
+    - if user_signed_in? &&@user.id == current_user.id
+
+    - else
+
+      - if @isRoom == true
+        p
+          a.btn.btn-default href="/rooms/#{@roomId}"  会議室へ
+      - else 
+        = form_for @room do |f| 
+          = fields_for @entry do |e|
+            = e.hidden_field :user_id, :value=> @user.id
+        = f.submit "チャットを始める"
+
+ 
+
+  - if user_signed_in? && @user.id == current_user.id
+    = link_to 'プロフィールを編集', edit_user_registration_path
+
+.user-novel
+  h3 依頼した小説
+
   hr
+
+  - @user.posts.each do |post|
+    ul
+      li = post.title
+      li = post.story
+      li = link_to "詳細を見る", post
+    hr

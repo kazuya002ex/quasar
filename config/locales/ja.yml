@@ -1,4 +1,8 @@
 ja:
+  activerecord:
+    models:
+      post: 
+        title: "タイトル"
   datetime:
     distance_in_words:
       half_a_minute: "30秒前後"

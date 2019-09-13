@@ -1,4 +1,4 @@
-h2
+h2.title
   | Edit 
   = resource_name.to_s.humanize
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
@@ -31,14 +31,13 @@ h2
   .field
     = f.label :password
     i
-      | (leave blank if you don't want to change it)
+      | (変更しない場合は空白のままにします)
     br
     = f.password_field :password, autocomplete: "new-password"
     - if @minimum_password_length
       br
       em
-        = @minimum_password_length
-        |  characters minimum
+        = "#{@minimum_password_length}   文字以上"
 
   .field
     = f.label :password_confirmation
@@ -48,12 +47,12 @@ h2
   .field
     = f.label :current_password
     i
-      | (we need your current password to confirm your changes)
+      | (内容を変更するには現在のパスワードが必要です)
     br
     = f.password_field :current_password, autocomplete: "current-password"
 
   .actions
-    = f.submit "Update"
+    = f.submit "変更", data: { confirm: "変更しますか？" }, class: 'btn btn-primary'
 
 
-= link_to "Back", :back
+= link_to "戻る", :back

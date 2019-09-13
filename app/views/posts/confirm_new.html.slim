@@ -1,4 +1,8 @@
-h1 作成依頼内容の確認
+= provide(:title, "依頼確認画面")
+
+h1 依頼内容の確認
+
+h3 この内容で依頼しますか？
 
 = form_with model: @post, local: true do |f|
   ul
@@ -13,6 +17,5 @@ h1 作成依頼内容の確認
     li = Post.human_attribute_name(:order)
     li = @post.order
     = f.hidden_field :order
-
   = f.submit '戻る', name: 'back', data: { confirm: "依頼を破棄しますか？"}, class: 'btn btn-primary'
   = f.submit '作成', class: 'btn btn-primary'

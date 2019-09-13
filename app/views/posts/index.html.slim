@@ -1,17 +1,26 @@
-h1 一覧ページ
+= provide(:title, "トップページなるもの")
 
-= search_form_for @q do |f|
-  = f.label :title, "タイトル"
-  = f.search_field :title_cont
+.title
+  h1 Top Page
 
-  = f.submit "検索"
+.search
+  = search_form_for @q do |f|
+    = f.label :title, "タイトル"
+    = f.search_field :title_cont
 
-p = link_to '作成依頼', new_post_path
+    = f.submit "検索"
 
-- @posts.each do |post|
+p.new = link_to '作成依頼', new_post_path
+
+h3 依頼
+
+hr
+
+.post-index
+  - @posts.each do |post|
   
-  ul
-    li = post.title
-    li = post.story
-    li = link_to "詳細を見る", post
-  hr
+    ul
+      li.post-title = post.title
+      li = post.story
+      li = link_to "詳細を見る", post
+    hr

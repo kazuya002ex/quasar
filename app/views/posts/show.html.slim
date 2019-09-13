@@ -1,39 +1,52 @@
-h1 = @post.title
+= provide(:title, "#{@post.title}")
+
+
+.title
+  h1 = @post.title
 
 - if user_signed_in? && @post.user_id == current_user.id
   ul
     li = link_to '概要を変更', edit_post_path(@post)
     li = link_to '依頼を削除', @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' }
 
-p ・あらすじ
-= @post.story
+.order-wrapper
+  .order
+    p.column ・あらすじ
+    = simple_format(@post.story)
+  .order
+    p.column ・依頼人
+    = link_to "#{@post.user.name}", "/users/#{@post.user_id}"
+  .order
+    - if user_signed_in?
+      p.column ・著者達に求める展開
+      = simple_format text_url_to_link(h(@post.order)).html_safe
 
-p ・依頼人
-= link_to "#{@post.user.name}", "/users/#{@post.user_id}"
 
-- if user_signed_in?
-  p ・著者達に求める展開
-  = simple_format text_url_to_link(h(@post.order)).html_safe
+.novel-form
+  - if user_signed_in?
+    p 文章を作成
+    = form_for [@post, @micropost] do |f|
+      = f.text_field :content, :placeholder => "55文字以内で文章を作成"
+      = f.submit '作成', data: { confirm: "投稿しますか？"}
+  - else
+    p 小説作成に参加するには、#{link_to "ログイン", new_user_session_path}してください
 
-- if user_signed_in?
-  = form_for [@post, @micropost] do |f|
-    = f.text_field :content, :placeholder => "55文字以内で文章を作成"
-    br
-    = f.submit '追加', data: { confirm: "投稿しますか？"}
-- else
-  p 小説作成に参加するには、#{link_to "ログイン", new_user_session_path}してください
 
-h2 本文
+.reading-botton
+  p = link_to '本文を読んでみる', novel_path, class: 'btn btn-primary'
 
-p = link_to '読んでみる', novel_path
+.post-log
+  h2 投稿ログ
 
-h2 投稿ログ
-
-- @microposts.each do |micropost|
-  p = micropost.content
-  = link_to "#{micropost.user.name}", "/users/#{micropost.user_id}"
-  - if user_signed_in? && micropost.user_id == current_user.id
-    span |
-    = link_to "削除", [@post, micropost], method: :delete, data: { confirm: '削除?' }
-  p = "#{time_ago_in_words(micropost.created_at)}前"
   hr
+
+  - @microposts.each do |micropost|
+    .post-content
+      p = micropost.content
+    .post-user
+      = link_to "#{micropost.user.name}", "/users/#{micropost.user_id}"
+      - if user_signed_in? && micropost.user_id == current_user.id
+        span |
+        = link_to "削除", [@post, micropost], method: :delete, data: { confirm: '削除?' }
+      p = "作成日時:#{time_ago_in_words(micropost.created_at)}前"
+    hr

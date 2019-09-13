@@ -72,6 +72,8 @@ gem 'devise-i18n-views'
 gem 'activeadmin'
 gem 'bootstrap-sass'
 gem 'active_bootstrap_skin'
+gem 'bootstrap'
+gem 'jquery-rails'
 
 
 group :production do

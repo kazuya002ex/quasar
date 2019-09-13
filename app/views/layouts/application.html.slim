@@ -1,8 +1,8 @@
 doctype html
 html
   head
-    title
-      | OnelineNovelGame
+    link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine"
+    title = full_title(yield(:title))
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -13,7 +13,7 @@ html
       ul 
         li = link_to "Top", root_path
         - if user_signed_in?
-          li = link_to "#{current_user.name}のプロフィール", user_path(current_user)
+          li = link_to "#{current_user.name}", user_path(current_user)
           li = link_to "Logout", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
         - else
           li = link_to "Signin", new_user_session_path
@@ -21,4 +21,5 @@ html
       = notice
     p.alert
       = alert
-    = yield
+    .container
+      = yield

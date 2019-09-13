@@ -1,0 +1,223 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+
+
+html {
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #2d3133;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+/* 共通レイアウト ================================ */
+body {
+    margin: 0;
+}
+
+.container {
+  margin-bottom: 80px;
+}
+
+
+
+
+header {
+  height: 55px;
+  background-color: #DDDDDD; 
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: medium solid #666666;
+}
+
+header li {
+  float: left;
+  margin: 12px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #EEE8AA;
+}
+
+.title {
+  text-align: center;
+  padding: 15px;
+  margin: 20px 0;
+  color: #000033;
+}
+
+
+
+/*nodel-show*/
+
+
+
+
+
+
+
+
+
+/*post-index*/
+
+
+.search {
+  padding: 20px;
+}
+
+.new {
+  padding: 8px;
+  margin-bottom: 25px;
+}
+
+
+.post-index {
+  margin-top: 30px;
+}
+
+.post-title {
+  font-size: 27px;
+}
+
+
+
+
+
+
+
+/*post-show*/
+
+.order-wrapper {
+  padding: 18px 0 30px 0;
+}
+
+.order {
+  margin: 20px 0;
+}
+
+.order .column {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.novel-form {
+  padding: 15px 0;
+}
+
+.reading-botton {
+  margin: 10px 0;
+}
+
+.reading-botton a {
+  color: white;
+}
+
+.post-log h2 {
+  margin: 20px 0 8px 0;
+}
+
+.post-log span {
+  margin: 0 6px;
+}
+
+.post-content {
+  margin: 7px;
+}
+
+.post-user {
+  font-size: 13px;
+}
+
+
+
+
+/*user-show*/
+
+.profile-wrapper {
+  padding: 15px;
+}
+
+.profile-wrapper .mytitle {
+  color: #6633CC;
+  font-size: 28px;
+  font-family: 'Noto Serif JP', serif;
+  font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.profile-wrapper .myname {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.profile-wrapper .kaigi {
+  padding: 13px;
+}
+
+.profile-wrapper .kaigi a {
+  color: #FF367F;
+}
+
+
+.user-novel {
+  margin-top: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

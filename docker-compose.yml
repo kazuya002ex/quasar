@@ -8,6 +8,14 @@ services:
     ports:
       - "3306:3306"
 
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    volumes:
+      - ./data/redis:/data
+    command: redis-server --appendonly yes
+
   web:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
@@ -17,3 +25,9 @@ services:
       - "3000:3000"
     links:
       - db
+      - redis
+    depends_on:
+      - db
+      - redis
+    environment:
+      REDIS_URL: redis://redis:6379

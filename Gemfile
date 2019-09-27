@@ -74,6 +74,7 @@ gem 'bootstrap-sass'
 gem 'active_bootstrap_skin'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'redis-rails'
 
 
 group :production do

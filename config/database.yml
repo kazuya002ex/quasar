@@ -16,6 +16,7 @@ default: &default
   username: root
   password: password
   host: db
+  REDIS_URL: redis://redis:6379
 
 development:
   <<: *default
@@ -55,3 +56,4 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
+  REDIS_URL: redis://redis:6379

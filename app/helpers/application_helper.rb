@@ -13,7 +13,7 @@ module ApplicationHelper
   end
 
   def full_title(page_title = '')
-    base_title = "OnelineNovelGame"
+    base_title = "RELIER"
     if page_title.empty?
       base_title
     else

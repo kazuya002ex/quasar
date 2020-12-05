@@ -16,36 +16,76 @@
  */
 
 
-@import "bootstrap";
+// @import "bootstrap";
 
 
 html {
 }
 
-ul, li {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+
+body {
+  font-family: "M PLUS Rounded 1c";
+}
+
+nav, ul, li {
+  list-style:none;
 }
 
 a {
-  color: #2d3133;
-  font-size: 15px;
   text-decoration: none;
+  color: #333;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
+a:hover {
+  color: #0a9dd1;
+  transition: 0.3s;
 }
 
-/* 共通レイアウト ================================ */
-body {
-    margin: 0;
-}
+// ul, li {
+//   list-style-type: none;
+//   padding: 0;
+//   margin: 0;
+// }
 
-.container {
-  margin-bottom: 80px;
-}
+// a {
+//   color: #2d3133;
+//   font-size: 15px;
+//   text-decoration: none;
+// }
+
+// h1, h2, h3, h4, h5, h6, p {
+//   margin: 0;
+// }
+
+// /* 共通レイアウト ================================ */
+// body {
+//     margin: 0;
+// }
+
+// .container {
+//   margin-bottom: 80px;
+// }
 
 
 

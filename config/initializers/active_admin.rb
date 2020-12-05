@@ -6,6 +6,10 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "Novel App"
 
+
+  config.clear_stylesheets!
+  config.register_stylesheet "admin/active_admin.css"
+
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #

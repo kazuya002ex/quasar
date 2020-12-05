@@ -6,15 +6,7 @@ services:
       MYSQL_ROOT_PASSWORD: password 
       MYSQL_DATABASE: root 
     ports:
-      - "3306:3306"
-
-  redis:
-    image: redis:latest
-    ports:
-      - 6379:6379
-    volumes:
-      - ./data/redis:/data
-    command: redis-server --appendonly yes
+      - "3308:3306"
 
   web:
     build: .
@@ -22,12 +14,6 @@ services:
     volumes:
       - .:/novel_app
     ports:
-      - "3000:3000"
+      - "3009:3000"
     links:
       - db
-      - redis
-    depends_on:
-      - db
-      - redis
-    environment:
-      REDIS_URL: redis://redis:6379

@@ -59,8 +59,6 @@ a:hover {
 
 .container {
   margin-bottom: 200px;
-  margin-left: 8%;
-  margin-right: 8%;
 }
 
 
@@ -105,7 +103,12 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 440px;
+  height: 490px;
+}
+
+.top-contaner {
+  margin-left: 8%;
+  margin-right: 8%;
 }
 
 .top-header {
@@ -165,7 +168,7 @@ header {
   font-size: 1.125rem;
   height: 37px;
   width: 77px;
-  background:#7fbfff;
+  background:#69b3fd;
   color: #fff;
   // font-weight: bold;
   border-radius:0 2px 2px 0;

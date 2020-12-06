@@ -99,8 +99,40 @@ header {
 // TOP
 
 .bg-top {
-  background-image: url(images/books.jpg);
+  background-image: url(books.jpg);
+  opacity: .9;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 440px;
 }
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1%;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.top-header-logo h1 a {
+  font-size: 1.75rem;
+  color: #fff;
+}
+
+.top-header-list ul {
+  display: flex;
+  padding-top: 8%;
+}
+
+.top-header-list ul li a{
+  font-weight: bold;
+  font-size: 0.92rem;
+  margin-left: 20px;
+  color: #fff;
+}
+
 
 .search {
   margin-top: 8%;

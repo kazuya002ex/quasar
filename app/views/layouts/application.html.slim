@@ -10,16 +10,17 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet"
   body
-    header
-      .header-logo
-        h1 = link_to "RELIER", root_path
-      .header-list
-        ul
-          - if user_signed_in?
-            li = link_to "マイページ", user_path(current_user)
-            li = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
-          - else
-            li = link_to "サインイン", new_user_session_path
+    - unless current_page?(root_path)
+      header
+        .header-logo
+          h1 = link_to "RELIER", root_path
+        .header-list
+          ul
+            - if user_signed_in?
+              li = link_to "マイページ", user_path(current_user)
+              li = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
+            - else
+              li = link_to "サインイン", new_user_session_path
 
     p.notice
       = notice

@@ -18,7 +18,8 @@
 
         = f.submit "検索"
 
-    p.new = link_to '作成依頼', new_post_path
+.top-container
+  p.new = link_to '作成依頼', new_post_path
 
-    .post-index
-      - @posts.each do |post|
+  .post-index
+    - @posts.each do |post|

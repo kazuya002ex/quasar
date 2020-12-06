@@ -19,7 +19,20 @@ html
             li = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
           - else
             li = link_to "サインイン", new_user_session_path
+
     p.notice
       = notice
     .container
       = yield
+
+    footer
+      .footer
+        .footer-copo-name
+          h3 MilkyWay
+        .footer-list
+          ul
+            li 
+              p.footer-ap-name RELIER
+            li
+              p.copylight &copy; 2020 harakazu All Rights Reserved. 
+

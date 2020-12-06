@@ -79,11 +79,13 @@ header {
 
 .header-list ul {
   display: flex;
+  margin-top: 8%;
 }
 
 .header-list ul li a{
   font-weight: bold;
   font-size: 0.92rem;
+  margin-left: 20px;
 }
 
 

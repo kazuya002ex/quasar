@@ -16,3 +16,23 @@
     profile: "初めまして、hara#{n + 1}です"
   )
 end
+
+
+# Post Create
+5.times do |n|
+  Post.create!(
+    title: "タイトル#{n + 1}",
+    story: "タイトル#{n + 1}のストーリー説明 \n ストーリーの説明その1 \n ストーリーの説明その2",
+    order: "素敵なストーリーにしてください。",
+    user_id: 1
+  )
+end
+
+5.times do |n|
+  Post.create!(
+    title: "タイトル#{n + 1}",
+    story: "タイトル#{n + 1}のストーリー説明 \n ストーリーの説明その1 \n ストーリーの説明その2",
+    order: "素敵なストーリーにしてください。",
+    user_id: 2
+    )
+end

@@ -98,6 +98,10 @@ header {
 
 // TOP
 
+.bg-top {
+  background-image: url(images/books.jpg);
+}
+
 .search {
   margin-top: 8%;
 }
@@ -118,9 +122,8 @@ header {
   font-size: 1.125rem;
   height: 37px;
   width: 65%;
-  // border-color: #ddd;
   border: none;
-  background:rgb(252, 252, 252);
+  background:rgb(251, 251, 251);
 }
 
 // 検索ボタンのデザイン

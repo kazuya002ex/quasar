@@ -181,7 +181,23 @@ header {
 }
 
 
+.top-ranking {
+  display: flex;
+  // justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
 
+.ranking-content {
+  margin: 0 1%;
+}
+
+// 本来はimgが入る
+.ranking-content .top-post-img {
+  background-color: #9ccaf8;
+  width: 210px;
+  height: 296px;
+}
 
 
 

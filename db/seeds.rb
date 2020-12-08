@@ -19,7 +19,7 @@ end
 
 
 # Post Create
-5.times do |n|
+10.times do |n|
   Post.create!(
     title: "タイトル#{n + 1}",
     story: "タイトル#{n + 1}のストーリー説明 \n ストーリーの説明その1 \n ストーリーの説明その2",
@@ -28,7 +28,7 @@ end
   )
 end
 
-5.times do |n|
+10.times do |n|
   Post.create!(
     title: "タイトル#{n + 1}",
     story: "タイトル#{n + 1}のストーリー説明 \n ストーリーの説明その1 \n ストーリーの説明その2",

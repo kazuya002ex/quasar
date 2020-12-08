@@ -26,7 +26,7 @@ section.top-container
   .top-ranking-wrapper
     .top-ranking-title
       h2 おすすめ作品
-    .top-ranking
+    .top-ranking.over-flow
       - @ranking_posts.each do |post|
         .ranking-content
           .top-post-img
@@ -38,7 +38,7 @@ section.top-container
   .top-new-arrival-wrapper
     .top-new-arrival-title
       h2 新着作品
-    .top-new-arrival
+    .top-new-arrival.over-flow
       - @new_arrival_posts.each do |post|
         .new-arrival-content
           .top-post-img

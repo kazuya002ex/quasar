@@ -7,10 +7,10 @@ class PostsController < ApplicationController
     @posts = @q.result(distinct: true).order(id: "DESC")
 
     # top-raiking
-    @ranking_posts = Post.order("RAND()").limit(4)
+    @ranking_posts = Post.order("RAND()").limit(10)
 
     #top-new-arrival
-    @new_arrival_posts = Post.first(4)
+    @new_arrival_posts = Post.first(10)
   end
 
   def show

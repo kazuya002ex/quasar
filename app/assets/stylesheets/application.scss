@@ -58,6 +58,11 @@ a:hover {
   margin-bottom: 250px;
 }
 
+/* コンテンツ横幅隠し */
+.over-flow{
+  overflow: scroll;
+}
+
 
 
 // HEADER
@@ -216,6 +221,7 @@ header {
 
 .ranking-content {
   margin: 0 1%;
+  // margin-left: 4%;
 }
 
 

@@ -131,6 +131,11 @@ header {
   color: #fff;
 }
 
+.top-header-list ul li a:hover {
+  color: #0a9dd1;
+  transition: 0.3s;
+}
+
 .search {
   margin-top: 8%;
 }
@@ -181,9 +186,20 @@ header {
 }
 
 
+.top-ranking-title {
+  margin-top: 7%;
+  margin-bottom: 1%;
+  margin-left: 11.5%;
+}
+
+.top-ranking-title h2 {
+  font-size: 1.5rem;
+  color: #555;
+}
+
 .top-ranking {
+  margin-bottom: 2%;
   display: flex;
-  // justify-content: space-between;
   justify-content: center;
   align-items: center;
 }
@@ -195,10 +211,24 @@ header {
 // 本来はimgが入る
 .ranking-content .top-post-img {
   background-color: #9ccaf8;
-  width: 210px;
-  height: 296px;
+  width: 250px;
+  height: 352px;
 }
 
+.ranking-content .top-post-title {
+  margin-top: 1.2%;
+  font-size: 1.125rem;
+  color: #555;
+}
+
+.ranking-content .top-post-link a {
+  color: #777;
+}
+
+.ranking-content .top-post-link a:hover {
+  color: #0a9dd1;
+  transition: 0.3s;
+}
 
 
 

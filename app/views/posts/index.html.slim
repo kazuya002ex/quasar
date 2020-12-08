@@ -23,13 +23,16 @@
 
   / p.new = link_to '作成依頼', new_post_path
 
+  .top-ranking-title
+    h2 おすすめ作品
+
   .top-ranking
     - @ranking_posts.each do |post|
       .ranking-content
-        p.top-post-img 画像が入る
+        p.top-post-img = link_to "画像が入る", "#"
         h3.top-post-title = post.title
         / p.top-post-story = post.story
-        p = link_to "詳細をみる", "#"
+        p.top-post-link = link_to "詳細をみる", "#"
 
   .top-new-arrival-content
     - @posts.each do |post|

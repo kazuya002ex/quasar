@@ -5,6 +5,10 @@ class PostsController < ApplicationController
   def index
     @q = Post.ransack(params[:q])
     @posts = @q.result(distinct: true).order(id: "DESC")
+
+    # top-raiking
+    @ranking_posts = Post.order("RAND()").limit(4)
+    pp @ranking_posts
   end
 
   def show

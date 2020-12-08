@@ -29,7 +29,8 @@ section.top-container
     .top-ranking
       - @ranking_posts.each do |post|
         .ranking-content
-          p.top-post-img = link_to "画像が入る", post
+          .top-post-img
+            = link_to image_tag("book_sample.jpg"), post
           h3.top-post-title = post.title
           / p.top-post-story = post.story
           p.top-post-link = link_to "詳細をみる", post
@@ -40,7 +41,8 @@ section.top-container
     .top-new-arrival
       - @new_arrival_posts.each do |post|
         .new-arrival-content
-          p.top-post-img = link_to "画像が入る", post
+          .top-post-img
+            = link_to image_tag("book_sample.jpg"), post
           h3.top-post-title = post.title
           / p.top-post-story = post.story
           p.top-post-link = link_to "詳細をみる", post

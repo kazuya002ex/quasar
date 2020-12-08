@@ -73,6 +73,7 @@ gem 'bootstrap-sass'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'redis-rails'
+gem 'carrierwave'
 
 
 group :production do

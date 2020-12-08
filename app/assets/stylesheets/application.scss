@@ -89,7 +89,9 @@ header {
 
 
 
-// POST INDEX
+
+
+// POST INDEX(ROOT PATH)
 
 // TOP
 
@@ -163,7 +165,6 @@ header {
 // 検索ボタンのデザイン
 .search input[type="submit"] {
   cursor: pointer;
-  // margin-left: .8%;
   font-size: 1.125rem;
   height: 37px;
   width: 77px;
@@ -172,6 +173,11 @@ header {
   border-radius:0 2px 2px 0;
   border: none;
 }
+
+
+
+
+
 
 .top-newuser-action {
   background-color: rgb(200, 243, 202);
@@ -184,6 +190,11 @@ header {
   padding: 6% 0;
   font-size: 1.25rem;
 }
+
+
+
+
+
 
 
 .top-ranking-title {
@@ -208,6 +219,12 @@ header {
   margin: 0 1%;
 }
 
+
+
+
+// RANKIGN NEW-ARRIVAL COMMON
+
+
 // 本来はimgが入る
 .top-post-img {
   background-color: #9ccaf8;
@@ -231,6 +248,11 @@ header {
   color: #0a9dd1;
   transition: 0.3s;
 }
+
+
+
+
+
 
 
 
@@ -273,7 +295,6 @@ header {
 
 // FOOTER
 
-
 footer {
   margin-bottom: 1%;
   margin-left: 8%;
@@ -307,20 +328,4 @@ footer {
   padding-top: 1%;
   color: #777;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

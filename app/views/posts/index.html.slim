@@ -29,10 +29,10 @@
   .top-ranking
     - @ranking_posts.each do |post|
       .ranking-content
-        p.top-post-img = link_to "画像が入る", "#"
+        p.top-post-img = link_to "画像が入る", post
         h3.top-post-title = post.title
         / p.top-post-story = post.story
-        p.top-post-link = link_to "詳細をみる", "#"
+        p.top-post-link = link_to "詳細をみる", post
 
   .top-new-arrival-content
     - @posts.each do |post|

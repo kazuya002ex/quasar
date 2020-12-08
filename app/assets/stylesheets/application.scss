@@ -221,7 +221,6 @@ header {
 
 .ranking-content {
   margin: 0 1%;
-  // margin-left: 4%;
 }
 
 
@@ -238,7 +237,14 @@ header {
 
 .top-post-img img {
   width: 250px;
-  height: 352px
+  height: 352px;
+  transition: 0.5s;
+}
+
+.top-post-img img:hover {
+  // opacity: .8;
+  filter: brightness(89%);
+  transition: 0.5s;
 }
 
 .top-post-title {

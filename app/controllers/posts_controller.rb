@@ -8,7 +8,9 @@ class PostsController < ApplicationController
 
     # top-raiking
     @ranking_posts = Post.order("RAND()").limit(4)
-    pp @ranking_posts
+
+    #top-new-arrival
+    @new_arrival_posts = Post.first(4)
   end
 
   def show

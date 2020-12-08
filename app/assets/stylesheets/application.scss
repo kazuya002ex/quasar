@@ -209,30 +209,59 @@ header {
 }
 
 // 本来はimgが入る
-.ranking-content .top-post-img {
+.top-post-img {
   background-color: #9ccaf8;
   width: 250px;
   height: 352px;
 }
 
-.ranking-content .top-post-title {
+.top-post-title {
   margin-top: 1.2%;
   font-size: 1.03rem;
   color: #555;
 }
 
-.ranking-content .top-post-link a {
+.top-post-link a {
   margin-top: .7%;
   font-size: .95rem;
   color: #777;
 }
 
-.ranking-content .top-post-link a:hover {
+.top-post-link a:hover {
   color: #0a9dd1;
   transition: 0.3s;
 }
 
 
+
+.top-new-arrival-title {
+  margin-top: 12%;
+  margin-bottom: 1%;
+  margin-left: 11.5%;
+}
+
+.top-new-arrival-title h2 {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.new-arrival {
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-new-arrival {
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-arrival-content {
+  margin: 0 1%;
+}
 
 
 

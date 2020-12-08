@@ -23,16 +23,24 @@
 
   / p.new = link_to '作成依頼', new_post_path
 
-  .top-ranking-title
-    h2 おすすめ作品
+  section.top-ranking-wrapper
+    .top-ranking-title
+      h2 おすすめ作品
+    .top-ranking
+      - @ranking_posts.each do |post|
+        .ranking-content
+          p.top-post-img = link_to "画像が入る", post
+          h3.top-post-title = post.title
+          / p.top-post-story = post.story
+          p.top-post-link = link_to "詳細をみる", post
 
-  .top-ranking
-    - @ranking_posts.each do |post|
-      .ranking-content
-        p.top-post-img = link_to "画像が入る", post
-        h3.top-post-title = post.title
-        / p.top-post-story = post.story
-        p.top-post-link = link_to "詳細をみる", post
-
-  .top-new-arrival-content
-    - @posts.each do |post|
+  section.top-new-arrival-wrapper
+    .top-new-arrival-title
+      h2 新着作品
+    .top-new-arrival
+      - @new_arrival_posts.each do |post|
+        .new-arrival-content
+          p.top-post-img = link_to "画像が入る", post
+          h3.top-post-title = post.title
+          / p.top-post-story = post.story
+          p.top-post-link = link_to "詳細をみる", post

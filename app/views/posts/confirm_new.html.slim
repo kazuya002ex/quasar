@@ -7,6 +7,11 @@
 
   = form_with model: @post, local: true do |f|
     ul
+      / 「image」が入らない
+      / li = Post.human_attribute_name(:image)
+      / li = @post.image
+      / = f.hidden_field :image  
+
       li = Post.human_attribute_name(:title)
       li = @post.title
       = f.hidden_field :title

@@ -1,6 +1,10 @@
 = form_with(model: @post, local: true) do |f|
   
   .field 
+    = f.label :image
+    br
+    = f.file_field :img, class: "image"
+
     = f.label :title
     br
     = f.text_field :title, class: 'form-control'

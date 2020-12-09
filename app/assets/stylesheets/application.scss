@@ -217,17 +217,13 @@ header {
 .top-ranking {
   margin-bottom: 2%;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .ranking-content {
   margin: 0 1%;
 }
 
-.ranking-content:first-child {
-  margin-right: 20%;
-}
+
 
 
 
@@ -248,7 +244,6 @@ header {
 }
 
 .top-post-img img:hover {
-  // opacity: .8;
   filter: brightness(89%);
   transition: 0.5s;
 }
@@ -297,16 +292,10 @@ header {
 .top-new-arrival {
   margin-bottom: 2%;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .new-arrival-content {
   margin: 0 1%;
-}
-
-.new-arrival-content:first-child {
-  margin-right: 20%;
 }
 
 

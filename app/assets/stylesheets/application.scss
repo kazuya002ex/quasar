@@ -60,7 +60,9 @@ a:hover {
 
 /* コンテンツ横幅隠し */
 .over-flow{
-  overflow: scroll;
+  overflow-y: scroll;
+  width: 100%;
+  padding-bottom: 3%;
 }
 
 
@@ -223,6 +225,10 @@ header {
   margin: 0 1%;
 }
 
+.ranking-content:first-child {
+  margin-right: 20%;
+}
+
 
 
 
@@ -298,6 +304,11 @@ header {
 .new-arrival-content {
   margin: 0 1%;
 }
+
+.new-arrival-content:first-child {
+  margin-right: 20%;
+}
+
 
 
 

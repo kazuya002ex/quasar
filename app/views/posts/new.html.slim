@@ -5,6 +5,9 @@ h1 作成依頼ページ
 = form_with model: @post, local: true, url: confirm_new_post_path do |f|
 
   .field 
+    = f.label :image
+    = f.file_field :img, class: "image"
+
     = f.label :title
     br
     = f.text_field :title, class: 'form-control'

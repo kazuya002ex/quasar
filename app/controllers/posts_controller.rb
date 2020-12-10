@@ -48,10 +48,10 @@ class PostsController < ApplicationController
   	redirect_to root_path
   end
 
-  def confirm_new
-    @post = current_user.posts.new(post_params)
-    render :new unless @post.valid?
-  end
+  # def confirm_new
+  #   @post = current_user.posts.new(post_params)
+  #   render :new unless @post.valid?
+  # end
 
   private
 

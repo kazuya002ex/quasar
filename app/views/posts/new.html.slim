@@ -2,13 +2,13 @@
 
 h1 作成依頼ページ
 
-= form_with model: @post, local: true, url: confirm_new_post_path do |f|
+= form_with model: @post, local: true do |f|
 
   .field 
     = f.label :image
     br
-    = f.file_field :img, class: "image"
-
+    = f.file_field :image, class: "image"
+    br
     = f.label :title
     br
     = f.text_field :title, class: 'form-control'
@@ -24,6 +24,6 @@ h1 作成依頼ページ
     = f.text_area :order, class: 'form-control'
   
   .submit
-    = f.submit '確認画面へ', class: 'btn btn-primary'
+    = f.submit '作成', class: 'btn btn-primary'
 
 

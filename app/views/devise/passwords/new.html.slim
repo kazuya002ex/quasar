@@ -1,5 +1,10 @@
 h2
-  | Forgot your password?
+  | パスワードをお忘れですか？
+
+.forget-password-desc
+  p
+    | 設定していたメールアドレスを入力すればパスワードを再設定できます
+
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
@@ -7,5 +12,5 @@ h2
     br
     = f.email_field :email, autofocus: true, autocomplete: "email"
   .actions
-    = f.submit "Send me reset password instructions"
+    = f.submit "送信"
 = render "devise/shared/links"

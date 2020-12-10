@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     @ranking_posts = Post.rank
 
     #top-new-arrival
-    @new_arrival_posts = Post.first(10)
+    @new_arrival_posts = Post.new_arriv
   end
 
   def show

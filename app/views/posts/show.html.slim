@@ -7,10 +7,10 @@
 
     .post-show-image
       - if @post.image.present?
-        = image_tag(post.image.url)
+        = image_tag(@post.image.url)
       - else
         = image_tag("book_sample.jpg")
-        
+
     .post-add-status
       / - if user_signed_in? && @post.user_id == current_user.id
       ul

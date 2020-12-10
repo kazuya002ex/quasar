@@ -42,7 +42,11 @@ section.top-container
       - @new_arrival_posts.each do |post|
         .new-arrival-content
           .top-post-img
-            = link_to image_tag("book_sample.jpg"), post
+            = link_to post do
+              - if post.image.present?
+                = image_tag(post.image.url)
+              - else
+                = image_tag("book_sample.jpg")
           h3.top-post-title = post.title
           / p.top-post-story = post.story
           p.top-post-link = link_to "詳細をみる", post

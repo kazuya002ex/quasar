@@ -1,13 +1,23 @@
 = provide(:title, "#{@post.title}")
 
+.post-show-top
+  .post-main-contents
+    .post-show-title
+      h1 = @post.title
 
-.title
-  h1 = @post.title
+    .post-show-image
+      - if @post.image.present?
+        = image_tag(post.image.url)
+      - else
+        = image_tag("book_sample.jpg")
+        
+    .post-add-status
+      / - if user_signed_in? && @post.user_id == current_user.id
+      ul
+        li = link_to "♡", "#"
+        / li = link_to '概要を変更', edit_post_path(@post)
+        / li = link_to '依頼を削除', @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' }
 
-- if user_signed_in? && @post.user_id == current_user.id
-  ul
-    li = link_to '概要を変更', edit_post_path(@post)
-    li = link_to '依頼を削除', @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' }
 
 .order-wrapper
   .order

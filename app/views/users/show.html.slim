@@ -11,7 +11,6 @@
     - if user_signed_in? && @user.id == current_user.id
 
     - else
-
       /// DM的な機能に飛ぶURL現在（2020/12/10）は不要
       / - if @isRoom == true
       /   p
@@ -21,11 +20,9 @@
       /     = fields_for @entry do |e|
       /       = e.hidden_field :user_id, :value=> @user.id
       /     = f.submit "会議室へ", class: 'btn btn-default'
-
- 
-
-  - if user_signed_in? && @user.id == current_user.id
-    = link_to 'プロフィールを編集', edit_user_registration_path
+  .edit-profile
+    - if user_signed_in? && @user.id == current_user.id
+      = link_to 'プロフィールを編集', edit_user_registration_path
 
 .user-novel
   h3 依頼した小説

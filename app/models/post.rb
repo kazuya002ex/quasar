@@ -6,4 +6,7 @@ class Post < ApplicationRecord
   validates :order, presence: true, length: { maximum: 300 }
   belongs_to :user, optional: true
   has_many :microposts, dependent: :destroy
+
+  # TOPページのランキングを表示する（未完成）
+  scope :rank, -> { order("RAND()").limit(10) }
 end

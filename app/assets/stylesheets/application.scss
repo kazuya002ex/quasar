@@ -376,6 +376,23 @@ footer {
   margin-left: 2%;
 }
 
+.post-sub-contents .post-sub-title h3 {
+  font-size: 1.125rem;
+  color: #999;
+  font-weight: normal;
+}
+
 .post-sub-contents .post-sub-user-name ul {
   display: flex;
+}
+
+.post-sub-contents .post-sub-user-name ul .image {
+  font-size: 2.2rem;
+}
+
+.post-sub-contents .post-sub-user-name ul .name {
+  margin-left: 6%;
+  margin-top: 27%;
+  font-size: 0.95rem;
+  color:#777;
 }

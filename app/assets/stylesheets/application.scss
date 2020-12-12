@@ -98,6 +98,53 @@ header {
 
 
 
+// FOOTER
+
+footer {
+  margin-bottom: 2.2%;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.footer .footer-copo-name {
+  border-bottom: solid 2px #ddd;
+}
+
+.footer .footer-copo-name h3 {
+  font-size: 1.125rem;
+  padding-bottom: .5%;
+}
+
+.footer-list {
+  margin-top: 1%;
+}
+
+.footer-list ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-list ul li .footer-ap-name {
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.footer-list ul li .copylight {
+  padding-top: 1%;
+  color: #777;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 // POST INDEX(ROOT PATH)
 
 // TOP
@@ -306,40 +353,4 @@ header {
 
 
 
-
-// FOOTER
-
-footer {
-  margin-bottom: 2.2%;
-  margin-left: 8%;
-  margin-right: 8%;
-}
-
-.footer .footer-copo-name {
-  border-bottom: solid 2px #ddd;
-}
-
-.footer .footer-copo-name h3 {
-  font-size: 1.125rem;
-  padding-bottom: .5%;
-}
-
-.footer-list {
-  margin-top: 1%;
-}
-
-.footer-list ul {
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer-list ul li .footer-ap-name {
-  font-weight: bold;
-  font-size: 1.125rem;
-}
-
-.footer-list ul li .copylight {
-  padding-top: 1%;
-  color: #777;
-}
 

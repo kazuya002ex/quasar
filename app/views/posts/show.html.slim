@@ -71,8 +71,9 @@
   
     .post-sub-title
       h3 依頼人
-      
+
     .post-sub-user-name
-      ul
-        li.image = link_to "◯", user_path(@post.user)
-        li.name = link_to @post.user.name, user_path(@post.user)
+      = link_to user_path(@post) do
+        ul
+          li.image ◯
+          li.name #{@post.user.name}

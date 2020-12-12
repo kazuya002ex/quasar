@@ -21,9 +21,18 @@
       h3 あらすじ 
       p = simple_format(@post.story)
 
-  .order
-    p.column ・依頼人
-    = link_to "#{@post.user.name}", "/users/#{@post.user_id}"
+    .post-reaction
+      ul
+        li = link_to "♡ #{12 + 12}", "#"
+        li = link_to "め #{240 + 240}", "#"
+
+    .post-reading-button
+      p = link_to '本文を読んでみる', novel_path, class: 'btn btn-primary'
+
+
+
+
+  // order の部分です
   .order
     - if user_signed_in?
       p.column ・著者達に求める展開
@@ -40,8 +49,7 @@
     p 小説作成に参加するには、#{link_to "ログイン", new_user_session_path}してください
 
 
-.reading-botton
-  p = link_to '本文を読んでみる', novel_path, class: 'btn btn-primary'
+
 
 .post-log
   h2 投稿ログ

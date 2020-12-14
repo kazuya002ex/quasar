@@ -1,6 +1,6 @@
 .devise-common-message
   - if controller_name != 'sessions'
-    = link_to "アカウントをお持ちの方はこちら（ログイン）", new_session_path(resource_name)
+    = link_to "アカウントをお持ちの方はこちら（サインイン）", new_session_path(resource_name)
     br
   - if devise_mapping.registerable? && controller_name != 'registrations'
     = link_to "まだアカウントをお持ちでない方はこちら（新規登録）", new_registration_path(resource_name)

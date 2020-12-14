@@ -3,8 +3,10 @@
 section.bg-top
   .top-container
     .top-header
+      // headerロゴ
       .top-header-logo
         h1 = link_to "RELIER", root_path
+      // headerリスト
       .top-header-list
         ul
           - if user_signed_in?
@@ -12,17 +14,17 @@ section.bg-top
             li = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
           - else
             li = link_to "サインイン", new_user_session_path
+    // 検索窓
     .search
       = search_form_for @q do |f|
         = f.search_field :title_cont, placeholder: "タイトル名、ジャンルで検索"
         = f.submit "検索"
 
 section.top-container
+  // LP遷移ボタン
   .top-newuser-action
     p = link_to "はじめてご利用の方へ", "#"
-
-  / p.new = link_to '作成依頼', new_post_path
-
+  // おすすめ作品
   .top-ranking-wrapper
     .top-ranking-title
       h2 おすすめ作品
@@ -34,7 +36,7 @@ section.top-container
           h3.top-post-title = post.title
           / p.top-post-story = post.story
           p.top-post-link = link_to "詳細をみる", post
-
+  // 新着作品
   .top-new-arrival-wrapper
     .top-new-arrival-title
       h2 新着作品

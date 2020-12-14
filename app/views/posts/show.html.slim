@@ -2,30 +2,32 @@
 
 .post-show-top
   .post-main-contents
+    // 作品タイトル
     .post-show-title
       h2 = @post.title
-
+    // 表紙画像
     .post-show-image
       - if @post.image.present?
         = image_tag(@post.image.url)
       - else
         = image_tag("book_sample.jpg")
-
+    // お気に入り・編集アイコンなど
     .post-add-status
       / - if user_signed_in? && @post.user_id == current_user.id
       ul
         li = link_to "♡", "#"
         / li = link_to '概要を変更', edit_post_path(@post)
         / li = link_to '依頼を削除', @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' }
+    // あらすじ
     .post-desc
       h3 あらすじ 
       p = simple_format(@post.story)
-
+    // お気に入り数・閲覧数
     .post-reaction
       ul
         li ♡ 12
         li め 240
-
+    // 本文閲覧ボタン
     .post-reading-button
       p = link_to '本文を読んでみる', novel_path, class: 'btn btn-primary'
 

@@ -70,6 +70,15 @@ a:hover {
 
 // DEVISE
 
+// DEVISE COMMON
+
+.field label {
+  font-weight: bold;
+}
+
+
+
+// LOGIN
 .login-form {
   text-align: center;
   margin: 0 auto;
@@ -92,10 +101,46 @@ a:hover {
   padding: 1% 0;
 }
 
-input[type="submit"] {
+.login-form input[type="submit"] {
   cursor: pointer;
   margin-left: 5%;
 }
+
+
+
+
+
+
+
+// SIGNUP
+
+.signup-form {
+  text-align: center;
+  margin: 0 auto;
+  background-image: url(books.jpg);
+  color: #fff;
+  padding-top: 6%;
+  padding-bottom: 23%;
+}
+
+.signup-title {
+  font-size: 1.75rem;
+  padding: 2% 0;
+}
+
+.signup-form .field {
+  padding: 1% 0;
+}
+
+.signup-form .actions {
+  padding: 1% 0;
+}
+
+.signup-form input[type="submit"] {
+  cursor: pointer;
+  margin-left: 5%;
+}
+
 
 
 

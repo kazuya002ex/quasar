@@ -55,7 +55,7 @@ a:hover {
 }
 
 .container {
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 
 /* コンテンツ横幅隠し */
@@ -67,6 +67,41 @@ a:hover {
 
 
 
+
+// DEVISE
+
+.login-form {
+  text-align: center;
+  margin: 0 auto;
+  background-image: url(books.jpg);
+  color: #fff;
+  padding-top: 6%;
+  padding-bottom: 23%;
+}
+
+.login-title {
+  font-size: 1.75rem;
+  padding: 2% 0;
+}
+
+.login-form .field {
+  padding: 1% 0;
+}
+
+.login-form .actions {
+  padding: 1% 0;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+
+
+
+
+
 // HEADER
 
 header {
@@ -75,7 +110,7 @@ header {
   margin-top: 1%;
   margin-left: 8%;
   margin-right: 8%;
-  margin-bottom: 4%;
+  margin-bottom: 2%;
 }
 
 .header-logo h1 {

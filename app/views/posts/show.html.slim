@@ -44,7 +44,7 @@
           = f.text_field :content, :placeholder => "55文字以内で文章を作成"
           = f.submit '作成', data: { confirm: "投稿しますか？"}
       - else
-        p 小説作成に参加するには、#{link_to "ログイン", new_user_session_path}してください
+        p 小説作成に参加するには、#{link_to "サインイン", new_user_session_path}してください
 
     .post-log
       h2 投稿ログ

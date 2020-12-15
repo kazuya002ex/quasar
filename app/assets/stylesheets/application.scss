@@ -464,16 +464,22 @@ footer {
 
 .post-main-contents {
   margin-left: 15%;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 18%;
+  padding-right: 18%;
   background-color: #fff;
 }
 
 .post-show-title {
+  width: 320px;
   text-align: center;
   padding-top: 7%;
   padding-bottom: 4%;
   font-size: 1.65rem;
+}
+
+.post-show-image img {
+  width: 320px;
+  height: 436px;
 }
 
 .post-add-status ul {
@@ -494,6 +500,23 @@ footer {
   color: #0a9dd1;
 }
 
+.post-desc {
+  margin-top: 4%;
+  margin-bottom: 6%;
+}
+
+.post-desc h3 {
+  font-size: 1.125rem;
+  color: #333;
+}
+
+.post-desc p {
+  margin-top: 2%;
+  width: 320px;
+  font-size: 0.9rem;
+  line-height: 22px;
+  color: #555;
+}
 
 
 

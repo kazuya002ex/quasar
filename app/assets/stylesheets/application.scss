@@ -528,6 +528,25 @@ footer {
   color: #ccc;
 }
 
+.post-reading-button {
+  text-align: center;
+  margin: 12% 0;
+}
+
+.post-reading-button p a {
+  background-color: #69b3fd;
+  padding: 19px 29px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.125rem;
+  transition: .3s;
+}
+
+.post-reading-button p a:hover {
+  opacity: .8;
+  transition: .3s;
+}
+
 
 .post-sub-contents {
   margin-left: 2%;

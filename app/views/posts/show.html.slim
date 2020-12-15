@@ -66,7 +66,7 @@
       h3 依頼人
     // 依頼人ユーザーのアイコンと名前
     .post-sub-user-name
-      = link_to user_path(@post) do
+      = link_to user_path(@post.user) do
         ul
-          li.image ◯
+          li.image □
           li.name #{@post.user.name}

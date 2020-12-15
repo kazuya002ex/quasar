@@ -13,11 +13,13 @@
         = image_tag("book_sample.jpg")
     // お気に入り・編集アイコンなど
     .post-add-status
-      / - if user_signed_in? && @post.user_id == current_user.id
       ul
-        li = link_to "♡", "#"
-        / li = link_to '概要を変更', edit_post_path(@post)
-        / li = link_to '依頼を削除', @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' }
+        - if user_signed_in? && @post.user_id == current_user.id
+          li = link_to "♡", "#"
+          li = link_to "あ", "#"
+        - else
+          li = link_to '変', edit_post_path(@post)
+          li = link_to '除', @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' }
     // あらすじ
     .post-desc
       h3 あらすじ 

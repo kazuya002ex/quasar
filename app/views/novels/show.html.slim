@@ -1,12 +1,13 @@
 = provide(:title, "#{@post.title}")
 
-.title
-  h1 = @post.title
+.novel-show-container
+  .novel-show-title
+    h2 = @post.title
 
-hr
-
-- @microposts.each do |micropost|
-  p = micropost.content
   hr
 
-= link_to "戻る", :back
+  - @microposts.each do |micropost|
+    p = micropost.content
+    hr
+
+  = link_to "戻る", :back, { class: "novel-back" }

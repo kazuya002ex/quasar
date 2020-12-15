@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
 
-  validates :title, presence: true, length: { maximum: 55 }
+  validates :title, presence: true, length: { maximum: 32 }
   validates :story, presence: true, length: { maximum: 300 }
   validates :order, presence: true, length: { maximum: 300 }
   belongs_to :user, optional: true

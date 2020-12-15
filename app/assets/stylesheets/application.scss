@@ -529,7 +529,6 @@ footer {
 }
 
 .post-reading-button {
-  // text-align: center;
   margin-top: 12%;
   margin-bottom: 12%;
   margin-left: 9.7%;
@@ -568,10 +567,20 @@ footer {
 }
 
 .post-log {
+  width: 240px;
+  height: auto;
+  margin: 5px; 
+  padding: 10px;
+  border: 2px solid #888;
 }
 
 .post-add {
   margin-left: 3%;
+  width: 240px;
+  height: auto;
+  margin: 5px; 
+  padding: 10px;
+  border: 2px solid #888;
 }
 
 

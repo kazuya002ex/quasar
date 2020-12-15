@@ -502,7 +502,7 @@ footer {
 
 .post-desc {
   margin-top: 4%;
-  margin-bottom: 6%;
+  margin-bottom: 2.5%;
 }
 
 .post-desc h3 {
@@ -518,6 +518,15 @@ footer {
   color: #555;
 }
 
+.post-reaction ul {
+  display: flex;
+  margin-bottom: 5%;
+}
+
+.post-reaction ul li {
+  margin-right: 5%;
+  color: #ccc;
+}
 
 
 .post-sub-contents {

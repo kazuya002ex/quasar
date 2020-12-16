@@ -59,13 +59,11 @@ a:hover {
 }
 
 /* コンテンツ横幅隠し */
-.over-flow{
+.over-flow {
   overflow-y: scroll;
   width: 100%;
   padding-bottom: 3%;
 }
-
-
 
 
 // DEVISE
@@ -549,38 +547,40 @@ footer {
 }
 
 
-
-
 // 仮です！
 .novel-form p {
   font-size: 0.8rem;
-}
-.post-log {
-  width: 320px;
 }
 
 .post-add-contents {
   margin-left: -20%;
   padding-left: -18%;
   padding-right: -18%;
+  margin-bottom: 11%;
   display: flex;
+  height: auto;
 }
 
 .post-log {
-  width: 240px;
-  height: auto;
+  width: 255px;
+  height: 300px;
+  overflow-y: scroll;
   margin: 5px; 
   padding: 10px;
-  border: 2px solid #888;
+  border: 2px solid #999;
 }
 
 .post-add {
   margin-left: 3%;
-  width: 240px;
-  height: auto;
+  width: 255px;
+  height: 300px;
+  overflow-y: scroll;
   margin: 5px; 
   padding: 10px;
   border: 2px solid #888;
+}
+
+.micropost-form {
 }
 
 

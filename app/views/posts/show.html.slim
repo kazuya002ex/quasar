@@ -48,13 +48,15 @@
       .post-add
         // 1行作業
         .micropost-form
-        - if user_signed_in?
-          h3 文章を作成
-          = form_for [@post, @micropost] do |f|
-            = f.text_field :content, :placeholder => "55文字以内で文章を作成"
-            = f.submit '作成', data: { confirm: "投稿しますか？"}
-        - else
-          p 小説作成に参加するには、#{link_to "サインイン", new_user_session_path}してください
+          h3 1行投稿
+          .novel-form
+            - if user_signed_in?
+              p 文章を作成
+              = form_for [@post, @micropost] do |f|
+                = f.text_field :content, :placeholder => "55文字以内で文章を作成"
+                = f.submit '作成', data: { confirm: "投稿しますか？"}
+            - else
+              p 小説作成に参加するには、#{link_to "サインイン", new_user_session_path}してください
         // 著者達に求める展開
         .post-order
           - if user_signed_in?

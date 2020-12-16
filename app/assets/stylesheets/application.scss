@@ -546,12 +546,6 @@ footer {
   transition: .3s;
 }
 
-
-// 仮です！
-.novel-form p {
-  font-size: 0.8rem;
-}
-
 .post-add-contents {
   margin-left: -20%;
   padding-left: -18%;
@@ -580,7 +574,28 @@ footer {
   border: 2px solid #888;
 }
 
-.micropost-form {
+.micropost-form h3 {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #444;
+}
+
+.novel-form {
+  margin-top: 4%;
+}
+
+.novel-form p {
+  margin-bottom: 1%;
+  font-size: .85rem;
+}
+
+.novel-form form {
+}
+
+.novel-form input[type="text"] {
+  width: 242px;
+  height: 25px;
+  font-size: .75rem;
 }
 
 

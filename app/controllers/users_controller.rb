@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     # end
 
     # 依頼作品
-    @request_posts = Post.where(user_id: params[:id])
+    @request_posts = Post.my_request(@user)
     # 執筆作品(仮)
     @writing_posts = Post.order("RAND()").limit(6)
   end

@@ -12,4 +12,7 @@ class Post < ApplicationRecord
 
   # TOPページの新着10件を表示する
   scope :new_arriv, -> { last(10).reverse }
+
+  # 依頼作品を表示する
+  scope :my_request, -> (user){ where(user_id: user.id).order(created_at: 'desc') }
 end

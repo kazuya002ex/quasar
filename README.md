@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## 詳細
+
+- このアプリケーションは「1行小説リレー」というものです。

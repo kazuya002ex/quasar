@@ -700,24 +700,30 @@ footer {
 }
 
 .post-sub-contents .post-sub-title h3 {
-  font-size: 1.125rem;
+  font-size: 0.99rem;
   color: #999;
   font-weight: normal;
 }
 
 .post-sub-contents .post-sub-user-name ul {
+  margin-top: 3%;
   display: flex;
 }
 
-.post-sub-contents .post-sub-user-name ul .image {
-  font-size: 2.2rem;
+.post-sub-contents .post-sub-user-name ul .image img {
+  width: 62px;
+  height: 62px;
 }
 
 .post-sub-contents .post-sub-user-name ul .name {
   margin-left: 6%;
-  margin-top: 27%;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color:#777;
+}
+
+.post-sub-user-name p {
+  font-size: 0.92rem;
+  color: #444;
 }
 
 

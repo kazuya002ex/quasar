@@ -793,6 +793,28 @@ footer {
 
 .user-profile-main .follow-wrapper {
   margin-left: auto;
+  margin-top: 5%;
+  padding-right: 7%;
+}
+
+.user-profile-main .follow-wrapper a {
+  padding: 12px 24px;
+  border-radius: 5px;
+  color: #fff;
+  transition: .3s;
+}
+
+.user-profile-main .follow-wrapper a.edit-profile {
+  background-color: #66cc66;
+}
+
+.user-profile-main .follow-wrapper a.follow {
+  background-color: #33ccff;
+}
+
+.user-profile-main .follow-wrapper a:hover {
+  transition: .3s;
+  opacity: .8;
 }
 
 

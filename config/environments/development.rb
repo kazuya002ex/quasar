@@ -62,5 +62,5 @@ Rails.application.configure do
 
 
   # production用
-  config.hosts << ".herokuapp.com"
+  # config.hosts << ".herokuapp.com"
 end

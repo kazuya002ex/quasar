@@ -15,7 +15,8 @@
         - else
           = link_to 'フォローする', "#"
     .profile-sub
-      p.profile = simple_format text_url_to_link(h(@user.profile)).html_safe
+      .profile 
+        = simple_format text_url_to_link(h(@user.profile)).html_safe
       .follow-follower
         = link_to "#{24 + 200}フォロー中", "#"
         = link_to "#{12 + 100}フォロワー", "#"

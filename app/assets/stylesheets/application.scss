@@ -781,6 +781,7 @@ footer {
 }
 
 .user-profile-main .name-wrapper .name {
+  font-weight: bold;
   color: #333;
   font-size: 1.17rem;
 }
@@ -794,3 +795,28 @@ footer {
   margin-left: auto;
 }
 
+
+.profile-sub {
+  margin-left: 7%;
+  font-size: 0.92rem;
+}
+
+.profile-sub .profile {
+  margin-top: 0.8%;
+  color: #555;
+}
+
+.profile-sub .follow-follower {
+  margin-top: 0.6%;
+}
+
+.profile-sub .follow-follower a {
+  color: #222;
+  margin-right: 1%;
+  transition: .3s;
+}
+
+.profile-sub .follow-follower a:hover {
+  color: #0a9dd1;
+  transition: .3s;
+}

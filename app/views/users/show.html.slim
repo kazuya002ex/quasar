@@ -31,9 +31,21 @@
 .user-novels-wrapper
   h3 依頼作品
 
-  - @user.posts.each do |post|
+  - @request_posts.each do |post|
     ul
       li = post.title
       li = post.story
       li = link_to "詳細を見る", post
     hr
+  
+  p yyuyuyuyuyuyuyuyuy
+
+  h3 執筆参加作品(仮)
+
+  - @writing_posts.each do |post|
+    ul
+      li = post.title
+      li = post.story
+      li = link_to "詳細を見る", post
+    hr
+    

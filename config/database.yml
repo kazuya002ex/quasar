@@ -20,4 +20,5 @@ production:
   database: novel_app_production
   username: novel_app
   password: <%= ENV['NOVEL_APP_DATABASE_PASSWORD'] %>
+  host: localhost
   pool: 5

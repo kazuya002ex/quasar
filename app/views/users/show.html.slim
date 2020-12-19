@@ -7,8 +7,8 @@
       .image-wrapper
         = image_tag("no_image.png")
       .name-wrapper
-        p = @user.name
-        p @ebiten123
+        p.name = @user.name
+        p.id @ebiten123
       .follow-wrapper
         - if user_signed_in? && @user.id == current_user.id
           = link_to 'プロフィールを編集', edit_user_registration_path

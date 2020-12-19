@@ -775,8 +775,22 @@ footer {
   display: flex;
 }
 
+.user-profile-main .name-wrapper {
+  margin-left: 1.4%;
+  margin-top: 2.8%;
+}
+
+.user-profile-main .name-wrapper .name {
+  color: #333;
+  font-size: 1.17rem;
+}
+
+.user-profile-main .name-wrapper .id {
+  color: #777;
+  font-size: 0.87rem;
+}
+
 .user-profile-main .follow-wrapper {
-  // justify-content: end;
   margin-left: auto;
 }
 

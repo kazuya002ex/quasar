@@ -572,6 +572,10 @@ footer {
   color: #444;
 }
 
+.post-log .post-log-contents {
+  margin-top: 4%;
+}
+
 .post-log-main-content {
   display: flex;
 }
@@ -587,15 +591,32 @@ footer {
   transition: .3s;
 }
 
-.post-log .post-log-contents {
-  margin-top: 4%;
+.post-log-content {
+  margin-left: 3%;
+}
+
+.post-log-content p a {
+  font-size: 0.88rem;
+  color: #555;
+  transition: .3s;
+}
+
+.post-log-content p.micro {
+  margin-top: 1%;
+  font-size: 0.8rem;
+  color: #222;
+}
+
+.post-log-content p a:hover {
+  color: #0a9dd1;
+  transition: .3s;
 }
 
 .post-log .post-log-info {
   margin-left: 18%;
-  margin-top: 1.5%;
+  margin-top: 1%;
   display: flex;
-  margin-bottom: 4%;
+  margin-bottom: 7%;
 }
 
 .post-log .post-log-info p {

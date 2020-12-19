@@ -42,8 +42,8 @@
             .post-log-user-img
               = link_to image_tag("no_image.png"), "/users/#{micropost.user_id}"
             .post-log-content
-              = link_to "#{micropost.user.name}", "/users/#{micropost.user_id}"
-              p = micropost.content
+              p.name = link_to "#{micropost.user.name}", "/users/#{micropost.user_id}"
+              p.micro = micropost.content
           .post-log-info
             p = "#{time_ago_in_words(micropost.created_at)}前"
             - if user_signed_in? && micropost.user_id == current_user.id

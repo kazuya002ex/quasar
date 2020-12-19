@@ -759,10 +759,24 @@ footer {
 
 // USER
 
-// INDEX
+// SHOW
+
+.user-profiles {
+  margin-left: 8%;
+  margin-right: 8%;
+}
 
 .user-profile-wrapper img {
   width: 88px;
   height: 88px;
+}
+
+.user-profile-main {
+  display: flex;
+}
+
+.user-profile-main .follow-wrapper {
+  // justify-content: end;
+  margin-left: auto;
 }
 

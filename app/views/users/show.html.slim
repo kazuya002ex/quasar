@@ -1,51 +1,53 @@
 = provide(:title, "#{@user.name}のページ")
 
-.user-profile-wrapper
-  .user-profile-main
-    .image-wrapper
-      = image_tag("no_image.png")
-    .name-wrapper
-      p = @user.name
-      p @ebiten123
-    .follow-wrapper
-      - if user_signed_in? && @user.id == current_user.id
-        = link_to 'プロフィールを編集', edit_user_registration_path
-      - else
-        = link_to 'フォローする', "#"
-  .profile-sub
-    p.profile = simple_format text_url_to_link(h(@user.profile)).html_safe
-    .follow-follower
-      = link_to "#{24 + 200}フォロー中", "#"
-      = link_to "#{12 + 100}フォロワー", "#"
+.user-profiles
 
-      /// DM的な機能に飛ぶURL現在（2020/12/10）は不要
-      / - if @isRoom == true
-      /   p
-      /     a.btn.btn-default href="/rooms/#{@roomId}"  会議室へ
-      / - else
-      /   = form_for @room do |f| 
-      /     = fields_for @entry do |e|
-      /       = e.hidden_field :user_id, :value=> @user.id
-      /     = f.submit "会議室へ", class: 'btn btn-default'
+  .user-profile-wrapper
+    .user-profile-main
+      .image-wrapper
+        = image_tag("no_image.png")
+      .name-wrapper
+        p = @user.name
+        p @ebiten123
+      .follow-wrapper
+        - if user_signed_in? && @user.id == current_user.id
+          = link_to 'プロフィールを編集', edit_user_registration_path
+        - else
+          = link_to 'フォローする', "#"
+    .profile-sub
+      p.profile = simple_format text_url_to_link(h(@user.profile)).html_safe
+      .follow-follower
+        = link_to "#{24 + 200}フォロー中", "#"
+        = link_to "#{12 + 100}フォロワー", "#"
 
-.user-novels-wrapper
-  h3 依頼作品
+        /// DM的な機能に飛ぶURL現在（2020/12/10）は不要
+        / - if @isRoom == true
+        /   p
+        /     a.btn.btn-default href="/rooms/#{@roomId}"  会議室へ
+        / - else
+        /   = form_for @room do |f| 
+        /     = fields_for @entry do |e|
+        /       = e.hidden_field :user_id, :value=> @user.id
+        /     = f.submit "会議室へ", class: 'btn btn-default'
 
-  - @request_posts.each do |post|
-    ul
-      li = post.title
-      li = post.story
-      li = link_to "詳細を見る", post
-    hr
-  
-  p yyuyuyuyuyuyuyuyuy
+  .user-novels-wrapper
+    h3 依頼作品
 
-  h3 執筆参加作品(仮)
+    - @request_posts.each do |post|
+      ul
+        li = post.title
+        li = post.story
+        li = link_to "詳細を見る", post
+      hr
+    
+    p yyuyuyuyuyuyuyuyuy
 
-  - @writing_posts.each do |post|
-    ul
-      li = post.title
-      li = post.story
-      li = link_to "詳細を見る", post
-    hr
+    h3 執筆参加作品(仮)
+
+    - @writing_posts.each do |post|
+      ul
+        li = post.title
+        li = post.story
+        li = link_to "詳細を見る", post
+      hr
     

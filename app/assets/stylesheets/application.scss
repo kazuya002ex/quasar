@@ -555,6 +555,8 @@ footer {
   height: auto;
 }
 
+// POST LOG 
+
 .post-log {
   width: 255px;
   height: 300px;
@@ -568,6 +570,10 @@ footer {
   font-size: 1.1rem;
   text-align: center;
   color: #444;
+}
+
+.post-log-main-content {
+  display: flex;
 }
 
 .post-log-user-img img {
@@ -584,6 +590,30 @@ footer {
 .post-log .post-log-contents {
   margin-top: 4%;
 }
+
+.post-log .post-log-info {
+  margin-left: 18%;
+  margin-top: 1.5%;
+  display: flex;
+  margin-bottom: 4%;
+}
+
+.post-log .post-log-info p {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.post-log .post-log-info p a {
+  color: #888;
+  transition: .3s;
+}
+
+.post-log .post-log-info p a:hover {
+  color: #0a9dd1;
+  transition: .3s;
+}
+
+
 
 
 

@@ -1,16 +1,23 @@
 = provide(:title, "#{@user.name}のページ")
 
-.profile-wrapper
-  ul
-    li.mytitle = @user.my_title
-    li.myname = @user.name
+.user-profile-wrapper
+  .user-profile-main
+    .image-wrapper
+      = image_tag("no_image.png")
+    .name-wrapper
+      p = @user.name
+      p @ebiten123
+    .follow-wrapper
+      - if user_signed_in? && @user.id == current_user.id
+        = link_to 'プロフィールを編集', edit_user_registration_path
+      - else
+        = link_to 'フォローする', "#"
+  .profile-sub
+    p.profile = simple_format text_url_to_link(h(@user.profile)).html_safe
+    .follow-follower
+      = link_to "#{24 + 200}フォロー中", "#"
+      = link_to "#{12 + 100}フォロワー", "#"
 
-  p.profile = simple_format text_url_to_link(h(@user.profile)).html_safe
-
-  .kaigi
-    - if user_signed_in? && @user.id == current_user.id
-
-    - else
       /// DM的な機能に飛ぶURL現在（2020/12/10）は不要
       / - if @isRoom == true
       /   p
@@ -20,14 +27,9 @@
       /     = fields_for @entry do |e|
       /       = e.hidden_field :user_id, :value=> @user.id
       /     = f.submit "会議室へ", class: 'btn btn-default'
-  .edit-profile
-    - if user_signed_in? && @user.id == current_user.id
-      = link_to 'プロフィールを編集', edit_user_registration_path
 
-.user-novel
-  h3 依頼した作品
-
-  hr
+.user-novels-wrapper
+  h3 依頼作品
 
   - @user.posts.each do |post|
     ul

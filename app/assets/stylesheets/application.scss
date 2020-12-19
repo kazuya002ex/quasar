@@ -564,6 +564,33 @@ footer {
   border: 2px solid #999;
 }
 
+.post-log h3 {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #444;
+}
+
+.post-log-user-img img {
+  width: 44px;
+  height: 44px;
+  transition: .3s;
+}
+
+.post-log-user-img img:hover {
+  opacity: .8;
+  transition: .3s;
+}
+
+.post-log .post-log-contents {
+  margin-top: 4%;
+}
+
+
+
+
+
+
+
 .post-add {
   margin-left: 3%;
   width: 255px;

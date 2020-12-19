@@ -842,3 +842,48 @@ footer {
   color: #0a9dd1;
   transition: .3s;
 }
+
+.user-novels-wrapper {
+  margin-top: 4%;
+}
+
+.user-novels-wrapper img {
+  width: 250px;
+  height: 352px;
+  transition: 0.5s;
+  box-shadow: 0 5px 12px 0 rgba(0, 0, 0, .3);
+}
+
+.user-novels-wrapper img:hover {
+  filter: brightness(89%);
+  transition: 0.5s;
+}
+
+.novels-title {
+  margin-top: 2%;
+}
+
+.novels-title h2 {
+  font-size: 1.125rem;
+  color: #555;
+}
+
+.user-novels-requests {
+  display: flex;
+  margin-top: 2.2%;
+}
+
+.user-novels-requests a {
+  margin-left: 1.4%;
+  color: #555;
+}
+
+.user-novels-writing {
+  margin-top: 2.2%;
+  display: flex;
+}
+
+.user-novels-writing a {
+  margin-left: 1.4%;
+  color: #555;
+}

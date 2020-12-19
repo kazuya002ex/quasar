@@ -32,23 +32,25 @@
         /     = f.submit "会議室へ", class: 'btn btn-default'
 
   .user-novels-wrapper
-    h3 依頼作品
-
-    - @request_posts.each do |post|
-      ul
-        li = post.title
-        li = post.story
-        li = link_to "詳細を見る", post
-      hr
-    
-    p yyuyuyuyuyuyuyuyuy
-
-    h3 執筆参加作品(仮)
-
-    - @writing_posts.each do |post|
-      ul
-        li = post.title
-        li = post.story
-        li = link_to "詳細を見る", post
-      hr
+    .novels-title
+      h2 依頼作品
+    .user-novels-requests.over-flow
+      - @request_posts.each do |post|
+        = link_to post do
+          - if post.image.present?
+            = image_tag(post.image.url)
+          - else
+            = image_tag("no_image_book.jpg")
+          h3 = post.title.truncate(27)
+      
+    .novels-title
+      h2 執筆参加作品(仮)
+    .user-novels-writing.over-flow
+      - @writing_posts.each do |post|
+        = link_to post do
+          - if post.image.present?
+            = image_tag(post.image.url)
+          - else
+            = image_tag("no_image_book.jpg")
+          h3 = post.title.truncate(27)
     

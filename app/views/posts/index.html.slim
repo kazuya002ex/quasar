@@ -32,7 +32,7 @@ section.top-container
       - @ranking_posts.each do |post|
         .ranking-content
           .top-post-img
-            = link_to image_tag("book_sample.jpg"), post
+            = link_to image_tag("no_image_book.jpg"), post
           h3.top-post-title = post.title
           / p.top-post-story = post.story
           p.top-post-link = link_to "詳細をみる", post
@@ -48,7 +48,7 @@ section.top-container
               - if post.image.present?
                 = image_tag(post.image.url)
               - else
-                = image_tag("book_sample.jpg")
+                = image_tag("no_image_book.jpg")
           h3.top-post-title = post.title
           / p.top-post-story = post.story
           p.top-post-link = link_to "詳細をみる", post

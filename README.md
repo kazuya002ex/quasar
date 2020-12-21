@@ -38,7 +38,7 @@
 
 https://localhost:3009
 
-## APP詳細
+## 概要
 
 - Ruby 2.6.3
 - Rails 5.2.3

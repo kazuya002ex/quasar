@@ -36,3 +36,13 @@ end
     user_id: 2
     )
 end
+
+
+# Micropost Create
+10.times do |n|
+  Micropost.create!(
+    content: "シナリオ#{n + 1}",
+    post_id: "#{n + 1}",
+    user_id: "#{n + 1}"
+  )
+end

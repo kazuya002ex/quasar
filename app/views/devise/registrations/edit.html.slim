@@ -1,58 +1,58 @@
-h2.title
-  | Edit 
-  = resource_name.to_s.humanize
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
+.profile-edit-wrapper
+  h2.title プロフィール編集
+.profile-field-wrapper
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = render "devise/shared/error_messages", resource: resource
 
-  .field
-    = f.label :name
-    br
-    = f.text_field :name, autofocus: true, autocomplete: "name"
-
-  .field
-    = f.label :my_title
-    br
-    = f.text_field :my_title, autofocus: true, autocomplete: "my_title"
-
-  .field
-    = f.label :profile
-    br
-    = f.text_area :profile, autofocus: true, autocomplete: "profile"
-
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    div
-      | Currently waiting confirmation for: 
-      = resource.unconfirmed_email 
-
-  .field
-    = f.label :password
-    i
-      | (変更しない場合は空白のままにします)
-    br
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
+    .field
+      = f.label :name
       br
-      em
-        = "#{@minimum_password_length}   文字以上"
+      = f.text_field :name, autofocus: true, autocomplete: "name"
 
-  .field
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation, autocomplete: "new-password"
+    / .field
+    /   = f.label :my_title
+    /   br
+    /   = f.text_field :my_title, autofocus: true, autocomplete: "my_title"
 
-  .field
-    = f.label :current_password
-    i
-      | (内容を変更するには現在のパスワードが必要です)
-    br
-    = f.password_field :current_password, autocomplete: "current-password"
+    .field
+      = f.label :profile
+      br
+      = f.text_area :profile, autofocus: true, autocomplete: "profile"
 
-  .actions
-    = f.submit "変更", data: { confirm: "変更しますか？" }, class: 'btn btn-primary'
+    .field
+      = f.label :email
+      br
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      div
+        | Currently waiting confirmation for: 
+        = resource.unconfirmed_email
+
+    / .field
+    /   = f.label :password
+    /   i
+    /     | (変更しない場合は空白のままにします)
+    /   br
+    /   = f.password_field :password, autocomplete: "new-password"
+    /   - if @minimum_password_length
+    /     br
+    /     em
+    /       = "#{@minimum_password_length}   文字以上"
+
+    / .field
+    /   = f.label :password_confirmation
+    /   br
+    /   = f.password_field :password_confirmation, autocomplete: "new-password"
+
+    .field
+      = f.label :current_password
+      i
+        | (内容を変更するには現在のパスワードが必要です)
+      br
+      = f.password_field :current_password, autocomplete: "current-password"
+
+    .actions
+      = f.submit "変更", data: { confirm: "変更しますか？" }, class: 'btn btn-primary'
 
 
-= link_to "戻る", :back
+  = link_to "戻る", :back

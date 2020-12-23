@@ -5,6 +5,11 @@
     = render "devise/shared/error_messages", resource: resource
 
     .field
+      = f.label :img
+      br
+      = f.file_field :img, class: 'img'
+
+    .field
       = f.label :name
       br
       = f.text_field :name, autofocus: true, autocomplete: "name"

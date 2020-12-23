@@ -5,7 +5,10 @@
   .user-profile-wrapper
     .user-profile-main
       .image-wrapper
-        = image_tag("no_image.png")
+        - if @user.img.present?
+          = image_tag(@user.img.url)
+        - else
+          = image_tag("no_image.png")
       .name-wrapper
         p.name = @user.name
         p.id @ebiten123

@@ -40,7 +40,11 @@
         - @microposts.each do |micropost|
           .post-log-main-content
             .post-log-user-img
-              = link_to image_tag("no_image.png"), "/users/#{micropost.user_id}"
+              - if micropost.user.img.present?
+                = link_to image_tag(micropost.user.img.url), "/users/#{micropost.user_id}"
+              - else
+                = link_to image_tag("no_image.png"), "/users/#{micropost.user_id}"
+              
             .post-log-content
               p.name = link_to "#{micropost.user.name}", "/users/#{micropost.user_id}"
               p.micro = micropost.content
@@ -75,6 +79,9 @@
     .post-sub-user-name
       = link_to user_path(@post.user) do
         ul
-          li.image = image_tag "no_image.png" 
+          - if @post.user.img.present?
+            li.image = image_tag @post.user.img.url 
+          - else
+            li.image = image_tag "no_image.png"
           li.name #{@post.user.name}
       = simple_format text_url_to_link(h(@post.user.profile)).html_safe

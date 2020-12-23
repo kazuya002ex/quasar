@@ -11,7 +11,7 @@
           = image_tag("no_image.png")
       .name-wrapper
         p.name = @user.name
-        p.id @ebiten123
+        p.id = @user.nickname.present? ? "@#{@user.nickname}" : "@(ID未設定)"
       .follow-wrapper
         - if user_signed_in? && @user.id == current_user.id
           = link_to 'プロフィールを編集', edit_user_registration_path, class: 'edit-profile'

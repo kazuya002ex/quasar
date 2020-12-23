@@ -28,7 +28,7 @@
     .post-reaction
       ul
         li ♡ 12
-        li め 240
+        li = "め #{@post.browsing}"
     // 本文閲覧ボタン
     .post-reading-button
       p = link_to '本文を読んでみる', novel_path, class: 'btn btn-primary'

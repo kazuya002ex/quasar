@@ -105,6 +105,8 @@ GEM
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.14.2)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     globalid (0.4.2)
@@ -286,6 +288,7 @@ DEPENDENCIES
   devise
   devise-i18n
   devise-i18n-views
+  font-awesome-rails
   font-awesome-sass
   html2slim
   jbuilder (~> 2.5)

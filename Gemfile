@@ -46,3 +46,4 @@ gem 'jquery-rails'
 gem 'redis-rails'
 gem 'carrierwave'
 gem 'font-awesome-sass'
+gem "font-awesome-rails"

@@ -13,6 +13,6 @@ class LikesController < ApplicationController
   private
 
     def post_set
-      @post = Post.find(params[:post_id])
+      @post = Post.find(params[:id])
     end
 end

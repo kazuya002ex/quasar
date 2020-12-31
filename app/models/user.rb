@@ -10,4 +10,10 @@ class User < ApplicationRecord
   has_many :microposts
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
+  has_many :likes, dependent: :destroy
+
+  # お気に入り機能関係
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
+  end
 end

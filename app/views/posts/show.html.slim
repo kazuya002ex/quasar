@@ -18,10 +18,10 @@
           li = link_to '変', edit_post_path(@post)
           li = link_to '除', @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' }
         - else
-          / - unless @post.like_user(current_user.id).blank?
-          /   li = link_to "♡", post_like_path(post_id: @post.id, id: @post.likes[0].id), method: :delete, remote: true
-          / - else
-          /   li = link_to "鮊", post_likes_path(@post.id), method: :post, remote: true
+          - if user_signed_in? && current_user.already_liked?(@post)
+            li = link_to 'D♡', post_like_path(@post), method: :delete
+          - else
+            li = link_to '♡', post_likes_path(@post), method: :post
           li = link_to "あ", "#"
     // あらすじ
     .post-desc

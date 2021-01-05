@@ -47,3 +47,7 @@ gem 'redis-rails'
 gem 'carrierwave'
 gem 'font-awesome-sass'
 gem "font-awesome-rails"
+
+# Vueと接続するGem
+gem 'active_model_serializers'
+gem 'jwt_sessions'

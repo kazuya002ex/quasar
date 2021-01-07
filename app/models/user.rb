@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :entries, dependent: :destroy
   has_many :likes, dependent: :destroy
 
+  scope :rand, -> { order("RAND()").limit(10) }
+
   # お気に入り機能関係
   def already_liked?(post)
     self.likes.exists?(post_id: post.id)

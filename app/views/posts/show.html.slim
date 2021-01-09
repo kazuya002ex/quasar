@@ -15,8 +15,10 @@
     .post-add-status
       ul
         - if user_signed_in? && @post.user_id == current_user.id
-          li = link_to '変', edit_post_path(@post)
-          li = link_to '除', @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' }
+          li = link_to edit_post_path(@post) do
+            i.fas.fa-pen
+          li = link_to @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' } do
+            i.fas.fa-archive
         - else
           - if user_signed_in? && current_user.already_liked?(@post)
             li = link_to post_add_path(@post), method: :delete do
@@ -35,7 +37,9 @@
         li 
           i.far.fa-heart.icon-btn
           = @post.likes.count
-        li = "め #{@post.browsing}"
+        li
+          i.far.fa-eye
+          = @post.browsing
     // 本文閲覧ボタン
     .post-reading-button
       p = link_to '本文を読んでみる', novel_path, class: 'btn btn-primary'

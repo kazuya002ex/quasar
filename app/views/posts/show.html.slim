@@ -16,7 +16,7 @@
       ul
         - if user_signed_in? && @post.user_id == current_user.id
           li = link_to edit_post_path(@post) do
-            i.fas.fa-pen
+            i.fas.fa-edit
           li = link_to @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' } do
             i.fas.fa-archive
         - else
@@ -26,7 +26,8 @@
           - else
             li = link_to post_add_path(@post), method: :post do
               i.far.fa-heart.icon-btn.not-like
-          li = link_to "あ", "#"
+          li = link_to "#" do
+            i.fas.fa-external-link-alt
     // あらすじ
     .post-desc
       h3 あらすじ 

@@ -19,10 +19,10 @@
           li = link_to '除', @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' }
         - else
           - if user_signed_in? && current_user.already_liked?(@post)
-            li = link_to post_like_path(@post), method: :delete do
+            li = link_to post_add_path(@post), method: :delete do
               i.fas.fa-heart.icon-btn.liked
           - else
-            li = link_to post_likes_path(@post), method: :post do
+            li = link_to post_add_path(@post), method: :post do
               i.far.fa-heart.icon-btn.not-like
           li = link_to "あ", "#"
     // あらすじ

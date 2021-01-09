@@ -18,4 +18,12 @@ class Post < ApplicationRecord
 
   # 依頼作品を表示する
   scope :my_request, -> (user){ where(user_id: user.id).order(created_at: 'desc') }
+
+  def user
+    return User.find_by(id: self.user_id)
+  end
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
 end

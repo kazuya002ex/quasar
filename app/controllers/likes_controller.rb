@@ -2,12 +2,15 @@ class LikesController < ApplicationController
   before_action :set_post, only: [:create, :destroy]
 
   def create
-    @like = Like.create(user_id: current_user.id, post_id: params[:post_id])
+    post = Post.find(params[:post_id])
+    like = Like.new(user_id: current_user.id, post_id: params[:post_id])
+    redirect_back(fallback_location: root_path) if like.save
   end
 
   def destroy
+    post = Post.find(params[:post_id])
     like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
-    like.destroy
+    redirect_back(fallback_location: root_path) if like.destroy
   end
 
   private

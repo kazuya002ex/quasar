@@ -1,6 +1,6 @@
-- if post.liked_by?(current_user)
-  = link_to(post_add_path(post), method: :delete, remote: true, id: :"like-button-#{post.id}") do
-    i.fa-lg.fas.fa-heart.icon-btn.liked
+- if user_signed_in? && @post.liked_by?(current_user)
+  = link_to(post_add_path(@post), method: :delete, remote: true, id: :"like-button-#{@post.id}") do
+    i.fas.fa-heart.icon-btn.liked
 - else
-  = link_to(post_add_path(post), method: :post, remote: true, id: :"like-button-#{post.id}") do
-    i.fa-lg.fas.fa-heart.icon-btn.not-like
+  = link_to(post_add_path(@post), method: :post, remote: true, id: :"like-button-#{@post.id}") do
+    i.far.fa-heart.icon-btn.not-like

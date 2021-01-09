@@ -19,9 +19,11 @@
           li = link_to '除', @post, method: :delete, data: { confirm: '本文も全て消えてしまいます。削除してもよろしいですか？' }
         - else
           - if user_signed_in? && current_user.already_liked?(@post)
-            li = link_to 'D♡', post_like_path(@post), method: :delete
+            li = link_to post_like_path(@post), method: :delete do
+              i.fas.fa-heart.icon-btn.liked
           - else
-            li = link_to '♡', post_likes_path(@post), method: :post
+            li = link_to post_likes_path(@post), method: :post do
+              i.far.fa-heart.icon-btn.not-like
           li = link_to "あ", "#"
     // あらすじ
     .post-desc
@@ -31,7 +33,6 @@
     .post-reaction
       ul
         li ♡ 12
-        i.fas.fa-heart.icon-btn.liked
         li = "め #{@post.browsing}"
     // 本文閲覧ボタン
     .post-reading-button

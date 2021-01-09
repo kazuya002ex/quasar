@@ -111,6 +111,7 @@ GEM
       devise (>= 4.7.1)
     devise-i18n-views (0.3.7)
     diff-lcs (1.4.4)
+    docile (1.3.4)
     erubi (1.10.0)
     execjs (2.7.0)
     factory_girl (4.9.0)
@@ -298,6 +299,12 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    simplecov (0.21.1)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.2)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -374,6 +381,7 @@ DEPENDENCIES
   rubocop-rspec
   sass-rails (~> 5.0)
   selenium-webdriver
+  simplecov
   slim-rails
   turbolinks (~> 5)
   tzinfo-data

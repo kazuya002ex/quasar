@@ -32,7 +32,9 @@
     // お気に入り数・閲覧数
     .post-reaction
       ul
-        li ♡ 12
+        li 
+          i.far.fa-heart.icon-btn
+          = @post.likes.count
         li = "め #{@post.browsing}"
     // 本文閲覧ボタン
     .post-reading-button

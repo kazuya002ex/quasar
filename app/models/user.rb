@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :like_posts, through: :likes, source: :post
 
   scope :rand, -> { order("RAND()").limit(10) }
 

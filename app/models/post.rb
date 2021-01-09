@@ -1,11 +1,14 @@
 class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
 
+  belongs_to :user, optional: true
+  has_many :microposts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :users, through: :likes
+
   validates :title, presence: true, length: { maximum: 32 }
   validates :story, presence: true, length: { maximum: 300 }
   validates :order, presence: true, length: { maximum: 300 }
-  belongs_to :user, optional: true
-  has_many :microposts, dependent: :destroy
 
   # TOPページのランキングを表示する（未完成）
   scope :rank, -> { order("RAND()").limit(10) }

@@ -1,10 +1,11 @@
 ja:
   activerecord:
-    models:
-      post: 
-        title: "タイトル"
-      user:
-        name: "名前"
+    attributes:
+      models:
+        post:
+          title: "タイトル"
+        user:
+          name: "名前"
   datetime:
     distance_in_words:
       half_a_minute: "30秒前後"

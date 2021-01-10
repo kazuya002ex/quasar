@@ -10,6 +10,8 @@ ja:
         name: "ユーザー名"
         my_title: "肩書き"
         profile: "プロフィール"
+        nickname: "ユーザーID"
+        img: "プロフィール画像"
     models:
       user: "ユーザー"
   devise:

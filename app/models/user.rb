@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_posts, through: :likes, source: :post
 
+  validates :name, presence: true, length: { maximum: 25 }
+
   scope :rand, -> { order("RAND()").limit(10) }
 
   # お気に入り機能関係

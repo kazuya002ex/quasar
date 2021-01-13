@@ -8,8 +8,14 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    # 依頼作品
+    @request_posts = Post.my_request(@user)
+    # 執筆作品(仮)
+    @writing_posts = Post.order("RAND()").limit(6)
+
+    # もともとダイレクトメッセージの機能として使っていた
     # if user_signed_in?
-      @user = User.find(params[:id])
       # @currentUserEntry=Entry.where(user_id: current_user.id)
       # @userEntry=Entry.where(user_id: @user.id)
       # if @user.id == current_user.id
@@ -29,10 +35,5 @@ class UsersController < ApplicationController
       #   end
       # end
     # end
-
-    # 依頼作品
-    @request_posts = Post.my_request(@user)
-    # 執筆作品(仮)
-    @writing_posts = Post.order("RAND()").limit(6)
   end
 end

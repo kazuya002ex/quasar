@@ -63,4 +63,22 @@ RSpec.describe Post, type: :model do
       expect(post).to_not be_valid
     end
   end
+
+  # scopeの取得
+  context 'new_arrivを使用した場合' do
+    test_posts = 10.times do |n|
+      Post.create!(
+        title: 'タイトル',
+        story: 'ストーリー説明',
+        order: '素敵なストーリーにしてください。',
+        user_id: 1
+        )
+    end
+
+    posts = Post.new_arriv
+
+    it '10件取得する' do
+      expect(posts.count).to eq 10
+    end
+  end
 end

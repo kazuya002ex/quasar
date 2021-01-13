@@ -54,6 +54,7 @@ gem 'redis-rails'
 gem 'carrierwave'
 gem 'font-awesome-sass'
 gem "font-awesome-rails"
+gem 'ruby-progressbar'
 
 # Vueと接続するGem
 gem 'active_model_serializers'

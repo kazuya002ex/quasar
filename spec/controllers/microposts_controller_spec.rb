@@ -1,4 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe Microposts, type: :controller do
+RSpec.describe MicropostsController, type: :controller do
 end

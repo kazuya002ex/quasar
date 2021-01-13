@@ -1,4 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe Likes, type: :controller do
+RSpec.describe LikesController, type: :controller do
 end

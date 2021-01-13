@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -53,8 +55,8 @@ gem 'jquery-rails'
 gem 'redis-rails'
 gem 'carrierwave'
 gem 'font-awesome-sass'
-gem "font-awesome-rails"
-gem 'ruby-progressbar'
+gem 'font-awesome-rails'
+gem 'fuubar'
 
 # Vueと接続するGem
 gem 'active_model_serializers'

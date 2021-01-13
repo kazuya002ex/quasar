@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
 
@@ -20,6 +22,6 @@ class Post < ApplicationRecord
   scope :my_request, -> (user){ where(user_id: user.id).order(created_at: 'desc') }
 
   def user
-    return User.find_by(id: self.user_id)
+    return User.find_by(id: user.id)
   end
 end

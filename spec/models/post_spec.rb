@@ -21,4 +21,46 @@ RSpec.describe Post, type: :model do
       expect(post).to_not be_valid
     end
   end
+
+  # ストーリーのバリデーション
+  context 'ストーリーが空の場合' do
+    post = Post.new(story: nil)
+    post.valid?
+    
+    it '無効になる' do
+      expect(post.errors.full_messages).to include('Storyを入力してください')
+      expect(post).to_not be_valid
+    end
+  end
+
+  context 'ストーリーが300文字を超える場合' do
+    post = Post.new(story: 'ごめん' * 100 + 'え')
+    post.valid?
+
+    it '無効になる' do
+      expect(post.errors.full_messages).to include('Storyは300文字以内で入力してください')
+      expect(post).to_not be_valid
+    end
+  end
+
+  # オーダーのバリデーション
+  context 'オーダーが空の場合' do
+    post = Post.new(order: nil)
+    post.valid?
+    
+    it '無効になる' do
+      expect(post.errors.full_messages).to include('Orderを入力してください')
+      expect(post).to_not be_valid
+    end
+  end
+
+  context 'オーダーが300文字を超える場合' do
+    post = Post.new(order: 'ごめん' * 100 + 'え')
+    post.valid?
+
+    it '無効になる' do
+      expect(post.errors.full_messages).to include('Orderは300文字以内で入力してください')
+      expect(post).to_not be_valid
+    end
+  end
 end

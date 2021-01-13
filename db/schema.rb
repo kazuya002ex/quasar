@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_10_035431) do
+ActiveRecord::Schema.define(version: 2021_01_13_025407) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -78,13 +78,14 @@ ActiveRecord::Schema.define(version: 2021_01_10_035431) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.text "story"
-    t.text "order"
+    t.text "story", null: false
+    t.text "order", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "image"
     t.integer "browsing", default: 0, null: false
+    t.index ["title"], name: "index_posts_on_title"
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

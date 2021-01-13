@@ -18,7 +18,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'simplecov', require: false
 end
 
@@ -49,7 +49,6 @@ gem 'ransack'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-gem 'bootstrap-sass'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'redis-rails'

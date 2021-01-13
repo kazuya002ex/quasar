@@ -20,8 +20,4 @@ class Post < ApplicationRecord
 
   # 依頼作品を表示する
   scope :my_request, -> (user){ where(user_id: user.id).order(created_at: 'desc') }
-
-  def user
-    return User.find_by(id: user.id)
-  end
 end

@@ -31,4 +31,29 @@ RSpec.describe PostsController, type: :controller do
 
     it { is_expected.to raise_error ActiveRecord::RecordNotFound }
   end
+
+  context '#new ユーザーが存在するとき' do
+    it 'リクエストが成功すること' do
+      get :new
+      expect(response.status).to eq 200
+    end
+
+    it 'newテンプレートで表示されること' do
+      get :new
+      expect(response).to render_template :new
+    end
+  end
+
+  # POSTメソッド
+  context '#create ユーザーが存在するとき' do
+    
+  end
+
+  context '#update ユーザーが存在するとき' do
+    
+  end
+
+  context '#destroy ユーザーが存在するとき' do
+    
+  end
 end

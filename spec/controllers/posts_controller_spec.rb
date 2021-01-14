@@ -33,6 +33,9 @@ RSpec.describe PostsController, type: :controller do
   end
 
   context '#new ユーザーが存在するとき' do
+    let(:makoto) { FactoryBot.create :makoto }
+    before { login_user makoto }
+
     it 'リクエストが成功すること' do
       get :new
       expect(response.status).to eq 200

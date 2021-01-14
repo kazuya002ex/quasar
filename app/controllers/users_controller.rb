@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     # 依頼作品
     @request_posts = Post.my_request(@user)
     # 執筆作品(仮)
-    @writing_posts = Post.order("RAND()").limit(6)
+    @writing_posts = Post.order(Arel.sql('rand()')).limit(6)
 
     # もともとダイレクトメッセージの機能として使っていた
     # if user_signed_in?

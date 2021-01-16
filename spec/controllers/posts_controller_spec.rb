@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+  let(:makoto) { FactoryBot.create :makoto }
+  before { login_user makoto }
+
   # GETメソッド
   context '#index ユーザーが存在する場合' do
     it 'リクエストが成功すること' do
@@ -33,9 +36,6 @@ RSpec.describe PostsController, type: :controller do
   end
 
   context '#new ユーザーが存在するとき' do
-    let(:makoto) { FactoryBot.create :makoto }
-    before { login_user makoto }
-
     it 'リクエストが成功すること' do
       get :new
       expect(response.status).to eq 200
@@ -48,24 +48,38 @@ RSpec.describe PostsController, type: :controller do
   end
 
   # POSTメソッド
-  context '#create ユーザーが存在するとき' do
-    let(:makoto) { FactoryBot.create :makoto }
-    before { login_user makoto }
-
+  context '#create ユーザーが存在する場合' do
     it 'リクエストが成功すること' do
       post :create, params: { post: FactoryBot.attributes_for(:post) }
       expect(response.status).to eq 302
     end
 
-    # it '投稿が作成されること' do
-    #   expect do
-    #     post :create, params: { post: FactoryBot.attributes_for(:post) }
-    #   end.to change(Post, :count).by(1)
-    # end
+    it '投稿が作成されること' do
+      expect do
+        post :create, params: { post: FactoryBot.attributes_for(:post) }
+      end.to change(Post, :count).by(1)
+    end
 
     it 'リダイレクトすること' do
       post :create, params: { post: FactoryBot.attributes_for(:post) }
       expect(response).to redirect_to Post.last
+    end
+  end
+
+  context '#create パラメータが不正の場合' do
+    it 'リクエストが成功すること' do
+      post :create, params: { post: FactoryBot.attributes_for(:post, :invalid) }
+      expect(response.status).to eq 200
+    end
+
+    it 'newテンプレートで表示されること' do
+      post :create, params: { post: FactoryBot.attributes_for(:post, :invalid) }
+      expect(response).to render_template :new
+    end
+
+    it 'エラーが表示されること' do
+      post :create, params: { post: FactoryBot.attributes_for(:post, :invalid) }
+      expect(assigns(:post).errors.any?).to be_truthy
     end
   end
 

@@ -49,7 +49,24 @@ RSpec.describe PostsController, type: :controller do
 
   # POSTメソッド
   context '#create ユーザーが存在するとき' do
-    
+    let(:makoto) { FactoryBot.create :makoto }
+    before { login_user makoto }
+
+    it 'リクエストが成功すること' do
+      post :create, params: { post: FactoryBot.attributes_for(:post) }
+      expect(response.status).to eq 302
+    end
+
+    # it '投稿が作成されること' do
+    #   expect do
+    #     post :create, params: { post: FactoryBot.attributes_for(:post) }
+    #   end.to change(Post, :count).by(1)
+    # end
+
+    it 'リダイレクトすること' do
+      post :create, params: { post: FactoryBot.attributes_for(:post) }
+      expect(response).to redirect_to Post.last
+    end
   end
 
   context '#update ユーザーが存在するとき' do

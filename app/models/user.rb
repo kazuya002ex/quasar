@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 25 }
 
-  scope :rand, -> { order("RAND()").limit(10) }
+  scope :rand, -> { order(Arel.sql('rand()')).limit(10) }
 
   # お気に入り機能関係
   def already_liked?(post)

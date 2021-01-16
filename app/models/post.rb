@@ -13,7 +13,7 @@ class Post < ApplicationRecord
   validates :order, presence: true, length: { maximum: 300 }
 
   # TOPページのランキングを表示する（未完成）
-  scope :rank, -> { order("RAND()").limit(10) }
+  scope :rank, -> { order(Arel.sql('rand()')).limit(10) }
 
   # TOPページの新着10件を表示する
   scope :new_arriv, -> { last(10).reverse }

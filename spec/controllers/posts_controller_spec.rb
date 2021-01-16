@@ -83,7 +83,7 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  context '#update ユーザーが存在するとき' do
+  context '#update ユーザーが存在する場合' do
     it 'リクエストが成功すること' do
       put :update, params: { id: 1, post: FactoryBot.attributes_for(:post) }
       expect(response.status).to eq 302

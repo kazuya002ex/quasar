@@ -84,7 +84,15 @@ RSpec.describe PostsController, type: :controller do
   end
 
   context '#update ユーザーが存在するとき' do
-    
+    it 'リクエストが成功すること' do
+      put :update, params: { id: 1, post: FactoryBot.attributes_for(:post) }
+      expect(response.status).to eq 302
+    end
+
+    it 'リダイレクトすること' do
+      put :update, params: { id: 1, post: FactoryBot.attributes_for(:post) }
+      expect(response).to redirect_to Post.find(1)
+    end
   end
 
   context '#destroy ユーザーが存在するとき' do

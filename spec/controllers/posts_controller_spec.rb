@@ -96,6 +96,14 @@ RSpec.describe PostsController, type: :controller do
   end
 
   context '#destroy ユーザーが存在するとき' do
-    
+    it 'リクエストが成功すること' do
+      delete :destroy, params: { id: 1 }
+      expect(response.status).to eq 302
+    end
+
+    it 'TOPページにリダイレクトすること' do
+      delete :destroy, params: { id: 1 }
+      expect(response).to redirect_to(root_path)
+    end
   end
 end

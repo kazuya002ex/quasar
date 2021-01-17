@@ -465,6 +465,47 @@ footer {
   margin: 0 1%;
 }
 
+// POST INDEX RESPONSIVE
+
+
+@media screen and (max-width: 480px) {
+
+  .bg-top {
+    height: 388px;
+  }
+
+  .top-container .search {
+    margin-top: 18%;
+  }
+
+  .search input[type="search"] {
+    font-size: 0.9rem;
+    width: 70%;
+  }
+
+  .search input[type="submit"] {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -468,6 +468,108 @@ footer {
 
 
 
+// POST INDEX RESPONSIVE
+
+
+@media screen and (max-width: 480px) {
+
+  .bg-top {
+    height: 388px;
+  }
+
+  .top-container .search {
+    margin-top: 18%;
+  }
+
+  .search input[type="search"] {
+    font-size: 0.9rem;
+    width: 70%;
+  }
+
+  .search input[type="submit"] {
+    font-size: 0.9rem;
+  }
+
+
+  .top-newuser-action {
+    margin: 12% 4%;
+  }
+  
+  .top-newuser-action p a {
+    padding: 8% 0;
+  }
+
+
+  .top-ranking-title {
+    margin-top: 29%;
+    margin-bottom: 4%;
+  }
+  
+  .top-ranking-title h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .top-ranking {
+    margin-left: 7%;
+  }
+  
+  
+  .ranking-content {
+    margin: 0 5%;
+  }
+
+  .ranking-content:last-child {
+    padding-right: 16%;
+  }
+
+
+  .top-new-arrival-title {
+    margin-top: 44%;
+    margin-bottom: 4%;
+  }
+  
+  .top-new-arrival-title h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .top-new-arrival {
+    margin-left: 7%;
+  }
+  
+  
+  .new-arrival-content {
+    margin: 0 5%;
+  }
+
+  .new-arrival-content:last-child {
+    padding-right: 16%;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

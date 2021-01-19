@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Micropost, type: :model do
-  # タイトルのバリデーション
-  context 'タイトルが空の場合' do
+  # 文章のバリデーション
+  context '文章が空の場合' do
     micropost = Micropost.new(content: nil)
     micropost.valid?
 

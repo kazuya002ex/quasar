@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'activerecord-import'
 gem 'active_model_serializers'
 gem 'annotate'
 gem 'bootsnap', '>= 1.1.0', require: false

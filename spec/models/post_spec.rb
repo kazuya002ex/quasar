@@ -5,7 +5,7 @@ RSpec.describe Post, type: :model do
   context 'タイトルが空の場合' do
     post = Post.new(title: nil)
     post.valid?
-    
+
     it '無効になる' do
       expect(post.errors.full_messages).to include('Titleを入力してください')
       expect(post).to_not be_valid

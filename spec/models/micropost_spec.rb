@@ -7,7 +7,7 @@ RSpec.describe Micropost, type: :model do
     micropost.valid?
 
     it '無効になる' do
-      expect(micropost.errors.full_messages).to include('Contenttを入力してください')
+      expect(micropost.errors.full_messages).to include('Contentを入力してください')
       expect(micropost).to_not be_valid
     end
   end
@@ -18,7 +18,7 @@ RSpec.describe Micropost, type: :model do
     micropost.valid?
 
     it '無効になる' do
-      expect(micropost.errors.full_messages).to include('Titleは55文字以内で入力してください')
+      expect(micropost.errors.full_messages).to include('Contentは55文字以内で入力してください')
       expect(micropost).to_not be_valid
     end
   end

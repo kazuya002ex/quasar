@@ -8,18 +8,18 @@ RSpec.describe LikesController, type: :controller do
 
   # POSTメソッド
   context '#create ユーザーが存在する場合' do
-    it 'リクエストが成功すること' do
+    xit 'リクエストが成功すること' do
       post :create, params: { like: FactoryBot.attributes_for(:like) }
       expect(response.status).to eq 302
     end
 
-    it 'いいねが作成されること' do
+    xit 'いいねが作成されること' do
       expect do
         post :create, params: { like: FactoryBot.attributes_for(:like) }
       end.to change(Post, :count).by(1)
     end
 
-    it 'リダイレクトすること' do
+    xit 'リダイレクトすること' do
       post :create, params: { like: FactoryBot.attributes_for(:like) }
       expect(response).to redirect_to Like.last
     end

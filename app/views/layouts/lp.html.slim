@@ -2,7 +2,8 @@
 
 section.bg-lp
   .lp-container
-    h2 創造を繋ぐ
+    .lp-bg-title
+      h2 創造を繋ぐ
 
 section.lp-welcome
   .lp-welcome-title
@@ -13,3 +14,33 @@ section.lp-welcome
     br
     p このページでは、そんな1行小説リレーの魅力を皆さんにお伝えします。
 
+section.lp-movie
+  .lp-movie-title
+    h3 紹介動画
+  .lp-movie-content
+    img src="#"
+
+section.lp-main
+  .lp-main-title
+    h3 遊び方の紹介
+  .lp-main-contents
+    // ここを動的なコンテンツにする
+
+section.lp-dev
+  .lp-dev-title
+    h3 開発者
+  .lp-dev-content
+    .lp-dev-img
+      img src="#"
+    .lp-dev-p
+      h4 ハラカズ
+      .dev-messages
+        p 個人事業主のITエンジニア。
+        p 好きな食べ物はチキン南蛮と寿司。
+        p 秋葉原好きの日本を代表する正統派オタク。
+
+section.lp-action
+  .lp-action-title
+    h3 さあ、今すぐはじめよう！
+  .lp-action-button
+    = link_to '新規登録', new_registration_path(resource_name)

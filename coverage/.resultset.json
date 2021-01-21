@@ -191,6 +191,12 @@
           null
         ]
       },
+      "/novel_app/app/helpers/static_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/novel_app/app/helpers/users_helper.rb": {
         "lines": [
           null,
@@ -497,6 +503,17 @@
         "branches": {
         }
       },
+      "/novel_app/app/controllers/static_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/novel_app/app/mailers/application_mailer.rb": {
         "lines": [
           null,
@@ -546,6 +563,6 @@
         }
       }
     },
-    "timestamp": 1611207447
+    "timestamp": 1611230258
   }
 }

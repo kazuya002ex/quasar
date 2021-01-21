@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.7.0'
 
 gem 'activerecord-import'
 gem 'active_model_serializers'
@@ -31,6 +31,7 @@ gem 'sass-rails'
 gem 'slim-rails'
 gem 'turbolinks'
 gem 'uglifier'
+gem 'webpacker'
 
 
 group :development, :test do

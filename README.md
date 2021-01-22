@@ -40,6 +40,6 @@ https://localhost:3009
 
 ## 概要
 
-- Ruby 2.6.3
-- Rails 5.2.3
+- Ruby 2.7.0
+- Rails 6.1.0
 - MySQL 5.7.32

@@ -208,8 +208,6 @@ header {
 
 
 
-
-
 // FOOTER
 
 footer {
@@ -245,6 +243,20 @@ footer {
   padding-top: 1%;
   color: #777;
 }
+
+@media screen and (max-width: 480px) {
+  footer {
+    margin-bottom: 5%;
+  }
+
+  .footer-list ul li .copylight {
+    padding-top: 3.6%;
+    font-size: 0.8rem;
+  }
+}
+
+
+
 
 
 

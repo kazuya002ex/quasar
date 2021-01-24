@@ -1036,3 +1036,39 @@ footer {
   margin-left: 1.4%;
   color: #555;
 }
+
+
+
+@media screen and (max-width: 480px) {
+  .user-profiles {
+    margin-top: 6%;
+  }
+
+  .user-profile-wrapper img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .user-profile-main .name-wrapper {
+    margin-left: 2%;
+    margin-top: 8.3%;
+  }
+  
+  .user-profile-main .name-wrapper .name {
+    font-size: 1.2rem;
+  }
+  
+  .user-profile-main .name-wrapper .id {
+    font-size: 0.9rem;
+  }
+
+  .user-profile-main .follow-wrapper {
+    margin-top: 2.4%;
+    padding-right: 1%;
+  }
+  
+  .user-profile-main .follow-wrapper a {
+    padding: 8px 15px;
+    font-size: 0.93rem;
+  }
+}

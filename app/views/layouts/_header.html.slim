@@ -8,3 +8,28 @@ header
         li = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
       - else
         li = link_to "サインイン", new_user_session_path
+
+css:
+  header {
+  display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 2%;
+  }
+
+  .header-logo h1 {
+    font-size: 1.75rem;
+  }
+
+  .header-list ul {
+    display: flex;
+    margin-top: 8%;
+  }
+
+  .header-list ul li a{
+    font-weight: bold;
+    font-size: 0.92rem;
+    margin-left: 20px;
+  }

@@ -38,6 +38,7 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           null,
@@ -80,13 +81,13 @@
           1,
           null,
           null,
-          3,
+          1,
           null,
           null,
-          4,
+          1,
           null,
           null,
-          4,
+          1,
           null
         ]
       },
@@ -140,6 +141,12 @@
           0,
           null,
           null,
+          null
+        ]
+      },
+      "/novel_app/app/helpers/articles_helper.rb": {
+        "lines": [
+          1,
           null
         ]
       },
@@ -205,152 +212,7 @@
           null
         ]
       },
-      "/novel_app/app/controllers/likes_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null
-        ]
-      },
-      "/novel_app/app/controllers/application_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null
-        ]
-      },
-      "/novel_app/app/controllers/microposts_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/novel_app/app/controllers/posts_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          2,
-          2,
-          null,
-          2,
-          null,
-          2,
-          null,
-          null,
-          1,
-          null,
-          2,
-          2,
-          null,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          6,
-          6,
-          6,
-          3,
-          null,
-          3,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          8,
-          null,
-          null,
-          1,
-          7,
-          null,
-          null
-        ]
-      },
-      "/novel_app/app/controllers/users_controller.rb": {
+      "/novel_app/app/models/article.rb": {
         "lines": [
           null,
           null,
@@ -358,58 +220,6 @@
           1,
           null,
           1,
-          0,
-          null,
-          null,
-          1,
-          4,
-          null,
-          3,
-          null,
-          3,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/novel_app/app/jobs/hello_world_job.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/novel_app/app/jobs/application_job.rb": {
-        "lines": [
-          null,
-          null,
           1,
           null
         ]
@@ -438,6 +248,58 @@
         "branches": {
         }
       },
+      "/novel_app/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/novel_app/app/controllers/articles_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/novel_app/app/controllers/likes_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/novel_app/app/controllers/messages_controller.rb": {
         "lines": [
           null,
@@ -458,6 +320,42 @@
         "branches": {
         }
       },
+      "/novel_app/app/controllers/microposts_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/novel_app/app/controllers/novels_controller.rb": {
         "lines": [
           null,
@@ -466,6 +364,81 @@
           0,
           null,
           0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/novel_app/app/controllers/posts_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
           0,
           0,
           0,
@@ -507,6 +480,76 @@
         "lines": [
           0,
           null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/novel_app/app/controllers/users_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/novel_app/app/jobs/application_job.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/novel_app/app/jobs/hello_world_job.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
           0,
           0,
           0
@@ -563,6 +606,6 @@
         }
       }
     },
-    "timestamp": 1611281701
+    "timestamp": 1611653349
   }
 }

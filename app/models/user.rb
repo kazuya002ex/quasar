@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :entries, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_posts, through: :likes, source: :post
+  has_many :articles
 
   validates :name, presence: true, length: { maximum: 25 }
 

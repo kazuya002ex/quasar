@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_085213) do
+ActiveRecord::Schema.define(version: 2021_01_26_090536) do
 
   create_table "active_admin_comments", charset: "utf8", force: :cascade do |t|
     t.string "namespace"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 2021_01_26_085213) do
     t.string "nickname"
     t.string "location"
     t.string "img"
+    t.integer "is_admin", limit: 1, default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

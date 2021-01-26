@@ -20,4 +20,24 @@ RSpec.describe Article, type: :model do
       expect(article).to_not be_valid
     end
   end
+
+  context 'コンテンツが空の場合' do
+    article = Article.new(content: nil)
+    article.valid?
+
+    it '無効になる' do
+      expect(article.errors.full_messages).to include('Contentを入力してください')
+      expect(article).to_not be_valid
+    end
+  end
+
+  context 'コンテンツが255文字を超える場合' do
+    article = Article.new(content: 'もめ' * 128)
+    article.valid?
+
+    it '無効になる' do
+      expect(article.errors.full_messages).to include('Contentは255文字以内で入力してください')
+      expect(article).to_not be_valid
+    end
+  end
 end

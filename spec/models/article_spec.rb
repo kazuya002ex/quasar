@@ -1,4 +1,5 @@
 require 'rails_helper'
+# frozen_string_literal: true
 
 RSpec.describe Article, type: :model do
   context 'タイトルが空の場合' do

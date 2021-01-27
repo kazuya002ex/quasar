@@ -797,7 +797,6 @@ a:hover {
   .post-show-top {
     padding-top: 18%;
     display: block;
-    // padding-bottom: 13%;
   }
   
   .post-main-contents {
@@ -805,12 +804,12 @@ a:hover {
     margin-right: 7%;
     padding-left: 5%;
     padding-right: 2%;
-    // padding-left: 5.4%;
-    // padding-right: 1%;
   }
   
   .post-show-title {
+    width: 280px;
     padding-top: 4%;
+    padding-bottom: 7.8%;
     font-size: 1.5rem;
   }
 

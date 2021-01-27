@@ -30,8 +30,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
+      success
       redirect_to @post
     else
+      flash[:alert] = 'not create order'
       render 'new'
     end
   end
@@ -41,15 +43,22 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
+      success
       redirect_to @post
     else
-      render 'new'
+      flash[:alert] = 'not delete post'
+      render 'edit'
     end
   end
 
   def destroy
-    @post.destroy
-    redirect_to root_path
+    if @post.destroy
+      success
+      redirect_to root_path
+    else
+      flash[:alert] = 'not delete post'
+      render 'show'
+    end
   end
 
   # def confirm_new

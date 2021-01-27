@@ -882,8 +882,35 @@ a:hover {
   .post-log .post-log-contents {
     margin-top: 10%;
   }
-  
-  
+
+  .post-log-user-img img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .post-log-content p a {
+    font-size: 1.02rem;
+  }
+
+  .post-log-content p.micro {
+    margin-top: 5%;
+    font-size: 0.87rem;
+  }
+
+  .post-log .post-log-info {
+    margin-left: 72%;
+    margin-bottom: 9%;
+  }
+
+  .post-log .post-log-info p a {
+    color: #888;
+    transition: .3s;
+  }
+
+  .post-log .post-log-info p a:hover {
+    color: #0a9dd1;
+    transition: .3s;
+  }
 
 }
 

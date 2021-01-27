@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   def authenticatte_admin!
     unless current_user.is_admin?
       flash[:alert] = 'アクセス権限がありません'
-      render root_path
+      redirect_to root_path
     end
   end
 

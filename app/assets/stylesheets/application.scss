@@ -67,11 +67,7 @@ a:hover {
   padding-bottom: 3%;
 }
 
-
-// DEVISE
-
 // DEVISE COMMON
-
 .field label {
   font-weight: bold;
 }
@@ -85,9 +81,6 @@ a:hover {
   color: #0a9dd1;
   transition: 0.3s;
 }
-
-
-
 
 // LOGIN
 .login-form {
@@ -117,14 +110,7 @@ a:hover {
   margin-left: 5%;
 }
 
-
-
-
-
-
-
 // SIGNUP
-
 .signup-form {
   text-align: center;
   margin: 0 auto;
@@ -152,10 +138,7 @@ a:hover {
   margin-left: 5%;
 }
 
-
-
 // PROFILE EDIT
-
 .profile-edit-wrapper {
   text-align: center;
 }
@@ -169,18 +152,7 @@ a:hover {
   margin-top: 0.6%;
 }
 
-
-
-
-
-
-
-
-
 // POST INDEX(ROOT PATH)
-
-// TOP
-
 .bg-top {
   background-image: url(books.jpg);
   opacity: .9;
@@ -260,11 +232,6 @@ a:hover {
   border: none;
 }
 
-
-
-
-
-
 .top-newuser-action {
   background-color: rgb(200, 243, 202);
   margin: 4% 14%;
@@ -276,12 +243,6 @@ a:hover {
   padding: 6% 0;
   font-size: 1.25rem;
 }
-
-
-
-
-
-
 
 .top-ranking-title {
   margin-top: 7%;
@@ -301,14 +262,6 @@ a:hover {
 .ranking-content {
   margin: 0 1%;
 }
-
-
-
-
-
-
-// RANKIGN NEW-ARRIVAL COMMON
-
 
 .top-post-img {
   background-color: #9ccaf8;
@@ -345,13 +298,6 @@ a:hover {
   transition: 0.3s;
 }
 
-
-
-
-
-
-
-
 .top-new-arrival-title {
   margin-top: 12%;
   margin-bottom: 1%;
@@ -378,12 +324,6 @@ a:hover {
   margin: 0 1%;
 }
 
-
-
-
-// POST INDEX RESPONSIVE
-
-
 @media screen and (max-width: 480px) {
 
   .bg-top {
@@ -403,7 +343,6 @@ a:hover {
     font-size: 0.9rem;
   }
 
-
   .top-newuser-action {
     margin: 12% 4%;
   }
@@ -411,7 +350,6 @@ a:hover {
   .top-newuser-action p a {
     padding: 8% 0;
   }
-
 
   .top-ranking-title {
     margin-top: 29%;
@@ -427,7 +365,6 @@ a:hover {
     margin-left: 7%;
   }
   
-  
   .ranking-content {
     margin: 0 5%;
   }
@@ -435,7 +372,6 @@ a:hover {
   .ranking-content:last-child {
     padding-right: 16%;
   }
-
 
   .top-new-arrival-title {
     margin-top: 44%;
@@ -451,7 +387,6 @@ a:hover {
     margin-left: 7%;
   }
   
-  
   .new-arrival-content {
     margin: 0 5%;
   }
@@ -459,5 +394,4 @@ a:hover {
   .new-arrival-content:last-child {
     padding-right: 16%;
   }
-  
 }

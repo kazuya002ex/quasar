@@ -212,6 +212,65 @@
           null
         ]
       },
+      "/novel_app/app/controllers/articles_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/novel_app/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
       "/novel_app/app/models/article.rb": {
         "lines": [
           null,
@@ -242,36 +301,6 @@
           null,
           0,
           0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/novel_app/app/controllers/application_controller.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/novel_app/app/controllers/articles_controller.rb": {
-        "lines": [
-          null,
-          null,
           0,
           0
         ],
@@ -606,6 +635,6 @@
         }
       }
     },
-    "timestamp": 1611653349
+    "timestamp": 1611711146
   }
 }

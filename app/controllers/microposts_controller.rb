@@ -9,9 +9,10 @@ class MicropostsController < ApplicationController
     @micropost.user_id = current_user.id
     @micropost.post_id = @post.id
     if @micropost.save
+      success
       redirect_back(fallback_location: root_path)
     else
-      flash[:notice] = '1行作成に失敗しました'
+      flash[:alert] = '1行作成に失敗しました'
       redirect_back(fallback_location: root_path)
     end
   end

@@ -5,6 +5,17 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def success
+    flash[:notice] = 'success'
+  end
+
+  def authenticatte_admin!
+    unless current_user.is_admin?
+      flash[:alert] = 'アクセス権限がありません'
+      redirect_to root_path
+    end
+  end
+
   protected
 
     def configure_permitted_parameters

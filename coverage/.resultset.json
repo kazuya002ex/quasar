@@ -221,6 +221,7 @@
           1,
           null,
           1,
+          2,
           null,
           null,
           1,
@@ -247,6 +248,7 @@
           null,
           null,
           1,
+          0,
           null,
           null
         ]
@@ -266,6 +268,18 @@
           0,
           0,
           null,
+          null
+        ]
+      },
+      "/novel_app/app/models/article.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
           null
         ]
       },
@@ -584,20 +598,6 @@
         "branches": {
         }
       },
-      "/novel_app/app/models/article.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/novel_app/app/models/entry.rb": {
         "lines": [
           null,
@@ -635,6 +635,6 @@
         }
       }
     },
-    "timestamp": 1611710589
+    "timestamp": 1611711146
   }
 }

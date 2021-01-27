@@ -939,6 +939,32 @@ a:hover {
   .post-order .column {
     font-size: 1.02rem;
   }
+
+  .post-sub-contents {
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  
+  .post-sub-contents .post-sub-title h3 {
+    font-size: 1.25rem;
+  }
+  
+  .post-sub-contents .post-sub-user-name ul {
+    margin-top: 4.5%;
+  }
+  
+  .post-sub-contents .post-sub-user-name ul .image img {
+    width: 83px;
+    height: 83px;
+  }
+  
+  .post-sub-contents .post-sub-user-name ul .name {
+    font-size: 1.05rem;
+  }
+  
+  .post-sub-user-name p {
+    font-size: 0.95rem;
+  }  
 }
 
 

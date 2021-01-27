@@ -803,7 +803,9 @@ a:hover {
   .post-main-contents {
     margin-left: 7%;
     margin-right: 7%;
-    padding-left: 0%;
+    padding-left: 5%;
+    padding-right: 2%;
+    // padding-left: 5.4%;
     // padding-right: 1%;
   }
   
@@ -828,9 +830,20 @@ a:hover {
   .post-add-status ul li a {
     font-size: 1.7rem;
   }
+
+  .post-desc {
+    margin-bottom: 9%;
+  }
   
-  .post-add-status ul li a:hover {
-    color: #0a9dd1;
+  .post-desc h3 {
+    font-size: 1.39rem;
+  }
+  
+  .post-desc p {
+    margin-top: 3.7%;
+    width: 284px;
+    font-size: 1.02rem;
+    line-height: 24px;
   }
 }
 

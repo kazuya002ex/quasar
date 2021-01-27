@@ -11,9 +11,21 @@ RSpec.describe ArticlesController, type: :controller do
       expect(response.status).to eq 200
     end
 
-    it 'indexテンプレートが表示されること' do
+    it 'indexテンプレートで表示されること' do
       get :index
       expect(response).to render_template :index
+    end
+  end
+
+  context '#show' do
+    it 'リクエストが成功すること' do
+      get :show, params: { id: 1 }
+      expect(response).to eq 200
+    end
+
+    it 'showテンプレートで表示されること' do
+      get :show, params: { id: 1 }
+      expect(response).to render_template :show
     end
   end
 end

@@ -9,6 +9,13 @@ class ApplicationController < ActionController::Base
     flash[:notice] = 'success'
   end
 
+  def authenticatte_admin!
+    unless current_user.is_admin?
+      flash[:alert] = 'アクセス権限がありません'
+      render root_path
+    end
+  end
+
   protected
 
     def configure_permitted_parameters

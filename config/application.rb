@@ -7,7 +7,8 @@ Bundler.require(*Rails.groups)
 module NovelApp
   class Application < Rails::Application
 
-    config.load_defaults 6.1
+    # config.load_defaults 6.1
+    config.load_defaults 5.2
     config.i18n.default_locale = :ja
 
     config.time_zone = 'Asia/Tokyo'

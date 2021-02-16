@@ -20,4 +20,14 @@ RSpec.describe Genre, type: :model do
       expect(genre).to_not be_valid
     end
   end
+
+  context 'ジャンル説明が300文字を超える場合' do
+    genre = Genre.new(desc: 'もめ' * 151)
+    genre.valid?
+
+    it '無効になる' do
+      expect(genre.errors.full_messages).to include('Descは300文字以内で入力してください')
+      expect(genre).to_not be_valid
+    end
+  end
 end

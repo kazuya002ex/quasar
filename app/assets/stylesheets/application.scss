@@ -417,7 +417,7 @@ a:hover {
   }
 
   .top-article-wrapper {
-    margin: 12% 8%;
+    margin: 12% 3%;
     display: block;
   }
 
@@ -434,22 +434,29 @@ a:hover {
   }
   
   .top-article-contents ul {
-    margin-top: 3%;
-    margin-left: 80px;
-    padding-right: 20%;
-    width: 100%;
+    margin-top: 10%;
+    margin-left: 0px;
+    padding-right: 0%;
   }
   
   .top-article-contents ul li a {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    margin-top: 2.5%;
+    margin-top: 6%;
   }
   
   .top-article-contents ul li a p {
-    margin-left: 22px;
-    font-size: 1.05rem;
+    margin-left: 12px;
+    font-size: 0.96rem;
+  }
+
+  .top-article-contents ul li a .label {
+    font-size: 0.77rem;
+  }
+
+  .top-article-contents ul li a .title {
+    font-size: 0.87rem;
+    margin-top: 2%;
+    border-bottom: #ddd solid 1px;
+    width: 100%;
   }
 
   .top-ranking-title {

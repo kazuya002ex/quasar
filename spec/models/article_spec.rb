@@ -47,7 +47,7 @@ RSpec.describe Article, type: :model do
     article.valid?
 
     it '無効になる' do
-      expect(article.errors.full_messages).to include('NewsTypeを入力してください')
+      expect(article.errors.full_messages).to include('News typeを入力してください')
       expect(article).to_not be_valid
     end
   end
@@ -57,7 +57,7 @@ RSpec.describe Article, type: :model do
     article.valid?
 
     it '無効になる' do
-      expect(article.errors.full_messages).to include('NewsTypeは3文字以内で入力してください')
+      expect(article.errors.full_messages).to include('News typeは3文字以内で入力してください')
       expect(article).to_not be_valid
     end
   end

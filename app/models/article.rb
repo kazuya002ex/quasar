@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Article < ApplicationRecord
-  enum :news_type, { other: 0, notice: 1, update: 2 }, _prefix: true
+  enum news_type: { other: 0, notice: 1, update: 2 }, _prefix: true
 
   belongs_to :user
 

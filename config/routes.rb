@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'posts#index'
+  root 'home#top'
 
   resources :posts do
     resources :microposts, only: [:create, :destroy]

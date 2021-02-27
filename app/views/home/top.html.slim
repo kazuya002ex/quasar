@@ -1,0 +1,55 @@
+= provide(:title, "")
+
+section.bg-top
+  .top-container
+    .top-header
+      // headerロゴ
+      .top-header-logo
+        h1 = link_to "RELIER", root_path
+      // headerリスト
+      .top-header-list
+        ul
+          - if user_signed_in?
+            li = link_to "マイページ", user_path(current_user)
+            li = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
+          - else
+            li = link_to "サインイン", new_user_session_path
+    // 検索窓
+    .search
+      = search_form_for @q do |f|
+        = f.search_field :title_cont, placeholder: "タイトル名、ジャンルで検索"
+        = f.submit "検索"
+
+section.top-container
+  - unless user_signed_in?
+    // LP遷移ボタン
+    .top-newuser-action
+      p = link_to "はじめてご利用の方へ", lp_path
+  // おすすめ作品
+  .top-ranking-wrapper
+    .top-ranking-title
+      h2 おすすめ作品
+    .top-ranking.over-flow
+      - @ranking_posts.each do |post|
+        .ranking-content
+          .top-post-img
+            = link_to image_tag("no_image_book.jpg"), post
+          h3.top-post-title = post.title.truncate(27)
+          / p.top-post-story = post.story
+          p.top-post-link = link_to "詳細をみる", post
+  // 新着作品
+  .top-new-arrival-wrapper
+    .top-new-arrival-title
+      h2 新着作品
+    .top-new-arrival.over-flow
+      - @new_arrival_posts.each do |post|
+        .new-arrival-content
+          .top-post-img
+            = link_to post do
+              - if post.image.present?
+                = image_tag(post.image.url)
+              - else
+                = image_tag("no_image_book.jpg")
+          h3.top-post-title = post.title.truncate(27)
+          / p.top-post-story = post.story
+          p.top-post-link = link_to "詳細をみる", post

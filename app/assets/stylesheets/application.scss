@@ -259,6 +259,28 @@ a:hover {
   color: #666;
 }
 
+.top-article-contents ul {
+  margin-top: 3%;
+  margin-left: 80px;
+}
+
+.top-article-contents ul li a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2.5%;
+}
+
+.top-article-contents ul li a p {
+  margin-left: 22px;
+  font-size: 1.05rem;
+}
+
+.top-article-contents ul li a .date {
+  color: #333;
+}
+
+
 .top-ranking-title {
   margin-top: 7%;
   margin-bottom: 1%;

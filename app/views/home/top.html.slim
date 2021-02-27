@@ -35,22 +35,22 @@ section.top-container
       ul
         li = link_to root_path do
           p.date 2021/02/22
-          p.label.update アップデート
+          p class="label update" アップデート
           p.title 軽度のバグを修正しました
         / hr
         li = link_to root_path do
           p.date 2021/02/18
-          p.label.notice お知らせ
+          p class="label #{@sample_article.news_type}" お知らせ
           p.title そろそろこういう素晴らしい機能ができるよ良かったね
         / hr
         li = link_to root_path do
           p.date 2021/02/16
-          p.label.other その他
+          p class="label other" その他
           p.title このサイトをやってるお前らときたらwww
         / hr
         li = link_to root_path do
           p.date 2021/02/09
-          p.label.update アップデート
+          p class="label update" アップデート
           p.title 大幅なアップデートを行いました
   // おすすめ作品
   .top-ranking-wrapper

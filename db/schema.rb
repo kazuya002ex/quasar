@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_02_27_061903) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "type", limit: 3, null: false
+    t.integer "news_type", limit: 3, null: false
     t.index ["title"], name: "index_articles_on_title"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end

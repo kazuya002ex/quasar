@@ -41,4 +41,24 @@ RSpec.describe Article, type: :model do
       expect(article).to_not be_valid
     end
   end
+
+  context 'タイプが空の場合' do
+    article = Article.new(news_type: nil)
+    article.valid?
+
+    it '無効になる' do
+      expect(article.errors.full_messages).to include('NewsTypeを入力してください')
+      expect(article).to_not be_valid
+    end
+  end
+
+  context 'タイプが３桁を超える場合' do
+    article = Article.new(news_type: 1696)
+    article.valid?
+
+    it '無効になる' do
+      expect(article.errors.full_messages).to include('NewsTypeは3文字以内で入力してください')
+      expect(article).to_not be_valid
+    end
+  end
 end

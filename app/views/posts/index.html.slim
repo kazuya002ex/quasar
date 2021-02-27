@@ -1,24 +1,4 @@
-= provide(:title, "")
-
-section.bg-top
-  .top-container
-    .top-header
-      // headerロゴ
-      .top-header-logo
-        h1 = link_to "RELIER", root_path
-      // headerリスト
-      .top-header-list
-        ul
-          - if user_signed_in?
-            li = link_to "マイページ", user_path(current_user)
-            li = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
-          - else
-            li = link_to "サインイン", new_user_session_path
-    // 検索窓
-    .search
-      = search_form_for @q do |f|
-        = f.search_field :title_cont, placeholder: "タイトル名、ジャンルで検索"
-        = f.submit "検索"
+= provide(:title, "検索結果")
 
 section.top-container
   - unless user_signed_in?

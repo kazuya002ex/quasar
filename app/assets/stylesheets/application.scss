@@ -269,12 +269,13 @@ a:hover {
 .top-article-contents ul li a {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  // justify-content: space-between;
+  align-items: flex-start;
   margin-top: 2.5%;
 }
 
 .top-article-contents ul li a p {
-  // margin-left: 22px;
+  margin-left: 22px;
   font-size: 1.05rem;
 }
 
@@ -304,6 +305,10 @@ a:hover {
   background-color: #5D99FF;
   border-radius: 7px;
   padding: 2px 22px;
+}
+
+.top-article-contents ul li a .title {
+  margin-top: 0.8px;
 }
 
 .top-ranking-title {

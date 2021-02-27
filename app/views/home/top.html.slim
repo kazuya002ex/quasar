@@ -40,7 +40,7 @@ section.top-container
         / hr
         li = link_to root_path do
           p.date 2021/02/18
-          p class="label #{@sample_article.news_type}" お知らせ
+          p class="label #{@sample_article.news_type}" = t(@sample_article.news_type)
           p.title そろそろこういう素晴らしい機能ができるよ良かったね
         / hr
         li = link_to root_path do

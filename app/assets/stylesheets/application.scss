@@ -503,3 +503,31 @@ a:hover {
     padding-right: 16%;
   }
 }
+
+// article#new
+
+.article-fields {
+  text-align: center;
+}
+
+.field {
+  margin-top: 1%;
+}
+
+.field label {
+  font-size: 1.25rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #000066;
+}
+
+.field input[type="text"] {
+  width: 50%;
+  height: 26px;
+  font-size: 1.03rem;
+}
+
+.field textarea {
+  width: 50%;
+  height: 208px;
+  font-size: 1.03rem;
+}

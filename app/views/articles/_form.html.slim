@@ -11,7 +11,7 @@
     .field.article-field
       = f.label :news_type
       br
-      = f.select :news_type, Article.news_types, { include_blank: '選択しなさいよね'}, class: 'form-control'
+      = f.select :news_type, { 'お知らせ': 'notice', 'アップデート': 'update', 'その他': 'other' }, { include_blank: '選択しなさいよね'}, class: 'form-control'
     .submit
       = f.submit '作成', class: 'btn btn-primary'
 

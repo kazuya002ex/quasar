@@ -7,5 +7,5 @@ class Article < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 30 }
   validates :content, presence: true, length: { maximum: 255 }
-  validates :news_type, presence: true, length: { maximum: 3 }
+  validates :news_type, presence: true
 end

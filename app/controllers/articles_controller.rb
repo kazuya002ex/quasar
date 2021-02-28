@@ -19,7 +19,11 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user_id = current_user.id
-    if @article.save
+    pp @article.news_type
+    pp @article.news_type
+    pp @article.news_type
+    pp @article.news_type
+    if @article.save! # TODO: 直す
       success
       redirect_to @article
     else
@@ -55,6 +59,8 @@ class ArticlesController < ApplicationController
 
     def article_params
       params.require(:article).permit(:title, :content, :news_type)
+      pp params.require(:article).permit(:title, :content, :news_type)
+      # news_typw -> update
     end
 
     def set_article

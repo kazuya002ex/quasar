@@ -98,6 +98,25 @@ a:hover {
   font-size: 1.03rem;
 }
 
+.fields .submit {
+  margin-top: 2%;
+  margin-left: 46%;
+}
+
+.fields .submit input[type="submit"] {
+  font-size: 1.1rem;
+  padding: 6px 23px;
+  background: #69b3fd;
+  color: #fff;
+  border: 2px solid #fff;
+  transition: .3s;
+}
+
+.fields .submit input[type="submit"]:hover {
+  transition: .3s;
+  background: #8dc2f6;
+}
+
 .devise-common-message a {
   color: #fff;
   transition: 0.3s;

@@ -1,22 +1,22 @@
 = form_with(model: @post, local: true) do |f|
   
   .fields.post-fields
-    .field 
+    .field.post-field
       = f.label :image
       br
       = f.file_field :image, class: "image"
 
-    .field
+    .field.post-field
       = f.label :title
       br
       = f.text_field :title, class: 'form-control'
 
-    .field 
+    .field.post-field
       = f.label :story
       br
       = f.text_area :story, class: 'form-control'
 
-    .field 
+    .field.post-field
       = f.label :order
       br
       = f.text_area :order, class: 'form-control'

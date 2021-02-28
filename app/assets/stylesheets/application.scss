@@ -72,6 +72,38 @@ a:hover {
   font-weight: bold;
 }
 
+.devise-field label {
+  color: #fff;
+}
+
+// field共通
+
+.fields {
+  text-align: center;
+}
+
+.field {
+  margin-top: 1%;
+}
+
+.field input[type="text"] {
+  width: 50%;
+  height: 26px;
+  font-size: 1.03rem;
+}
+
+.field textarea {
+  width: 50%;
+  height: 208px;
+  font-size: 1.03rem;
+}
+
+.post-field label, .article-field label {
+  font-size: 1.25rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #000066;
+}
+
 .devise-common-message a {
   color: #fff;
   transition: 0.3s;
@@ -502,32 +534,4 @@ a:hover {
   .new-arrival-content:last-child {
     padding-right: 16%;
   }
-}
-
-// article#new
-
-.fields {
-  text-align: center;
-}
-
-.field {
-  margin-top: 1%;
-}
-
-.field label {
-  font-size: 1.25rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #000066;
-}
-
-.field input[type="text"] {
-  width: 50%;
-  height: 26px;
-  font-size: 1.03rem;
-}
-
-.field textarea {
-  width: 50%;
-  height: 208px;
-  font-size: 1.03rem;
 }

@@ -1,14 +1,14 @@
 = form_with(model: @article, local: true) do |f|
   .fields.article-fields
-    .field
+    .field.article-field
       = f.label :title
       br
       = f.text_field :title, class: 'form-control'
-    .field 
+    .field.article-field
       = f.label :content
       br
       = f.text_area :content, class: 'form-control'
-    .field 
+    .field.article-field
       = f.label :news_type
       br
       = f.select :news_type, Article.news_types, { include_blank: '選択しなさいよね'}, class: 'form-control'

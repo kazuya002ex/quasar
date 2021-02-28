@@ -25,6 +25,33 @@ section.top-container
     // LP遷移ボタン
     .top-newuser-action
       p = link_to "はじめてご利用の方へ", lp_path
+  // Newsエリア
+  .top-article-wrapper
+    .top-article-title
+      h2 News
+      p お知らせ
+    .top-article-contents
+      // eachする
+      ul
+        li = link_to root_path do
+          p.date 2021/02/22
+          p class="label update" アップデート
+          p.title 軽度のバグを修正しました
+        / hr
+        li = link_to root_path do
+          p.date = @sample_article.created_at.strftime("%Y/%m/%d")
+          p class="label #{@sample_article.news_type}" = t(@sample_article.news_type)
+          p.title = @sample_article.title
+        / hr
+        li = link_to root_path do
+          p.date 2021/02/16
+          p class="label other" その他
+          p.title このサイトをやってるお前らときたらwww
+        / hr
+        li = link_to root_path do
+          p.date 2021/02/09
+          p class="label update" アップデート
+          p.title 大幅なアップデートを行いました
   // おすすめ作品
   .top-ranking-wrapper
     .top-ranking-title

@@ -38,10 +38,10 @@ section.top-container
           p class="label update" アップデート
           p.title 軽度のバグを修正しました
         / hr
-        li = link_to root_path do
-          p.date = @sample_article.created_at.strftime("%Y/%m/%d")
-          p class="label #{@sample_article.news_type}" = t(@sample_article.news_type)
-          p.title = @sample_article.title
+        / li = link_to root_path do
+        /   p.date = @sample_article.created_at.strftime("%Y/%m/%d")
+        /   p class="label #{@sample_article.news_type}" = t(@sample_article.news_type)
+        /   p.title = @sample_article.title
         / hr
         li = link_to root_path do
           p.date 2021/02/16

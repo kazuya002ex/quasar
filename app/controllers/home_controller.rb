@@ -6,8 +6,7 @@ class HomeController < ApplicationController
     @posts = @q.result(distinct: true).order(id: "DESC")
 
     # top-article
-    # TODO: 最新の4件を取得する
-    @sample_article = Article.order(created_at: 'desc').limit(4)
+    @sample_article = Article.latest_news
 
     # top-raiking
     @ranking_posts = Post.rank

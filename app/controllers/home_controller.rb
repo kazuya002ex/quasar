@@ -7,7 +7,7 @@ class HomeController < ApplicationController
 
     # top-article
     # TODO: 最新の4件を取得する
-    @sample_article = Article.first
+    @sample_article = Article.order(created_at: 'desc').limit(4)
 
     # top-raiking
     @ranking_posts = Post.rank

@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     @posts = @q.result(distinct: true).order(id: "DESC")
 
     # top-article
-    @sample_article = Article.latest_news
+    @articles = Article.latest_news
 
     # top-raiking
     @ranking_posts = Post.rank

@@ -4,7 +4,7 @@
   .article-main-contents
     // Newsタイトル
     .article-show-title
-      h2 = @article.title
+      h2 class="#{@article.news_type}-border" = @article.title
     .atricle-desc-wrapper
       p = simple_format @article.content
     .article-back-button

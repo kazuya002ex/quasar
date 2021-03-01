@@ -1,3 +1,9 @@
 = provide(:title, "#{@article.title}")
 
-
+.article-show-top
+  .article-main-contents
+    // Newsタイトル
+    .article-show-title
+      h2 = @article.title
+    .atricle-desc-wrapper
+      p = simple_format @article.content

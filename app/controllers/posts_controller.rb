@@ -15,8 +15,7 @@ class PostsController < ApplicationController
 
   def show
     # ページが表示されたら閲覧数を増やす
-    post_browsing = @post.browsing + 1
-    @post.update(browsing: post_browsing)
+    browsing_count(@post)
 
     @microposts = @post.microposts.order(id: "DESC")
     @micropost = Micropost.new
@@ -74,5 +73,10 @@ class PostsController < ApplicationController
 
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def browsing_count(post)
+      post_browsing = post.browsing + 1
+      post.update(browsing: post_browsing)
     end
 end

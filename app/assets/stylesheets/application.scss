@@ -560,3 +560,18 @@ a:hover {
   font-size: 1.25rem;
   font-weight: normal;
 }
+
+.article-show-title .notice-border {
+  border-bottom: solid 4px #FF773E;
+  display: inline-block;
+}
+
+.article-show-title .update-border {
+  border-bottom: solid 4px #A16EFF;
+  display: inline-block;
+}
+
+.article-show-title .other-border {
+  border-bottom: solid 4px #5D99FF;
+  display: inline-block;
+}

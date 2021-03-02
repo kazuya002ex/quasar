@@ -6,7 +6,7 @@ class Article < ApplicationRecord
   belongs_to :user
 
   validates :title, presence: true, length: { maximum: 30 }
-  validates :content, presence: true, length: { maximum: 255 }
+  validates :content, presence: true, length: { maximum: 500 }
   validates :news_type, presence: true
 
   # TOPページに最新のNewsを4件表示する

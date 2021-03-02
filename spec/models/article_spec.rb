@@ -32,12 +32,12 @@ RSpec.describe Article, type: :model do
     end
   end
 
-  context 'コンテンツが255文字を超える場合' do
-    article = Article.new(content: 'もめ' * 128)
+  context 'コンテンツが500文字を超える場合' do
+    article = Article.new(content: 'もめ' * 251)
     article.valid?
 
     it '無効になる' do
-      expect(article.errors.full_messages).to include('Contentは255文字以内で入力してください')
+      expect(article.errors.full_messages).to include('Contentは500文字以内で入力してください')
       expect(article).to_not be_valid
     end
   end
@@ -48,16 +48,6 @@ RSpec.describe Article, type: :model do
 
     it '無効になる' do
       expect(article.errors.full_messages).to include('News typeを入力してください')
-      expect(article).to_not be_valid
-    end
-  end
-
-  context 'タイプが３桁を超える場合' do
-    article = Article.new(news_type: 1696)
-    article.valid?
-
-    it '無効になる' do
-      expect(article.errors.full_messages).to include('News typeは3文字以内で入力してください')
       expect(article).to_not be_valid
     end
   end

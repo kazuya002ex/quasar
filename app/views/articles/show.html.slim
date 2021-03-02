@@ -1,0 +1,80 @@
+= provide(:title, "#{@article.title}")
+
+.article-show-top
+  .article-main-contents
+    // Newsタイトル
+    .article-show-title
+      h2 class="#{@article.news_type}-border" = @article.title
+    .article-desc-wrapper
+      p = simple_format @article.content
+    .article-back-button
+      = link_to '戻る', :back
+
+css:
+  .article-show-top {
+    background-color: rgb(244, 244, 244);
+    padding-top: 5%;
+    padding-bottom: 25%;
+    padding-left: 18%;
+    padding-right: 18%;
+  }
+
+  .article-main-contents {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-show-title {
+    padding: 3% 0;
+    text-align: center;
+  }
+
+  .article-show-title h2 {
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: #222;
+  }
+
+  .article-show-title .notice-border {
+    border-bottom: solid 4px #FF773E;
+    display: inline-block;
+  }
+
+  .article-show-title .update-border {
+    border-bottom: solid 4px #A16EFF;
+    display: inline-block;
+  }
+
+  .article-show-title .other-border {
+    border-bottom: solid 4px #5D99FF;
+    display: inline-block;
+  }
+
+  .article-desc-wrapper {
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-top: 2.2%;
+    padding-bottom: 6%;
+  }
+
+  .article-desc-wrapper p {
+    line-height: 180%;
+    color: #444;
+  }
+
+  .article-back-button {
+    font-size: 1.02rem;
+    margin-left: 80%;
+    margin-bottom: 2%;
+  }
+
+  .article-back-button a {
+    color: #666;
+    transition: 0.3s;
+  }
+
+  .article-back-button a:hover {
+    color: #0a9dd1;
+    transition: 0.3s
+  }

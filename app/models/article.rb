@@ -7,5 +7,8 @@ class Article < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 30 }
   validates :content, presence: true, length: { maximum: 255 }
-  validates :news_type, presence: true, length: { maximum: 3 }
+  validates :news_type, presence: true
+
+  # TOPページに最新のNewsを4件表示する
+  scope :latest_news, -> { order(created_at: 'desc').limit(4) }
 end

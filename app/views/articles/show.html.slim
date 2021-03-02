@@ -5,6 +5,8 @@
     // Newsタイトル
     .article-show-title
       h2 class="#{@article.news_type}-border" = @article.title
+    .article-show-date
+      p = @article.created_at.strftime("%Y年%m月%d日")
     .article-desc-wrapper
       p = simple_format @article.content
     .article-back-button

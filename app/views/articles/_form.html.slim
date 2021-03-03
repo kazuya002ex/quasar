@@ -1,12 +1,29 @@
 = form_with(model: @article, local: true) do |f|
-  .post-fields
-    .field
+  .fields.article-fields
+    .field.article-field
       = f.label :title
       br
       = f.text_field :title, class: 'form-control'
-    .field 
+    .field.article-field
       = f.label :content
       br
       = f.text_area :content, class: 'form-control'
+    .field.article-field
+      = f.label :news_type
+      br
+      = f.select :news_type, { 'お知らせ': 'notice', 'アップデート': 'update', 'その他': 'other' }, { include_blank: '選択しなさいよね'}, class: 'form-control'
     .submit
       = f.submit '作成', class: 'btn btn-primary'
+
+css:
+  .article-field label {
+    font-size: 1.25rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #000066;
+  }
+
+  .article-field select {
+    width: 20%;
+    height: 30px;
+    font-size: 1.01rem;
+  }

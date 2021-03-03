@@ -1,10 +1,42 @@
-= provide(:title, "検索結果")
+= provide(:title, "")
+
+section.bg-top
+  .top-container
+    .top-header
+      // headerロゴ
+      .top-header-logo
+        h1 = link_to "RELIER", root_path
+      // headerリスト
+      .top-header-list
+        ul
+          - if user_signed_in?
+            li = link_to "マイページ", user_path(current_user)
+            li = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
+          - else
+            li = link_to "サインイン", new_user_session_path
+    // 検索窓
+    .search
+      = search_form_for @q do |f|
+        = f.search_field :title_cont, placeholder: "タイトル名、ジャンルで検索"
+        = f.submit "検索"
 
 section.top-container
   - unless user_signed_in?
     // LP遷移ボタン
     .top-newuser-action
       p = link_to "はじめてご利用の方へ", lp_path
+  // Newsエリア
+  .top-article-wrapper
+    .top-article-title
+      h2 News
+      p お知らせ
+    .top-article-contents
+      ul
+        - @articles.each do |article|
+          li = link_to article do
+            p.date = article.created_at.strftime("%Y/%m/%d")
+            p class="label #{article.news_type}" = t(article.news_type)
+            p.title = article.title
   // おすすめ作品
   .top-ranking-wrapper
     .top-ranking-title
@@ -15,7 +47,6 @@ section.top-container
           .top-post-img
             = link_to image_tag("no_image_book.jpg"), post
           h3.top-post-title = post.title.truncate(27)
-          / p.top-post-story = post.story
           p.top-post-link = link_to "詳細をみる", post
   // 新着作品
   .top-new-arrival-wrapper

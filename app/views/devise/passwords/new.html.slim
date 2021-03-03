@@ -7,7 +7,7 @@ h2
 
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
   = render "devise/shared/error_messages", resource: resource
-  .field
+  .field.devise-field
     = f.label :email
     br
     = f.email_field :email, autofocus: true, autocomplete: "email"

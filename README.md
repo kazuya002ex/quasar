@@ -7,6 +7,9 @@
 ## Setup
 
 ```
+  # このリポジトリをローカルに取り込む
+  git clone https://github.com/kazuya002ex/quasar.git
+
   # dockerのセットアップ方法
 
   # コンテナをbuildする

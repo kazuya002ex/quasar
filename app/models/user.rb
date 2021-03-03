@@ -5,7 +5,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+        :recoverable, :rememberable, :validatable
   # 依頼人が消えても作品は残る
   has_many :posts
   # 著者が消えても投稿は残る

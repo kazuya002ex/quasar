@@ -96,6 +96,7 @@
             li.image = image_tag "no_image.png"
           li.name #{@post.user.name}
       = simple_format text_url_to_link(h(@post.user.profile)).html_safe
+  // フリーコメントを表示
 
 css:
   .post-show-top {

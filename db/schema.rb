@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_090536) do
+ActiveRecord::Schema.define(version: 2021_02_27_061903) do
 
   create_table "active_admin_comments", charset: "utf8", force: :cascade do |t|
     t.string "namespace"
@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 2021_01_26_090536) do
     t.bigint "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
-    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
   end
 
   create_table "admin_users", charset: "utf8", force: :cascade do |t|
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_01_26_090536) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "news_type", limit: 3, null: false
     t.index ["title"], name: "index_articles_on_title"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
@@ -55,6 +56,14 @@ ActiveRecord::Schema.define(version: 2021_01_26_090536) do
     t.datetime "updated_at", null: false
     t.index ["room_id"], name: "index_entries_on_room_id"
     t.index ["user_id"], name: "index_entries_on_user_id"
+  end
+
+  create_table "genres", charset: "utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "desc"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_genres_on_name"
   end
 
   create_table "likes", charset: "utf8", force: :cascade do |t|
@@ -84,6 +93,15 @@ ActiveRecord::Schema.define(version: 2021_01_26_090536) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_microposts_on_post_id"
     t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
+
+  create_table "post_genres", charset: "utf8", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "genre_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["genre_id"], name: "index_post_genres_on_genre_id"
+    t.index ["post_id"], name: "index_post_genres_on_post_id"
   end
 
   create_table "posts", charset: "utf8", force: :cascade do |t|

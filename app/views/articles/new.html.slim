@@ -1,6 +1,16 @@
-= provide(:title, 'News作瀬雨')
+= provide(:title, 'News作瀬雨（admin用）')
 
 .article-field-wrapper
   h2 News作成ページ
 
   = render 'form'
+
+css:
+  .article-field-wrapper {
+    text-align: center;
+  }
+
+  .article-field-wrapper h2 {
+    font-size: 1.35rem;
+    color: #444;
+  }

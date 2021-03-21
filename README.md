@@ -52,7 +52,7 @@ docker-compose run web --rm web bash
 rspec
 ```
 
-詳細は https://github.com/kazuya002ex/quasar/issues/8 を参照
+詳細は https://github.com/kazuya002ex/quasar/issues/8 に記載
 
 ## 概要
 

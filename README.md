@@ -41,6 +41,19 @@
 
 https://localhost:3009
 
+
+## RSpecの実行
+
+```
+docker-compose run web rspec
+
+# dockerコンテナ内で実行
+docker-compose run web --rm web bash
+rspec
+```
+
+詳細は https://github.com/kazuya002ex/quasar/issues/8 を参照
+
 ## 概要
 
 - Ruby 2.7.0

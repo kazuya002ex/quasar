@@ -39,7 +39,7 @@
 
 - サーバのデフォルト値
 
-https://localhost:3009
+http://localhost:3009
 
 
 ## RSpecの実行

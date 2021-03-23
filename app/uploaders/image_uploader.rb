@@ -3,11 +3,11 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
-  if Rails.env.production?
+  # if Rails.env.production?
     storage :fog
-  else
-    storage :file
-  end
+  # else
+  #   storage :file
+  # end
 
   # S3のディレクトリ名
   def store_dir

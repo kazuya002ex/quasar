@@ -119,9 +119,15 @@
   /       li.name 名無しのリライアーさん
   /       li.post-content お前の作品好きだわ
 
-  // フリーコメントの入力フォーム
+  // フリーコメントの作成フォーム
   .post-show-free-post-form
     .free-post-form-title
+      h3 フリーコメントを作成
+    .free-form
+      // TODO: 本来の姿
+      / = form_for [@post, @free_post] do |f|
+        / = f.text_field :content, :placeholder => "55文字以内で文章を作成"
+        / = f.submit '作成', data: { confirm: "投稿しますか？"}
 
 css:
   .post-show-top {

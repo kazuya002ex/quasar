@@ -97,37 +97,41 @@
           li.name #{@post.user.name}
       = simple_format text_url_to_link(h(@post.user.profile)).html_safe
 
-  // フリーコメントを表示
-  / .post-show-free-posts
-  /   .free-post-title
-  /     h3 フリーコメント
-  /   .free-post-user-name
-  /     / - if # そのユーザーが存在すれば
-  /     / - else
-  /     ul
-  /       li.image = image_tag  "no_image.png"
-  /       li.name 名無しのリライアーさん
-  /       li.post-content お前の作品好きだわ
-  /       // TODO: 本来の姿
-  /       / li.post-content = fp.content
-  /     ul
-  /       li.image = image_tag  "no_image.png"
-  /       li.name 名無しのリライアーさん
-  /       li.post-content お前の作品好きだわ
-  /     ul
-  /       li.image = image_tag  "no_image.png"
-  /       li.name 名無しのリライアーさん
-  /       li.post-content お前の作品好きだわ
+    // フリーコメントを表示
+    .post-show-free-posts
+      .free-post-log
+        .free-post-title
+          h3 フリーコメント
+        .free-post-user-name
+          / - if # そのユーザーが存在すれば
+          / - else
+          ul
+            li.image = image_tag  "no_image.png"
+            li.name 名無しのリライアーさん
+            li.post-content お前の作品好きだわ
+            // TODO: 本来の姿
+            / li.post-content = fp.content
+          ul
+            li.image = image_tag  "no_image.png"
+            li.name 名無しのリライアーさん
+            li.post-content お前の作品好きだわ
+          ul
+            li.image = image_tag  "no_image.png"
+            li.name 名無しのリライアーさん
+            li.post-content お前の作品好きだわ
 
-  // フリーコメントの作成フォーム
-  .post-show-free-post-form
-    .free-post-form-title
-      h3 フリーコメントを作成
-    .free-form
-      // TODO: 本来の姿
-      / = form_for [@post, @free_post] do |f|
-        / = f.text_field :content, :placeholder => "55文字以内で文章を作成"
-        / = f.submit '作成', data: { confirm: "投稿しますか？"}
+    // フリーコメントの作成フォーム
+    .post-show-free-post-form
+      .free-post-form-title
+        h3 フリーコメントを作成
+      .free-form
+        form
+          input type="text" name="name" size="40"
+          input type="submit" value="送信"
+        // TODO: 本来の姿
+        / = form_for [@post, @free_post] do |f|
+          / = f.text_field :content, :placeholder => "55文字以内で文章を作成"
+          / = f.submit '作成', data: { confirm: "投稿しますか？"}
 
 css:
   .post-show-top {
@@ -413,6 +417,25 @@ css:
     margin-top: 0.6%;
   }
 
+  .post-show-free-posts {
+    margin-top: 20%;
+  }
+
+  .free-post-log {
+    margin-left: 3%;
+    width: 255px;
+    height: 300px;
+    overflow-y: scroll;
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid #888;
+  }
+
+  .free-post-user-name ul li img {
+    width: 44px;
+    height: 44px;
+  }
+
   @media screen and (max-width: 480px) {
     .post-show-top {
       padding-top: 18%;
@@ -583,10 +606,5 @@ css:
     
     .post-sub-user-name p {
       font-size: 0.95rem;
-    }
-
-    .free-post-user-name ul li img {
-      width: 44px;
-      height: 44px;
     }
   }

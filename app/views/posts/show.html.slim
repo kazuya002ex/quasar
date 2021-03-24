@@ -98,16 +98,30 @@
       = simple_format text_url_to_link(h(@post.user.profile)).html_safe
 
   // フリーコメントを表示
-  .post-show-free-posts
-    .free-post-title
-      h3 フリーコメント
-    .post-user-name
-    
-      - if # そのユーザーが存在すれば
-      - else
-        ul
-          li.image = = image_tag  "no_image.png"
-          li.name 名無しのリライアーさん
+  / .post-show-free-posts
+  /   .free-post-title
+  /     h3 フリーコメント
+  /   .free-post-user-name
+  /     / - if # そのユーザーが存在すれば
+  /     / - else
+  /     ul
+  /       li.image = image_tag  "no_image.png"
+  /       li.name 名無しのリライアーさん
+  /       li.post-content お前の作品好きだわ
+  /       // TODO: 本来の姿
+  /       / li.post-content = fp.content
+  /     ul
+  /       li.image = image_tag  "no_image.png"
+  /       li.name 名無しのリライアーさん
+  /       li.post-content お前の作品好きだわ
+  /     ul
+  /       li.image = image_tag  "no_image.png"
+  /       li.name 名無しのリライアーさん
+  /       li.post-content お前の作品好きだわ
+
+  // フリーコメントの入力フォーム
+  .post-show-free-post-form
+    .free-post-form-title
 
 css:
   .post-show-top {
@@ -563,5 +577,10 @@ css:
     
     .post-sub-user-name p {
       font-size: 0.95rem;
+    }
+
+    .free-post-user-name ul li img {
+      width: 44px;
+      height: 44px;
     }
   }

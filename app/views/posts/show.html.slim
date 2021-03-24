@@ -96,7 +96,18 @@
             li.image = image_tag "no_image.png"
           li.name #{@post.user.name}
       = simple_format text_url_to_link(h(@post.user.profile)).html_safe
+
   // フリーコメントを表示
+  .post-show-free-posts
+    .free-post-title
+      h3 フリーコメント
+    .post-user-name
+    
+      - if # そのユーザーが存在すれば
+      - else
+        ul
+          li.image = = image_tag  "no_image.png"
+          li.name 名無しのリライアーさん
 
 css:
   .post-show-top {

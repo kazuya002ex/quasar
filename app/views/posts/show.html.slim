@@ -103,14 +103,20 @@
         .free-post-title
           h3 フリーコメント
         .free-post-user-name
-          / - if # そのユーザーが存在すれば
-          / - else
+          ul
+            // TODO: 本来の姿
+            / @free_comments.each do |fc|
+              / li.image = image_tag  "no_image.png"
+              / li.post-name = fc.username
+              / li.post-content = fc.content
+              / li = "#{time_ago_in_words(fc.created_at)}前"
+            li.image = image_tag  "no_image.png"
+            li.name 名無しのリライアーさん
+            li.post-content お前の作品好きだわ
           ul
             li.image = image_tag  "no_image.png"
             li.name 名無しのリライアーさん
             li.post-content お前の作品好きだわ
-            // TODO: 本来の姿
-            / li.post-content = fp.content
           ul
             li.image = image_tag  "no_image.png"
             li.name 名無しのリライアーさん
@@ -126,10 +132,13 @@
         h3 フリーコメントを作成
       .free-form
         form
-          input type="text" name="name" size="40"
-          input type="submit" value="送信"
+          input type="text" name="username" size="25" value="名無しのリライアーさん"
+          input type="text" name="content" size="40" placeholder="55文字以内で文章を作成"
+          input type="submit" value="作成"
         // TODO: 本来の姿
-        / = form_for [@post, @free_post] do |f|
+        / = form_for [@post, @free_comment] do |f|
+          / - unless user_signed_in?
+            / = f.text_field :username, value: @default_name
           / = f.text_field :content, :placeholder => "55文字以内で文章を作成"
           / = f.submit '作成', data: { confirm: "投稿しますか？"}
 

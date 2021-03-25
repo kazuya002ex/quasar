@@ -102,29 +102,22 @@
       .free-post-log
         .free-post-title
           h3 フリーコメント
-        .free-post-user-name
-          ul
+        .free-posts-wrapper
+          .free-post-contents
             // TODO: 本来の姿
             / @free_comments.each do |fc|
-              / li.image = image_tag  "no_image.png"
-              / li.post-name = fc.username
-              / li.post-content = fc.content
-              / li = "#{time_ago_in_words(fc.created_at)}前"
-            li.image = image_tag  "no_image.png"
-            li.name 名無しのリライアーさん
-            li.post-content お前の作品好きだわ
-          ul
-            li.image = image_tag  "no_image.png"
-            li.name 名無しのリライアーさん
-            li.post-content お前の作品好きだわ
-          ul
-            li.image = image_tag  "no_image.png"
-            li.name 名無しのリライアーさん
-            li.post-content お前の作品好きだわ
-          ul
-            li.image = image_tag  "no_image.png"
-            li.name 名無しのリライアーさん
-            li.post-content お前の作品好きだわ
+            .free-post-content
+              .free-post-image
+                p.image = image_tag  "no_image.png"
+                / p.image = image_tag  "no_image.png"
+              .free-post-msg
+                p.name 名無しのリライアーさん
+                p.post-content お前の作品好きだわ
+                / p.name = fc.username
+                / p.post-content = fc.content
+            .free-post-time
+              p 5分前
+              / = "#{time_ago_in_words(fc.created_at)}前"
 
     // フリーコメントの作成フォーム
     .post-show-free-post-form
@@ -133,6 +126,7 @@
       .free-form
         form
           input type="text" name="username" size="25" value="名無しのリライアーさん"
+          br
           input type="text" name="content" size="40" placeholder="55文字以内で文章を作成"
           input type="submit" value="作成"
         // TODO: 本来の姿
@@ -432,15 +426,29 @@ css:
 
   .free-post-log {
     margin-left: 3%;
-    width: 255px;
+    width: 340px;
     height: 300px;
     overflow-y: scroll;
     margin: 5px;
     padding: 10px;
-    border: 2px solid #888;
+    border: .5px solid #ccc;
   }
 
-  .free-post-user-name ul li img {
+  .free-post-title {
+    margin-top: 2.6%;
+    text-align: center;
+  }
+
+  .free-post-title h3 {
+    font-size: 1.03rem;
+    color: #444;
+  }
+
+  .free-post-content {
+    display: flex;
+  }
+
+  .free-post-contents img {
     width: 44px;
     height: 44px;
   }

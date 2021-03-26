@@ -39,3 +39,21 @@ p 'Micropost create 1~10'
     user_id: "#{n + 1}"
   )
 end
+
+# Article Create
+p "Article create"
+Article.create!(title: "RELIER1.3.3をリリースしました",
+                content: "この度は「RELIER」をご利用いただきまして、ありがとうございます。\n今回の変更は~です。\nよろしくお願いします。",
+                user_id: 1,
+                news_type: 2
+                )
+Article.create!(title: "もうすぐアップデートされます",
+                content: "この度は「RELIER」をご利用いただきまして、ありがとうございます。\nもうすぐ~が変わります。\nよろしくお願いします。",
+                user_id: 1,
+                news_type: 1
+                )
+Article.create!(title: "暇だね〜",
+                content: "この度は「RELIER」をご利用いただきまして、ありがとうございます。\n今回は暇です。\nよろしくお願いします。",
+                user_id: 1,
+                news_type: 0
+                )

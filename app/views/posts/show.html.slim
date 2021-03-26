@@ -110,13 +110,13 @@
               .free-post-image
                 p.image = image_tag  "no_image.png"
                 / p.image = image_tag  "no_image.png"
-              .free-post-msg
+              .free-post-name
                 p.name 名無しのリライアーさん
-                p.post-content お前の作品好きだわ
                 / p.name = fc.username
-                / p.post-content = fc.content
-            .free-post-time
-              p 5分前
+            .free-post-msg
+              p.post-content お前の作品好きだわ、なんていうかさ、良いんだよね〜なんでだろい
+              / p.post-content = fc.content
+              p.time 5分前
               / = "#{time_ago_in_words(fc.created_at)}前"
 
     // フリーコメントの作成フォーム
@@ -444,13 +444,34 @@ css:
     color: #444;
   }
 
+  .free-post-contents {
+    margin-top: 2%;
+    margin-bottom: 4%;
+  }
+
   .free-post-content {
     display: flex;
   }
 
-  .free-post-contents img {
-    width: 44px;
-    height: 44px;
+  .free-post-content img {
+    width: 47px;
+    height: 47px;
+  }
+
+  .free-post-name .name {
+    font-size: 0.82rem;
+    padding-top: 8%;
+    color: #444;
+  }
+
+  .free-post-msg .post-content {
+    font-size: 0.88rem;
+    color: #333;
+  }
+
+  .free-post-msg .time {
+    font-size: 0.79rem;
+    color: #999;
   }
 
   @media screen and (max-width: 480px) {

@@ -22,6 +22,7 @@ gem 'html2slim'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'jwt_sessions'
+gem 'mini_magick'
 gem 'mysql2'
 gem 'puma'
 gem 'rails', '6.1.0'
@@ -58,6 +59,10 @@ group :test do
   gem 'capybara'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+end
+
+group :production do
+  gem 'fog-aws'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

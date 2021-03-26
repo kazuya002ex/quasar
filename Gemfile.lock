@@ -381,6 +381,7 @@ GEM
       rake
     mini_magick (4.11.0)
     mini_mime (1.0.3)
+    mini_portile2 (2.5.0)
     minitest (5.14.4)
     msgpack (1.4.2)
     multi_json (1.15.0)
@@ -388,7 +389,8 @@ GEM
     mysql2 (0.5.3)
     netrc (0.11.0)
     nio4r (2.5.7)
-    nokogiri (1.11.2-x86_64-linux)
+    nokogiri (1.11.2)
+      mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     optimist (3.0.1)
     orm_adapter (0.5.0)
@@ -609,7 +611,7 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
-  x86_64-linux
+  ruby
 
 DEPENDENCIES
   active_model_serializers
@@ -665,4 +667,4 @@ RUBY VERSION
    ruby 2.7.0p0
 
 BUNDLED WITH
-   2.0.2
+   2.1.2

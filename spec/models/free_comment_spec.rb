@@ -4,7 +4,7 @@ RSpec.describe FreeComment, type: :model do
 
   #contentのバリデーション
 
-  describe content do
+  describe 'content' do
     context '文章が空の場合' do
       free_comment = FreeComment.new(content: nil)
       free_comment.valid?
@@ -21,7 +21,7 @@ RSpec.describe FreeComment, type: :model do
       free_comment.valid?
 
       it '無効になる' do
-        expect(free_comment.errors.full_messages).to include('Contentを入力してください')
+        expect(free_comment.errors.full_messages).to include('Contentは55文字以内で入力してください')
         expect(free_comment).to_not be_valid
       end
     end
@@ -29,13 +29,13 @@ RSpec.describe FreeComment, type: :model do
 
   #usernameのバリデーション
 
-  describe username do
+  describe 'username' do
     context '文章が空の場合' do
       free_comment = FreeComment.new(username: nil)
       free_comment.valid?
 
       it '無効になる' do
-        expect(free_comment.errors.full_messages).to include('usernameを入力してください')
+        expect(free_comment.errors.full_messages).to include('Usernameを入力してください')
         expect(free_comment).to_not be_valid
       end
     end
@@ -46,8 +46,9 @@ RSpec.describe FreeComment, type: :model do
       free_comment.valid?
 
       it '無効になる' do
-        expect(free_comment.errors.full_messages).to include('usernameを入力してください')
+        expect(free_comment.errors.full_messages).to include('Usernameは25文字以内で入力してください')
         expect(free_comment).to_not be_valid
       end
     end 
+  end
 end

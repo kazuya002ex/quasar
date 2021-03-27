@@ -452,9 +452,11 @@ a:hover {
   transition: 0.3s;
 }
 
-.top-new-arrival-title {
+.top-new-arrival-top {
+  display: flex;
+  justify-content: space-between;
   margin-top: 12%;
-  margin-bottom: 1%;
+  margin-bottom: 1.3%;
 }
 
 .top-new-arrival-title h2 {
@@ -464,6 +466,18 @@ a:hover {
 
 .top-new-arrival-more-link {
   margin: 1% 0;
+  margin-right: 3%;
+}
+
+.top-new-arrival-more-link p a {
+  font-size: 1.1rem;
+  color: #777;
+  transition: .3s;
+}
+
+.top-new-arrival-more-link p a:hover {
+  color: #0a9dd1;
+  transition: .3s;
 }
 
 .new-arrival {

@@ -59,12 +59,12 @@ ActiveRecord::Schema.define(version: 2021_03_25_143255) do
   end
 
   create_table "free_comments", charset: "utf8", force: :cascade do |t|
-    t.string "content"
-    t.string "username"
-    t.bigint "post_id_id"
+    t.string "content", null: false
+    t.string "username", null: false
+    t.bigint "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["post_id_id"], name: "index_free_comments_on_post_id_id"
+    t.index ["post_id"], name: "index_free_comments_on_post_id"
   end
 
   create_table "genres", charset: "utf8", force: :cascade do |t|
@@ -156,6 +156,7 @@ ActiveRecord::Schema.define(version: 2021_03_25_143255) do
   add_foreign_key "articles", "users"
   add_foreign_key "entries", "rooms"
   add_foreign_key "entries", "users"
+  add_foreign_key "free_comments", "posts"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "messages", "rooms"

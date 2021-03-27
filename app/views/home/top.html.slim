@@ -39,10 +39,11 @@ section.top-container
             p.title = article.title
   // おすすめ作品
   .top-ranking-wrapper
-    .top-ranking-title
-      h2 おすすめ作品
-    .top-ranking-more-link
-      p = link_to ">もっとみる", recommend_posts_path
+    .top-ranking-top
+      .top-ranking-title
+        h2 おすすめ作品
+      .top-ranking-more-link
+        p = link_to ">もっとみる", recommend_posts_path
     .top-ranking.over-flow
       - @ranking_posts.each do |post|
         .ranking-content

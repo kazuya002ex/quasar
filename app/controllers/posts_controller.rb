@@ -19,6 +19,9 @@ class PostsController < ApplicationController
 
     @microposts = @post.microposts.order(id: "DESC")
     @micropost = Micropost.new
+
+    @free_comments = @post.free_comments.order(id: "DESC")
+    @free_comment = FreeComment.new
   end
 
   def new

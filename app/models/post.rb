@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   has_many :microposts, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :users, through: :likes
+  has_many :free_comments, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 32 }
   validates :story, presence: true, length: { maximum: 300 }

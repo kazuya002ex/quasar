@@ -72,7 +72,7 @@
             - if user_signed_in?
               p 文章を作成
               = form_for [@post, @micropost] do |f|
-                = f.text_field :content, :placeholder => "55文字以内で文章を作成"
+                = f.text_field :content, placeholder: "55文字以内で文章を作成"
                 = f.submit '作成', data: { confirm: "投稿しますか？"}
             - else
               p.not-signin 小説作成に参加するには、#{link_to "サインイン", new_user_session_path}してください
@@ -103,21 +103,20 @@
         .free-post-title
           h3 フリーコメント
         .free-posts-wrapper
-          .free-post-contents
-            // TODO: 本来の姿
-            / - @free_comments.each do |fc|
-            .free-post-content
-              .free-post-image
-                p.image = image_tag  "no_image.png"
-                / p.image = image_tag  "no_image.png"
-              .free-post-name
-                p.name 名無しのリライアーさん
-                / p.name = fc.username
-            .free-post-msg
-              p.post-content お前の作品好きだわ、なんていうかさ、良いんだよね〜なんでだろう、、
-              / p.post-content = fc.content
-              p.time 5分前
-              / = "#{time_ago_in_words(fc.created_at)}前"
+          - if @free_comments.present?
+            - @free_comments.each do |fc|
+              .free-post-contents
+                .free-post-content
+                  .free-post-image
+                    p.image = image_tag  "no_image.png"
+                  .free-post-name
+                    p.name = fc.username
+                .free-post-msg
+                  p.post-content = fc.content
+                  p.time = "#{time_ago_in_words(fc.created_at)}前"
+          - else
+            p.not-free-post このスペースは誰でも自由に書き込むことが出来ます
+
 
     // フリーコメントの作成フォーム
     .post-show-free-post-form
@@ -125,17 +124,11 @@
         h3 フリーコメントを作成
       .free-form
         form
-          / - unless user_signed_in?
-          input type="text" name="username" size="37" value="名無しのリライアーさん" placeholder="25文字以内でHNを設定(空白禁止)"
-          br
-          input type="text" name="content" size="44" placeholder="55文字以内で文章を作成"
-          input type="submit" value="作成"
-        // TODO: 本来の姿
-        / = form_for [@post, @free_comment] do |f|
-          / - unless user_signed_in?
-            / = f.text_field :username, value: @default_name
-          / = f.text_field :content, :placeholder => "55文字以内で文章を作成"
-          / = f.submit '作成', data: { confirm: "投稿しますか？"}
+        = form_for [@post, @free_comment] do |f|
+          - unless user_signed_in?
+            = f.text_field :username, value: @default_name, placeholder: "25文字以内でHNを設定（空白禁止）", size: 32
+          = f.text_field :content, placeholder: "55文字以内で文章を作成", size: 45
+          = f.submit '作成'
 
 css:
   .post-show-top {
@@ -447,7 +440,7 @@ css:
 
   .free-post-contents {
     margin-top: 2%;
-    margin-bottom: 4%;
+    margin-bottom: 6%;
   }
 
   .free-post-content {
@@ -475,6 +468,12 @@ css:
     color: #999;
   }
 
+  .free-post-contents .not-free-post {
+    padding: 3% 7%;
+    color: #777;
+    font-size: 0.91rem;
+  }
+
   .post-show-free-post-form {
     margin-top: 8%;
   }
@@ -487,6 +486,10 @@ css:
     font-size: 1.1rem;
     font-weight: normal;
     color: #777;
+  }
+
+  .free-form {
+    width: 360px;
   }
 
   .post-show-free-post-form .free-form input[type="text"] {

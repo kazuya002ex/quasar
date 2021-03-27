@@ -102,23 +102,22 @@
       .free-post-log
         .free-post-title
           h3 フリーコメント
-        .free-post-user-name
-          / - if # そのユーザーが存在すれば
-          / - else
-          ul
-            li.image = image_tag  "no_image.png"
-            li.name 名無しのリライアーさん
-            li.post-content お前の作品好きだわ
+        .free-posts-wrapper
+          .free-post-contents
             // TODO: 本来の姿
-            / li.post-content = fp.content
-          ul
-            li.image = image_tag  "no_image.png"
-            li.name 名無しのリライアーさん
-            li.post-content お前の作品好きだわ
-          ul
-            li.image = image_tag  "no_image.png"
-            li.name 名無しのリライアーさん
-            li.post-content お前の作品好きだわ
+            / - @free_comments.each do |fc|
+            .free-post-content
+              .free-post-image
+                p.image = image_tag  "no_image.png"
+                / p.image = image_tag  "no_image.png"
+              .free-post-name
+                p.name 名無しのリライアーさん
+                / p.name = fc.username
+            .free-post-msg
+              p.post-content お前の作品好きだわ、なんていうかさ、良いんだよね〜なんでだろう、、
+              / p.post-content = fc.content
+              p.time 5分前
+              / = "#{time_ago_in_words(fc.created_at)}前"
 
     // フリーコメントの作成フォーム
     .post-show-free-post-form
@@ -126,10 +125,15 @@
         h3 フリーコメントを作成
       .free-form
         form
-          input type="text" name="name" size="40"
-          input type="submit" value="送信"
+          / - unless user_signed_in?
+          input type="text" name="username" size="37" value="名無しのリライアーさん" placeholder="25文字以内でHNを設定(空白禁止)"
+          br
+          input type="text" name="content" size="44" placeholder="55文字以内で文章を作成"
+          input type="submit" value="作成"
         // TODO: 本来の姿
-        / = form_for [@post, @free_post] do |f|
+        / = form_for [@post, @free_comment] do |f|
+          / - unless user_signed_in?
+            / = f.text_field :username, value: @default_name
           / = f.text_field :content, :placeholder => "55文字以内で文章を作成"
           / = f.submit '作成', data: { confirm: "投稿しますか？"}
 
@@ -423,17 +427,73 @@ css:
 
   .free-post-log {
     margin-left: 3%;
-    width: 255px;
+    width: 340px;
     height: 300px;
     overflow-y: scroll;
     margin: 5px;
     padding: 10px;
-    border: 2px solid #888;
+    border: .5px solid #ccc;
   }
 
-  .free-post-user-name ul li img {
-    width: 44px;
-    height: 44px;
+  .free-post-title {
+    margin-top: 2.6%;
+    text-align: center;
+  }
+
+  .free-post-title h3 {
+    font-size: 1.03rem;
+    color: #444;
+  }
+
+  .free-post-contents {
+    margin-top: 2%;
+    margin-bottom: 4%;
+  }
+
+  .free-post-content {
+    display: flex;
+  }
+
+  .free-post-content img {
+    width: 47px;
+    height: 47px;
+  }
+
+  .free-post-name .name {
+    font-size: 0.82rem;
+    padding-top: 8%;
+    color: #444;
+  }
+
+  .free-post-msg .post-content {
+    font-size: 0.88rem;
+    color: #333;
+  }
+
+  .free-post-msg .time {
+    font-size: 0.79rem;
+    color: #999;
+  }
+
+  .post-show-free-post-form {
+    margin-top: 8%;
+  }
+
+  .free-post-form-title {
+    margin-bottom: 2.2%;
+  }
+
+  .free-post-form-title h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #777;
+  }
+
+  .post-show-free-post-form .free-form input[type="text"] {
+    margin-top: 2%;
+    height: 22px;
+    font-size: 0.85rem;
+    color: #444;
   }
 
   @media screen and (max-width: 480px) {

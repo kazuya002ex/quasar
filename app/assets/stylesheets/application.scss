@@ -73,7 +73,7 @@ a:hover {
 }
 
 .devise-field label {
-  color: #fff;
+  color: rgb(244, 243, 243);
 }
 
 // field共通
@@ -86,7 +86,10 @@ a:hover {
   margin-top: 1%;
 }
 
-.field input[type="text"] {
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"] {
+  margin-top: 0.7%;
   width: 50%;
   height: 26px;
   font-size: 1.03rem;

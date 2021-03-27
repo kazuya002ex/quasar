@@ -54,6 +54,8 @@ section.top-container
   .top-new-arrival-wrapper
     .top-new-arrival-title
       h2 新着作品
+    .top-new-arrival-more-link
+      p = link_to ">もっとみる", new_arrival_posts_path
     .top-new-arrival.over-flow
       - @new_arrival_posts.each do |post|
         .new-arrival-content

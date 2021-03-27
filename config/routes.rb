@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :articles
 
   resources :recommend_posts, :index
+  resources :new_arrival_posts, :index
 
   # 静的ページ
   get '/lp', to: 'static#lp'

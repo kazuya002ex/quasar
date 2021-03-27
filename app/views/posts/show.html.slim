@@ -105,7 +105,7 @@
         .free-posts-wrapper
           .free-post-contents
             // TODO: 本来の姿
-            / @free_comments.each do |fc|
+            / - @free_comments.each do |fc|
             .free-post-content
               .free-post-image
                 p.image = image_tag  "no_image.png"
@@ -125,6 +125,7 @@
         h3 フリーコメントを作成
       .free-form
         form
+          / - unless user_signed_in?
           input type="text" name="username" size="25" value="名無しのリライアーさん"
           br
           input type="text" name="content" size="40" placeholder="55文字以内で文章を作成"
@@ -472,6 +473,20 @@ css:
   .free-post-msg .time {
     font-size: 0.79rem;
     color: #999;
+  }
+
+  .post-show-free-post-form {
+    margin-top: 8%;
+  }
+
+  .free-post-form-title {
+    margin-bottom: 2.2%;
+  }
+
+  .free-post-form-title h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #777;
   }
 
   @media screen and (max-width: 480px) {

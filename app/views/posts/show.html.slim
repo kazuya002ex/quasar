@@ -91,7 +91,7 @@
       = link_to user_path(@post.user) do
         ul
           - if @post.user.img.present?
-            li.image = image_tag @post.user.img.url 
+            li.image = image_tag @post.user.img.url
           - else
             li.image = image_tag "no_image.png"
           li.name #{@post.user.name}
@@ -116,14 +116,11 @@
                   p.time = "#{time_ago_in_words(fc.created_at)}前"
           - else
             p.not-free-post このスペースは誰でも自由に書き込むことが出来ます
-
-
     // フリーコメントの作成フォーム
     .post-show-free-post-form
       .free-post-form-title
         h3 フリーコメントを作成
       .free-form
-        form
         = form_for [@post, @free_comment] do |f|
           - unless user_signed_in?
             = f.text_field :username, value: @default_name, placeholder: "25文字以内でHNを設定（空白禁止）", size: 32
@@ -472,7 +469,7 @@ css:
     color: #999;
   }
 
-  .free-post-contents .not-free-post {
+  .free-posts-wrapper .not-free-post {
     padding: 3% 7%;
     color: #777;
     font-size: 0.91rem;

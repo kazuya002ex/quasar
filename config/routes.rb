@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :rooms, only: [:create, :show, :index]
   resources :articles
 
+  resources :recommend_posts, :index
+
   # 静的ページ
   get '/lp', to: 'static#lp'
 end

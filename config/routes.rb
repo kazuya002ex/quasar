@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:create]
   resources :rooms, only: [:create, :show, :index]
   resources :articles
+  resources :comments, only: [:create]
 
   # 静的ページ
   get '/lp', to: 'static#lp'

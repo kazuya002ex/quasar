@@ -126,9 +126,9 @@
       .free-form
         form
           / - unless user_signed_in?
-          input type="text" name="username" size="25" value="名無しのリライアーさん"
+          input type="text" name="username" size="37" value="名無しのリライアーさん" placeholder="25文字以内でHNを設定(空白禁止)"
           br
-          input type="text" name="content" size="40" placeholder="55文字以内で文章を作成"
+          input type="text" name="content" size="44" placeholder="55文字以内で文章を作成"
           input type="submit" value="作成"
         // TODO: 本来の姿
         / = form_for [@post, @free_comment] do |f|
@@ -487,6 +487,13 @@ css:
     font-size: 1.1rem;
     font-weight: normal;
     color: #777;
+  }
+
+  .post-show-free-post-form .free-form input[type="text"] {
+    margin-top: 2%;
+    height: 22px;
+    font-size: 0.85rem;
+    color: #444;
   }
 
   @media screen and (max-width: 480px) {

@@ -17,7 +17,7 @@ class FreeCommentsController < ApplicationController
       success
       redirect_to @post
     else
-      flash[:alert] = 'コメント作成に失敗しました'
+      flash[:alert] = @free_comment.errors.full_messages[0]
       redirect_to @post
     end
   end

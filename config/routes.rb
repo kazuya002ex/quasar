@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     post :confirm, action: :confirm_new, on: :new
     post 'add', to: 'likes#create'
     delete '/add', to: 'likes#destroy'
+    resources :free_comments, only: [:create]
   end
 
   resources :users, only: [:index, :show]
@@ -14,7 +15,6 @@ Rails.application.routes.draw do
   resources :messages, only: [:create]
   resources :rooms, only: [:create, :show, :index]
   resources :articles
-  resources :comments, only: [:create]
 
   # 静的ページ
   get '/lp', to: 'static#lp'

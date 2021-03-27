@@ -1,9 +1,10 @@
 
-class CommentsController < ApplicationController
+class FreeCommentsController < ApplicationController
+  skip_before_action :authenticate_user!
 
   def create
     if user_signed_in?
-      @free_comment = FreeComment.new(content: params[:content])
+      @free_comment = FreeComment.new(content: params[:free_comment][:content])
       @free_comment.username = current_user.name
     else
       @free_comment = FreeComment.new(free_comment_params)
@@ -17,7 +18,7 @@ class CommentsController < ApplicationController
       redirect_to @post
     else
       flash[:alert] = 'コメント作成に失敗しました'
-      render 'posts/show'
+      redirect_to @post
     end
   end
 

@@ -22,6 +22,7 @@ class PostsController < ApplicationController
 
     @free_comments = @post.free_comments.order(id: "DESC")
     @free_comment = FreeComment.new
+    @default_name = '名無しのリライアーさん'
   end
 
   def new

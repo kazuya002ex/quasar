@@ -2,15 +2,15 @@
 class CommentsController < ApplicationController
 
   def create
-    @post = Post.find(params[:post_id])
-    @free_comment.post_id = @post.id
-
     if user_signed_in?
       @free_comment = FreeComment.new(content: params[:content])
       @free_comment.username = current_user.name
     else
       @free_comment = FreeComment.new(free_comment_params)
     end
+
+    @post = Post.find(params[:post_id])
+    @free_comment.post_id = @post.id
 
     if @free_comment.save
       success

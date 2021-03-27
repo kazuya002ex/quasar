@@ -5,11 +5,11 @@
     .field.devise-field
       = f.label :email
       br
-      = f.email_field :email, autofocus: true, autocomplete: "email"
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例) relier@example.com"
     .field.devise-field
       = f.label :password
       br
-      = f.password_field :password, autocomplete: "current-password"
+      = f.password_field :password, autocomplete: "current-password", placeholder: "半角英数字6文字以上"
     - if devise_mapping.rememberable?
       .field.devise-field
         = f.check_box :remember_me

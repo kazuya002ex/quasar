@@ -16,9 +16,9 @@ section.bg-top
             li = link_to "サインイン", new_user_session_path
     // 検索窓
     .search
-      = search_form_for @q do |f|
-        = f.search_field :title_cont, placeholder: "タイトル名、ジャンルで検索"
-        = f.submit "検索"
+      form
+        input type="search" placeholder="タイトル名、ジャンルで検索"
+        input type="submit"
 
 section.top-container
   - unless user_signed_in?

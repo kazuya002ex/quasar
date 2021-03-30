@@ -376,14 +376,36 @@ a:hover {
   margin-top: 0.8px;
 }
 
-.top-ranking-title {
+.top-ranking-top {
+  display: flex;
+  justify-content: space-between;
   margin-top: 7%;
+  margin-bottom: 1.3%;
+}
+
+.top-ranking-title {
   margin-bottom: 1%;
 }
 
 .top-ranking-title h2 {
   font-size: 1.5rem;
   color: #555;
+}
+
+.top-ranking-more-link {
+  margin: 1% 0;
+  margin-right: 3%;
+}
+
+.top-ranking-more-link p a {
+  font-size: 1.1rem;
+  color: #777;
+  transition: .3s;
+}
+
+.top-ranking-more-link p a:hover {
+  color: #0a9dd1;
+  transition: .3s;
 }
 
 .top-ranking {
@@ -430,14 +452,32 @@ a:hover {
   transition: 0.3s;
 }
 
-.top-new-arrival-title {
+.top-new-arrival-top {
+  display: flex;
+  justify-content: space-between;
   margin-top: 12%;
-  margin-bottom: 1%;
+  margin-bottom: 1.3%;
 }
 
 .top-new-arrival-title h2 {
   font-size: 1.5rem;
   color: #555;
+}
+
+.top-new-arrival-more-link {
+  margin: 1% 0;
+  margin-right: 3%;
+}
+
+.top-new-arrival-more-link p a {
+  font-size: 1.1rem;
+  color: #777;
+  transition: .3s;
+}
+
+.top-new-arrival-more-link p a:hover {
+  color: #0a9dd1;
+  transition: .3s;
 }
 
 .new-arrival {

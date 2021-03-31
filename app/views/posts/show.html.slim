@@ -65,7 +65,7 @@
             - if user_signed_in? && micropost.user_id == current_user.id
               p = link_to "・削除", [@post, micropost], method: :delete, data: { confirm: '削除?' }
           .post-log-star
-            p star
+            p = "#{micropost.star_count}star"
             p = link_to'押せる', post_micropost_micropost_stars_path(post_id: @post.id, micropost_id: micropost.id), method: :post
       .post-add
         // 1行作業

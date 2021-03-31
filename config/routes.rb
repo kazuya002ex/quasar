@@ -7,10 +7,11 @@ Rails.application.routes.draw do
       resources :micropost_stars, only: :create
     end
 
+    resources :free_comments, only: [:create] 
+
     post :confirm, action: :confirm_new, on: :new
     post 'add', to: 'likes#create'
     delete '/add', to: 'likes#destroy'
-    resources :free_comments, only: [:create]
   end
 
   resources :users, only: [:index, :show]

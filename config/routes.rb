@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :posts do
-    resources :microposts, only: [:create, :destroy]
+    resources :microposts, only: [:create, :destroy] do
+      resources :micropost_stars, only: :create
+    end
+
     post :confirm, action: :confirm_new, on: :new
     post 'add', to: 'likes#create'
     delete '/add', to: 'likes#destroy'

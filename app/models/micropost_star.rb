@@ -1,0 +1,2 @@
+class MicropostStar < ApplicationRecord
+end

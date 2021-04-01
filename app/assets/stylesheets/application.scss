@@ -545,6 +545,21 @@ a:hover {
   font-size: 1.15rem;
 }
 
+.lp-main-title {
+  text-align: center;
+}
+
+.lp-main {
+  margin-top: 6.5%;
+}
+
+.lp-main-title h3 {
+  font-size: 1.75rem;
+  color: #444;
+  border-bottom: #339933 solid 2.5px;
+  display: inline-block;
+}
+
 @media screen and (max-width: 480px) {
 
   .bg-top {

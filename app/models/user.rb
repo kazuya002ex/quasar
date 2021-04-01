@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_posts, through: :likes, source: :post
   has_many :articles
+  has_many :micropost_stars
 
   validates :name, presence: true, length: { maximum: 25 }
 

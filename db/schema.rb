@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_25_143255) do
+ActiveRecord::Schema.define(version: 2021_03_31_025031) do
 
   create_table "active_admin_comments", charset: "utf8", force: :cascade do |t|
     t.string "namespace"
@@ -94,12 +94,22 @@ ActiveRecord::Schema.define(version: 2021_03_25_143255) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "micropost_stars", charset: "utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "micropost_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["micropost_id"], name: "index_micropost_stars_on_micropost_id"
+    t.index ["user_id"], name: "index_micropost_stars_on_user_id"
+  end
+
   create_table "microposts", charset: "utf8", force: :cascade do |t|
     t.string "content"
     t.bigint "user_id"
     t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "star_count", default: 0, null: false
     t.index ["post_id"], name: "index_microposts_on_post_id"
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end

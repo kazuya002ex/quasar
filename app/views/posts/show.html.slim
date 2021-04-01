@@ -60,6 +60,10 @@
             .post-log-content
               p.name = link_to "#{micropost.user.name}", "/users/#{micropost.user_id}"
               p.micro = micropost.content
+            .post-log-star
+              p = link_to post_micropost_micropost_stars_path(post_id: @post.id, micropost_id: micropost.id), method: :post do
+                i.far.fa-star.fa-lg.star-color
+              p.star-p = micropost_star_count(micropost)
           .post-log-info
             p = "#{time_ago_in_words(micropost.created_at)}前"
             - if user_signed_in? && micropost.user_id == current_user.id
@@ -128,6 +132,16 @@
           = f.submit '作成'
 
 css:
+  .star-color {
+    color: #ffcc33;
+  }
+
+  .star-p {
+    font-size: 0.88rem;
+    color: #ffcc33;
+    text-align: center;
+  }
+
   .post-show-top {
     background-color: rgb(244, 244, 244);
     padding-top: 1.3%;
@@ -288,6 +302,11 @@ css:
   .post-log-content p a:hover {
     color: #0a9dd1;
     transition: .3s;
+  }
+
+  .post-log-star {
+    margin-left: 5%;
+    margin-top: 2%;
   }
 
   .post-log .post-log-info {

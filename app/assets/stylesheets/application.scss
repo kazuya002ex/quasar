@@ -505,6 +505,12 @@ a:hover {
   text-align: center;
 }
 
+.lp-main-contents h4 {
+  font-size: 1.125rem;
+  border-bottom: #ddd solid 3px;
+  display: inline-block;
+}
+
 .bg-lp {
   background-image: url(lp-top.jpg);
   opacity: .8;
@@ -545,17 +551,35 @@ a:hover {
   font-size: 1.15rem;
 }
 
-.lp-main-title {
-  text-align: center;
-}
-
 .lp-main {
   margin-top: 6.5%;
+}
+
+.lp-main-title {
+  text-align: center;
+  margin-bottom: 1%;
 }
 
 .lp-main-title h3 {
   border-bottom: #339933 solid 2.5px;
   display: inline-block;
+}
+
+.lp-main-contents {
+  text-align: center;
+}
+
+.lp-main-content {
+  margin-top: 5.5%;
+}
+
+.main-content-p {
+  margin-top: 3%;
+}
+
+.main-content-p p {
+  margin-top: 1%;
+  line-height: 26px;
 }
 
 .lp-dev-title h3 {

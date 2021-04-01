@@ -65,8 +65,9 @@
             - if user_signed_in? && micropost.user_id == current_user.id
               p = link_to "・削除", [@post, micropost], method: :delete, data: { confirm: '削除?' }
           .post-log-star
-            p = link_to'押せるstar', post_micropost_micropost_stars_path(post_id: @post.id, micropost_id: micropost.id), method: :post
-            p = micropost_star_count(micropost)
+            p = link_to post_micropost_micropost_stars_path(post_id: @post.id, micropost_id: micropost.id), method: :post do
+              i.far.fa-star.fa-lg.star-color
+            p.star-p = micropost_star_count(micropost)
       .post-add
         // 1行作業
         .micropost-form
@@ -131,6 +132,14 @@
           = f.submit '作成'
 
 css:
+  .star-color {
+    color: #ffcc33;
+  }
+
+  .star-p {
+    color: #ffcc33;
+  }
+
   .post-show-top {
     background-color: rgb(244, 244, 244);
     padding-top: 1.3%;

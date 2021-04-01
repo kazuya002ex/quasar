@@ -2,9 +2,6 @@ class HomeController < ApplicationController
   skip_before_action :authenticate_user!, only: :top
 
   def top
-    @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true).order(id: "DESC")
-
     # top-article
     @articles = Article.latest_news
 

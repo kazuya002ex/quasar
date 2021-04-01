@@ -16,9 +16,9 @@ section.bg-top
             li = link_to "サインイン", new_user_session_path
     // 検索窓
     .search
-      = search_form_for @q do |f|
-        = f.search_field :title_cont, placeholder: "タイトル名、ジャンルで検索"
-        = f.submit "検索"
+      form
+        input type="search" placeholder="タイトル名、ジャンルで検索"
+        input type="submit"
 
 section.top-container
   - unless user_signed_in?
@@ -39,8 +39,11 @@ section.top-container
             p.title = article.title
   // おすすめ作品
   .top-ranking-wrapper
-    .top-ranking-title
-      h2 おすすめ作品
+    .top-ranking-top
+      .top-ranking-title
+        h2 おすすめ作品
+      .top-ranking-more-link
+        p = link_to ">もっとみる", recommend_posts_path
     .top-ranking.over-flow
       - @ranking_posts.each do |post|
         .ranking-content
@@ -50,8 +53,11 @@ section.top-container
           p.top-post-link = link_to "詳細をみる", post
   // 新着作品
   .top-new-arrival-wrapper
-    .top-new-arrival-title
-      h2 新着作品
+    .top-new-arrival-top
+      .top-new-arrival-title
+        h2 新着作品
+      .top-new-arrival-more-link
+        p = link_to ">もっとみる", new_arrival_posts_path
     .top-new-arrival.over-flow
       - @new_arrival_posts.each do |post|
         .new-arrival-content

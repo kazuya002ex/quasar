@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     flash[:notice] = 'success'
   end
 
-  def authenticatte_admin!
+  def authenticate_admin!
     unless current_user.is_admin?
       flash[:alert] = 'アクセス権限がありません'
       redirect_to root_path

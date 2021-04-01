@@ -4,7 +4,6 @@ class MicropostsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @microposts = @post.microposts
     @micropost = Micropost.new(micropost_params)
     @micropost.user_id = current_user.id
     @micropost.post_id = @post.id

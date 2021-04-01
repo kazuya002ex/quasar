@@ -39,7 +39,20 @@
 
 - サーバのデフォルト値
 
-https://localhost:3009
+http://localhost:3009
+
+
+## RSpecの実行
+
+```
+docker-compose run web rspec
+
+# dockerコンテナ内で実行
+docker-compose run web --rm web bash
+rspec
+```
+
+詳細は https://github.com/kazuya002ex/quasar/issues/8 に記載
 
 ## 概要
 

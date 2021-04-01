@@ -60,6 +60,10 @@
             .post-log-content
               p.name = link_to "#{micropost.user.name}", "/users/#{micropost.user_id}"
               p.micro = micropost.content
+            .post-log-star
+              p = link_to post_micropost_micropost_stars_path(post_id: @post.id, micropost_id: micropost.id), method: :post do
+                i.far.fa-star.fa-lg.star-color
+              p.star-p = micropost_star_count(micropost)
           .post-log-info
             p = "#{time_ago_in_words(micropost.created_at)}前"
             - if user_signed_in? && micropost.user_id == current_user.id
@@ -72,7 +76,7 @@
             - if user_signed_in?
               p 文章を作成
               = form_for [@post, @micropost] do |f|
-                = f.text_field :content, :placeholder => "55文字以内で文章を作成"
+                = f.text_field :content, placeholder: "55文字以内で文章を作成"
                 = f.submit '作成', data: { confirm: "投稿しますか？"}
             - else
               p.not-signin 小説作成に参加するには、#{link_to "サインイン", new_user_session_path}してください
@@ -91,13 +95,53 @@
       = link_to user_path(@post.user) do
         ul
           - if @post.user.img.present?
-            li.image = image_tag @post.user.img.url 
+            li.image = image_tag @post.user.img.url
           - else
             li.image = image_tag "no_image.png"
           li.name #{@post.user.name}
       = simple_format text_url_to_link(h(@post.user.profile)).html_safe
 
+    // フリーコメントを表示
+    .post-show-free-posts
+      .free-post-log
+        .free-post-title
+          h3 フリーコメント
+        .free-posts-wrapper
+          - if @free_comments.present?
+            - @free_comments.each do |fc|
+              .free-post-contents
+                .free-post-content
+                  .free-post-image
+                    p.image = image_tag  "no_image.png"
+                  .free-post-name
+                    p.name = fc.username
+                .free-post-msg
+                  p.post-content = fc.content
+                  p.time = "#{time_ago_in_words(fc.created_at)}前"
+          - else
+            p.not-free-post このスペースは誰でも自由に書き込むことが出来ます
+    // フリーコメントの作成フォーム
+    .post-show-free-post-form
+      .free-post-form-title
+        h3 フリーコメントを作成
+      .free-form
+        = form_for [@post, @free_comment] do |f|
+          - unless user_signed_in?
+            = f.text_field :username, value: @default_name, placeholder: "25文字以内でHNを設定（空白禁止）", size: 32
+          = f.text_field :content, placeholder: "55文字以内で文章を作成", size: 45
+          = f.submit '作成'
+
 css:
+  .star-color {
+    color: #ffcc33;
+  }
+
+  .star-p {
+    font-size: 0.88rem;
+    color: #ffcc33;
+    text-align: center;
+  }
+
   .post-show-top {
     background-color: rgb(244, 244, 244);
     padding-top: 1.3%;
@@ -260,6 +304,11 @@ css:
     transition: .3s;
   }
 
+  .post-log-star {
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+
   .post-log .post-log-info {
     margin-left: 18%;
     margin-top: 1%;
@@ -379,6 +428,95 @@ css:
 
   .post-field-wrapper .field {
     margin-top: 0.6%;
+  }
+
+  .post-show-free-posts {
+    margin-top: 20%;
+  }
+
+  .free-post-log {
+    margin-left: 3%;
+    width: 340px;
+    height: 300px;
+    overflow-y: scroll;
+    margin: 5px;
+    padding: 10px;
+    border: .5px solid #ccc;
+  }
+
+  .free-post-title {
+    margin-top: 2.6%;
+    text-align: center;
+  }
+
+  .free-post-title h3 {
+    font-size: 1.03rem;
+    color: #444;
+  }
+
+  .free-post-contents {
+    margin-top: 2%;
+    margin-bottom: 6%;
+  }
+
+  .free-post-content {
+    display: flex;
+  }
+
+  .free-post-content img {
+    width: 47px;
+    height: 47px;
+  }
+
+  .free-post-name .name {
+    font-size: 0.82rem;
+    padding-top: 8%;
+    color: #444;
+  }
+
+  .free-post-msg {
+    margin-right: 6%;
+  }
+
+  .free-post-msg .post-content {
+    font-size: 0.88rem;
+    color: #333;
+  }
+
+  .free-post-msg .time {
+    font-size: 0.79rem;
+    color: #999;
+  }
+
+  .free-posts-wrapper .not-free-post {
+    padding: 3% 7%;
+    color: #777;
+    font-size: 0.91rem;
+  }
+
+  .post-show-free-post-form {
+    margin-top: 8%;
+  }
+
+  .free-post-form-title {
+    margin-bottom: 2.2%;
+  }
+
+  .free-post-form-title h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #777;
+  }
+
+  .free-form {
+    width: 360px;
+  }
+
+  .post-show-free-post-form .free-form input[type="text"] {
+    margin-top: 2%;
+    height: 22px;
+    font-size: 0.85rem;
+    color: #444;
   }
 
   @media screen and (max-width: 480px) {
@@ -551,5 +689,23 @@ css:
     
     .post-sub-user-name p {
       font-size: 0.95rem;
+    }
+
+    .free-post-log {
+      width: 280px;
+    }
+
+    .free-post-contents {
+      margin-top: 6%;
+      margin-bottom: 9%;
+    }
+
+    .post-show-free-post-form .free-form input[type="text"] {
+      width: 244px;
+      margin-bottom: 2%;
+    }
+
+    .post-show-free-post-form {
+      margin-bottom: 18%;
     }
   }

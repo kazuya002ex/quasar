@@ -148,55 +148,7 @@ GEM
       railties (>= 5.0.0)
     faker (2.17.0)
       i18n (>= 1.6, < 2)
-    faraday (0.17.4)
-      multipart-post (>= 1.2, < 3)
     ffi (1.15.0)
-    fission (0.5.0)
-      CFPropertyList (~> 2.2)
-    fog (2.2.0)
-      fog-aliyun (>= 0.1.0)
-      fog-atmos
-      fog-aws (>= 0.6.0)
-      fog-brightbox (~> 0.4)
-      fog-cloudatcost (~> 0.4)
-      fog-cloudstack (~> 0.1.0)
-      fog-core (~> 2.1)
-      fog-digitalocean (>= 0.3.0)
-      fog-dnsimple (~> 2.1)
-      fog-dynect (~> 0.0.2)
-      fog-ecloud (~> 0.1)
-      fog-google (~> 1.0)
-      fog-internet-archive
-      fog-json
-      fog-local
-      fog-openstack
-      fog-ovirt
-      fog-powerdns (>= 0.1.1)
-      fog-profitbricks
-      fog-rackspace
-      fog-radosgw (>= 0.0.2)
-      fog-riakcs
-      fog-sakuracloud (>= 0.0.4)
-      fog-serverlove
-      fog-softlayer
-      fog-storm_on_demand
-      fog-terremark
-      fog-vmfusion
-      fog-voxel
-      fog-vsphere (>= 0.4.0)
-      fog-xenserver
-      fog-xml (~> 0.1.1)
-      ipaddress (~> 0.5)
-      json (~> 2.0)
-    fog-aliyun (0.3.19)
-      aliyun-sdk (~> 0.8.0)
-      fog-core
-      fog-json
-      ipaddress (~> 0.8)
-      xml-simple (~> 1.1)
-    fog-atmos (0.1.0)
-      fog-core
-      fog-xml
     fog-aws (3.10.0)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
@@ -376,21 +328,17 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0225)
-    mimemagic (0.3.9)
       nokogiri (~> 1)
       rake
     mini_magick (4.11.0)
     mini_mime (1.0.3)
-    mini_portile2 (2.5.0)
     minitest (5.14.4)
     msgpack (1.4.2)
     multi_json (1.15.0)
     multipart-post (2.1.1)
     mysql2 (0.5.3)
-    netrc (0.11.0)
     nio4r (2.5.7)
-    nokogiri (1.11.2)
-      mini_portile2 (~> 2.5.0)
+    nokogiri (1.11.2-x86_64-linux)
       racc (~> 1.4)
     optimist (3.0.1)
     orm_adapter (0.5.0)
@@ -472,10 +420,6 @@ GEM
     redis-store (1.9.0)
       redis (>= 4, < 5)
     regexp_parser (2.1.1)
-    representable (3.0.4)
-      declarative (< 0.1.0)
-      declarative-option (< 0.2.0)
-      uber (< 0.2.0)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -542,11 +486,6 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
-    signet (0.15.0)
-      addressable (~> 2.3)
-      faraday (>= 0.17.3, < 2.0)
-      jwt (>= 1.5, < 3.0)
-      multi_json (~> 1.10)
     simplecov (0.21.2)
       docile (~> 1.1)
       simplecov-html (~> 0.11)

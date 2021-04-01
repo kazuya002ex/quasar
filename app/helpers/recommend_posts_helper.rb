@@ -1,0 +1,2 @@
+module RecommendPostsHelper
+end

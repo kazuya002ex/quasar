@@ -4,32 +4,32 @@
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
     = render "devise/shared/error_messages", resource: resource
 
-    .field.devise-field
+    .field
       = f.label :img
       br
       = f.file_field :img, class: 'img'
 
-    .field.devise-field
+    .field
       = f.label :name
       br
       = f.text_field :name, autofocus: true, autocomplete: "name"
 
-    .field.devise-field
+    .field
       = f.label :nickname   
       br
-      = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+      = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例) relier01"
 
     / .field
     /   = f.label :my_title
     /   br
     /   = f.text_field :my_title, autofocus: true, autocomplete: "my_title"
 
-    .field.devise-field
+    .field
       = f.label :profile
       br
       = f.text_area :profile, autofocus: true, autocomplete: "profile"
 
-    .field.devise-field
+    .field
       = f.label :email
       br
       = f.email_field :email, autofocus: true, autocomplete: "email"
@@ -59,7 +59,7 @@
       i
         | (内容を変更するには現在のパスワードが必要です)
       br
-      = f.password_field :current_password, autocomplete: "current-password"
+      = f.password_field :current_password, autocomplete: "current-password", placeholder: "半角英数字6文字以上"
 
     .actions
       = f.submit "変更", data: { confirm: "変更しますか？" }, class: 'btn btn-primary'

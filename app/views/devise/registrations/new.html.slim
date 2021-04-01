@@ -6,24 +6,20 @@
     .field.devise-field
       = f.label :name
       br
-      = f.text_field :name, autofocus: true, autocomplete: "name"
+      = f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "例) リライアーくん"
     .field.devise-field
       = f.label :email
       br
-      = f.email_field :email, autofocus: true, autocomplete: "email"
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例) relier@example.com"
     .field.devise-field
       = f.label :password
       - if @minimum_password_length
-        em
-          | (
-          = @minimum_password_length
-          | 文字以上)
       br
-      = f.password_field :password, autocomplete: "new-password"
+      = f.password_field :password, autocomplete: "new-password", placeholder: "半角英数字6文字以上"
     .field.devise-field
       = f.label :password_confirmation
       br
-      = f.password_field :password_confirmation, autocomplete: "new-password"
+      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "半角英数字6文字以上"
     .actions
       = f.submit "サインアップ"
   = render "devise/shared/links"

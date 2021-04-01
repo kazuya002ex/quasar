@@ -536,6 +536,10 @@ a:hover {
   display: inline-block;
 }
 
+.lp-welcome-content {
+  margin-top: 8%;
+}
+
 @media screen and (max-width: 480px) {
 
   .bg-top {
@@ -648,5 +652,13 @@ a:hover {
 
   .new-arrival-content:last-child {
     padding-right: 16%;
+  }
+
+  .bg-lp {
+    height: 450px;
+  }
+
+  .lp-bg-title h2 {
+    font-size: 3.4rem;
   }
 }

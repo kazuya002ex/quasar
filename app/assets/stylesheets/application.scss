@@ -521,6 +521,21 @@ a:hover {
   text-shadow: 1px 2px 3px #333;
 }
 
+.lp-welcome {
+  margin-top: 5%;
+}
+
+.lp-welcome-title {
+  text-align: center;
+}
+
+.lp-welcome-title h3 {
+  font-size: 1.25rem;
+  color: #444;
+  border-bottom: #FF773E solid 2.5px;
+  display: inline-block;
+}
+
 @media screen and (max-width: 480px) {
 
   .bg-top {

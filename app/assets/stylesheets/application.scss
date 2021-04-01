@@ -522,7 +522,7 @@ a:hover {
 }
 
 .lp-welcome {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .lp-welcome-title {
@@ -530,14 +530,19 @@ a:hover {
 }
 
 .lp-welcome-title h3 {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   color: #444;
   border-bottom: #FF773E solid 2.5px;
   display: inline-block;
 }
 
 .lp-welcome-content {
-  margin-top: 8%;
+  margin-top: 3%;
+  text-align: center;
+}
+
+.lp-welcome-content p {
+  font-size: 1.15rem;
 }
 
 @media screen and (max-width: 480px) {
@@ -660,5 +665,13 @@ a:hover {
 
   .lp-bg-title h2 {
     font-size: 3.4rem;
+  }
+
+  .lp-welcome {
+    margin-top: 5%;
+  }
+
+  .lp-welcome-title h3 {
+    font-size: 1.25rem;
   }
 }

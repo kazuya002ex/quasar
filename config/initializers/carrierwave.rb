@@ -15,8 +15,8 @@ CarrierWave.configure do |config|
   # キャッシュをS3に保存
   # config.cache_storage = :fog
 
-  config.fog_directory = ENV['S3_BUCKET']
-  config.asset_host = 'https://s3.ap-northeast-1.amazonaws.com/relier-s3-production'
+  config.fog_directory = 'relier-s3-production-image-store'
+  config.asset_host = 'https://relier-s3-production-image-store.s3-ap-northeast-1.amazonaws.com'
   config.cache_storage = :fog
 end
   

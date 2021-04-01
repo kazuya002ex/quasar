@@ -16,6 +16,8 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'fuubar'
+gem 'fog'
+gem 'fog-aws'
 gem 'font-awesome-rails'
 gem 'font-awesome-sass'
 gem 'html2slim'
@@ -25,7 +27,7 @@ gem 'jwt_sessions'
 gem 'mini_magick'
 gem 'mysql2'
 gem 'puma'
-gem 'rails', '6.1.0'
+gem 'rails', '6.1.3.1'
 gem 'ransack'
 gem 'redis-rails'
 gem 'sass-rails'
@@ -59,10 +61,6 @@ group :test do
   gem 'capybara'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
-end
-
-group :production do
-  gem 'fog-aws'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -563,9 +563,32 @@ a:hover {
   display: inline-block;
 }
 
+.lp-action {
+  text-align: center;
+}
+
 .lp-action-title h3 {
   border-bottom: #ffcc33 solid 2.5px;
   display: inline-block;
+}
+
+.lp-action-button {
+  margin-top: 4.5%;
+  margin-bottom: 13%;
+}
+
+.lp-action-button a {
+  background-color: #6ba9e7;
+  padding: 16px 32px;
+  font-size: 1.125rem;
+  border-radius: 5px;
+  color: rgb(249, 249, 249);
+  transition: .3s;
+}
+
+.lp-action-button a:hover {
+  opacity: .8;
+  transition: .3s;
 }
 
 

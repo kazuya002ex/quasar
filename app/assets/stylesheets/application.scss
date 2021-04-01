@@ -498,6 +498,13 @@ a:hover {
 
 // LP PAGE
 
+// COMMON
+.lp-title {
+  font-size: 1.75rem;
+  color: #444;
+  text-align: center;
+}
+
 .bg-lp {
   background-image: url(lp-top.jpg);
   opacity: .8;
@@ -509,7 +516,6 @@ a:hover {
 }
 
 .lp-bg-title {
-  text-align: center;
   padding-top: 14%;
 }
 
@@ -525,13 +531,7 @@ a:hover {
   margin-top: 3%;
 }
 
-.lp-welcome-title {
-  text-align: center;
-}
-
 .lp-welcome-title h3 {
-  font-size: 1.75rem;
-  color: #444;
   border-bottom: #FF773E solid 2.5px;
   display: inline-block;
 }
@@ -554,11 +554,11 @@ a:hover {
 }
 
 .lp-main-title h3 {
-  font-size: 1.75rem;
-  color: #444;
   border-bottom: #339933 solid 2.5px;
   display: inline-block;
 }
+
+
 
 @media screen and (max-width: 480px) {
 
@@ -674,6 +674,11 @@ a:hover {
     padding-right: 16%;
   }
 
+  // COMMON
+  .lp-title {
+    font-size: 1.25rem;
+  }
+
   .bg-lp {
     height: 450px;
   }
@@ -684,9 +689,5 @@ a:hover {
 
   .lp-welcome {
     margin-top: 5%;
-  }
-
-  .lp-welcome-title h3 {
-    font-size: 1.25rem;
   }
 }

@@ -119,6 +119,12 @@
                   p.post-content = fc.content
                   p.time = "#{time_ago_in_words(fc.created_at)}前"
                 / ここにスター
+                .free-post-star
+                  / p = link_to post_micropost_micropost_stars_path(post_id: @post.id, micropost_id: micropost.id), method: :post do
+                  i.far.fa-star.fa-lg.star-color
+                  p.star-p 12
+                  / TODO: 本来の姿
+                  / p.star-p = micropost_star_count(micropost)
           - else
             p.not-free-post このスペースは誰でも自由に書き込むことが出来ます
     // フリーコメントの作成フォーム

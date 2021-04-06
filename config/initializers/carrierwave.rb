@@ -4,7 +4,8 @@ CarrierWave.configure do |config|
     provider: 'AWS',
     aws_access_key_id: ENV['S3_ACCESS_KEY'],
     aws_secret_access_key: ENV['S3_SECRET_KEY'],
-    region: ENV['S3_REGION'],
+    region: 'ap-northeast-1',
+    # region: ENV['S3_REGION'],
     }
 
   # 公開・非公開の切り替え
@@ -15,8 +16,10 @@ CarrierWave.configure do |config|
   # キャッシュをS3に保存
   # config.cache_storage = :fog
 
-  config.fog_directory = 'relier-s3-production-image-store'
-  config.asset_host = 'https://relier-s3-production-image-store.s3-ap-northeast-1.amazonaws.com'
+  # config.fog_directory = 'relier-s3-production-image-store'
+  config.fog_directory = 'relier-s3-production'
+  # config.asset_host = 'https://relier-s3-production-image-store.s3-ap-northeast-1.amazonaws.com'
+  config.asset_host = "https://s3.ap-northeast-1.amazonaws.com/relier-s3-production"
   config.cache_storage = :fog
 end
   

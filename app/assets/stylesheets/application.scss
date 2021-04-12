@@ -498,19 +498,6 @@ a:hover {
 
 // LP PAGE
 
-// COMMON
-.lp-title {
-  font-size: 1.75rem;
-  color: #444;
-  text-align: center;
-}
-
-.lp-main-contents h4 {
-  font-size: 1.125rem;
-  border-bottom: #ddd solid 3px;
-  display: inline-block;
-}
-
 .bg-lp {
   background-image: url(lp-top.jpg);
   opacity: .8;
@@ -519,114 +506,6 @@ a:hover {
   background-repeat: no-repeat;
   width: 100%;
   height: 650px;
-}
-
-.lp-bg-title {
-  padding-top: 14%;
-}
-
-.lp-bg-title h2 {
-  font-size: 3.75rem;
-  font-family: "Sawarabi Mincho";
-  color: rgb(248, 244, 244);
-  letter-spacing: 2px;
-  text-shadow: 1px 2px 3px #333;
-}
-
-.lp-welcome {
-  margin-top: 3%;
-}
-
-.lp-welcome-title h3 {
-  border-bottom: #FF773E solid 2.5px;
-  display: inline-block;
-}
-
-.lp-welcome-content {
-  margin-top: 3%;
-  text-align: center;
-}
-
-.lp-welcome-content p {
-  font-size: 1.15rem;
-}
-
-.lp-main {
-  margin-top: 6.5%;
-}
-
-.lp-main-title {
-  text-align: center;
-  margin-bottom: 1%;
-}
-
-.lp-main-title h3 {
-  border-bottom: #339933 solid 2.5px;
-  display: inline-block;
-}
-
-.lp-main-contents {
-  text-align: center;
-}
-
-.lp-main-content {
-  margin-top: 5.5%;
-}
-
-.main-content-p {
-  margin-top: 3%;
-}
-
-.main-content-p p {
-  margin-top: 1%;
-  line-height: 26px;
-}
-
-.lp-dev {
-  margin-top: 6%;
-  text-align: center;
-}
-
-.lp-dev-title {
-  margin-bottom: 3%;
-}
-
-.lp-dev-title h3 {
-  border-bottom: #A16EFF solid 2.5px;
-  display: inline-block;
-}
-
-.dev-messages {
-  margin-top: 1.5%;
-}
-
-.lp-action {
-  margin-top: 6%;
-  text-align: center;
-}
-
-.lp-action-title h3 {
-  border-bottom: #ffcc33 solid 2.5px;
-  display: inline-block;
-}
-
-.lp-action-button {
-  margin-top: 4.5%;
-  margin-bottom: 13%;
-}
-
-.lp-action-button a {
-  background-color: #6ba9e7;
-  padding: 16px 32px;
-  font-size: 1.125rem;
-  border-radius: 5px;
-  color: rgb(249, 249, 249);
-  transition: .3s;
-}
-
-.lp-action-button a:hover {
-  opacity: .8;
-  transition: .3s;
 }
 
 

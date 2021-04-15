@@ -40,14 +40,17 @@ class PostsController < ApplicationController
   end
 
   def edit
+    return if authenticate_author!
   end
 
   def update
+    return if authenticate_author!
+
     if @post.update(post_params)
       success
       redirect_to @post
     else
-      flash[:alert] = 'not delete post'
+      error(text: '小説の編集に失敗しました')
       render :edit
     end
   end
@@ -80,5 +83,12 @@ class PostsController < ApplicationController
     def browsing_count(post)
       post_browsing = post.browsing + 1
       post.update(browsing: post_browsing)
+    end
+
+    def authenticate_author!
+      unless @post.user == current_user
+        error(text: '作成者では無いため、作品の内容を編集できません')
+        redirect_to @post
+      end
     end
 end

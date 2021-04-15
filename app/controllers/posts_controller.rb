@@ -31,11 +31,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      success
+      success(text: '小説を作成しました')
       redirect_to @post
     else
-      flash[:alert] = 'not create order'
-      render 'new'
+      flash[:alert] = @free_comment.errors.full_messages[0]
+      render :new
     end
   end
 
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
       redirect_to @post
     else
       flash[:alert] = 'not delete post'
-      render 'edit'
+      render :edit
     end
   end
 

@@ -24,6 +24,12 @@ class MicropostsController < ApplicationController
 
   def destroy
     @micropost = Micropost.find(params[:id])
+
+    if @micropost.post.closed
+      error(text: 'この作品は新規の書き込みを停止しています')
+      redirect_back(fallback_location: root_path)
+    end
+
     @micropost.destroy
     redirect_back(fallback_location: root_path)
   end

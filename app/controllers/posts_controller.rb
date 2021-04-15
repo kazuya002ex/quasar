@@ -47,7 +47,7 @@ class PostsController < ApplicationController
     return if authenticate_author!
 
     if @post.update(post_params)
-      success
+      success(text: '小説の内容を編集しました')
       redirect_to @post
     else
       error(text: '小説の編集に失敗しました')
@@ -60,8 +60,8 @@ class PostsController < ApplicationController
       success
       redirect_to root_path
     else
-      flash[:alert] = 'not delete post'
-      render 'show'
+      error(text: '小説の削除に失敗しました')
+      render :show
     end
   end
 

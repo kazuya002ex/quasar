@@ -8,7 +8,7 @@
 
   - if @post.closed
     .relay-start-button
-      = link_to 'リレーを開始する', "#"
+      = link_to 'リレーを開始する', closed_post_path(@post), method: :delete
   - else
     .relay-stop-button
       = link_to 'リレーを停止する', closed_post_path(@post), method: :patch, data: { confirm: "本当にリレーを停止してもよろしいですか？" }

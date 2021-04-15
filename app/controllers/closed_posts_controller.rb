@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class ClosedPostsController < ApplicationController
+  before_action :set_post, only: [:update, :destroy]
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(closed: true)
       success(text: '作品への書き込みを停止しました')
       redirect_to @post
@@ -12,4 +12,19 @@ class ClosedPostsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    if @post.update(closed: false)
+      success(text: '作品への書き込みを開始しました')
+      redirect_to @post
+    else
+      error(text: '作品への書き込み開始に失敗しました（開始できていません）')
+      render :edit
+    end
+  end
+
+  private
+    def set_post
+      @post = Post.find(params[:id])
+    end
 end

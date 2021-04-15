@@ -110,21 +110,22 @@
           - if @free_comments.present?
             - @free_comments.each do |fc|
               .free-post-contents
-                .free-post-content
+                .free-post-info
                   .free-post-image
                     p.image = image_tag  "no_image.png"
                   .free-post-name
                     p.name = fc.username
-                .free-post-msg
-                  p.post-content = fc.content
-                  p.time = "#{time_ago_in_words(fc.created_at)}前"
-                / フリーコメントのスター
-                .free-post-star
-                  / p = link_to post_micropost_micropost_stars_path(post_id: @post.id, micropost_id: micropost.id), method: :post do
-                  i.far.fa-star.fa-lg.star-color
-                  p.star-p 12
-                  / TODO: 本来の姿
-                  / p.star-p = micropost_star_count(micropost)
+                .free-post-content
+                  .free-post-msg
+                    p.post-content = fc.content
+                    p.time = "#{time_ago_in_words(fc.created_at)}前"
+                  / フリーコメントのスター
+                  .free-post-star
+                    / p = link_to post_micropost_micropost_stars_path(post_id: @post.id, micropost_id: micropost.id), method: :post do
+                    i.far.fa-star.fa-lg.star-color
+                    p.star-p 12
+                    / TODO: 本来の姿
+                    / p.star-p = micropost_star_count(micropost)
           - else
             p.not-free-post このスペースは誰でも自由に書き込むことが出来ます
     // フリーコメントの作成フォーム
@@ -466,11 +467,11 @@ css:
     margin-bottom: 6%;
   }
 
-  .free-post-content {
+  .free-post-info {
     display: flex;
   }
 
-  .free-post-content img {
+  .free-post-info img {
     width: 47px;
     height: 47px;
   }
@@ -479,6 +480,10 @@ css:
     font-size: 0.82rem;
     padding-top: 8%;
     color: #444;
+  }
+
+  .free-post-content {
+    display: flex;
   }
 
   .free-post-msg {

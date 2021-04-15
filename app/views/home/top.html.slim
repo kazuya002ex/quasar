@@ -49,6 +49,10 @@ section.top-container
         .ranking-content
           .top-post-img
             = link_to image_tag("no_image_book.jpg"), post
+          - unless post.closed
+            i.fas.fa-book-open.fa-lg
+          - else
+            i.fas.fa-window-close.fa-lg
           h3.top-post-title = post.title.truncate(27)
           p.top-post-link = link_to "詳細をみる", post
   // 新着作品
@@ -67,6 +71,10 @@ section.top-container
                 = image_tag(post.image.url)
               - else
                 = image_tag("no_image_book.jpg")
+          - unless post.closed
+            i.fas.fa-book-open.fa-lg
+          - else
+            i.fas.fa-window-close.fa-lg
           h3.top-post-title = post.title.truncate(27)
           / p.top-post-story = post.story
           p.top-post-link = link_to "詳細をみる", post

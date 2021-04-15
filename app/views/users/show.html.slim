@@ -43,6 +43,10 @@
             = image_tag(post.image.url)
           - else
             = image_tag("no_image_book.jpg")
+          - unless post.closed
+            i.fas.fa-book-open.fa-lg
+          - else
+            i.fas.fa-window-close.fa-lg
           h3 = post.title.truncate(27)
       
     .novels-title
@@ -54,6 +58,10 @@
             = image_tag(post.image.url)
           - else
             = image_tag("no_image_book.jpg")
+          - unless post.closed
+            i.fas.fa-book-open.fa-lg
+          - else
+            i.fas.fa-window-close.fa-lg
           h3 = post.title.truncate(27)
 
 css:

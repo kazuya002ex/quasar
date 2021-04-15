@@ -6,7 +6,7 @@ class MicropostsController < ApplicationController
     @post = Post.find(params[:post_id])
 
     if @post.closed
-      flash[:alert] = 'この作品は新規の書き込みを停止しています'
+      error(text: 'この作品は新規の書き込みを停止しています')
       redirect_back(fallback_location: root_path)
     end
 
@@ -14,10 +14,10 @@ class MicropostsController < ApplicationController
     @micropost.user_id = current_user.id
     @micropost.post_id = @post.id
     if @micropost.save
-      success
+      success(text: '1行小説を作成しました')
       redirect_back(fallback_location: root_path)
     else
-      flash[:alert] = '1行作成に失敗しました'
+      error(text: '1行作成に失敗しました')
       redirect_back(fallback_location: root_path)
     end
   end

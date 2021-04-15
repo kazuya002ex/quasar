@@ -34,7 +34,7 @@ class PostsController < ApplicationController
       success(text: '小説を作成しました')
       redirect_to @post
     else
-      flash[:alert] = @free_comment.errors.full_messages[0]
+      error(text: @free_comment.errors.full_messages[0])
       render :new
     end
   end

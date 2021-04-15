@@ -8,6 +8,7 @@ require File.expand_path("spec/support/controller_macros.rb")
 
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+require 'factory_bot'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
@@ -16,6 +17,8 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   config.use_transactional_fixtures = true

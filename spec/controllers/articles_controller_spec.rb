@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
-  let(:makoto) { FactoryBot.create :makoto }
-  before { login_user makoto }
+  let(:makoto) { FactoryBot.create :user }
+  before { login_user user }
 
   # GETメソッド
   context '#index' do
@@ -17,13 +17,13 @@ RSpec.describe ArticlesController, type: :controller do
     end
   end
 
-  context '#show' do
-    xit 'リクエストが成功すること' do
+  xcontext '#show' do
+    it 'リクエストが成功すること' do
       get :show, params: { id: 1 }
       expect(response).to eq 200
     end
 
-    xit 'showテンプレートで表示されること' do
+    it 'showテンプレートで表示されること' do
       get :show, params: { id: 1 }
       expect(response).to render_template :show
     end

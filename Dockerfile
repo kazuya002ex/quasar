@@ -24,6 +24,7 @@ EXPOSE 3000
 ADD ./Gemfile $APP_ROOT/Gemfile
 ADD ./Gemfile.lock $APP_ROOT/Gemfile.lock
 
+ENV LANG C.UTF-8
 
 RUN bundle install
 ADD . $APP_ROOT

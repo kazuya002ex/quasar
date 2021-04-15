@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_31_025031) do
+ActiveRecord::Schema.define(version: 2021_04_15_051342) do
 
   create_table "active_admin_comments", charset: "utf8", force: :cascade do |t|
     t.string "namespace"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(version: 2021_03_31_025031) do
     t.integer "user_id"
     t.string "image"
     t.integer "browsing", default: 0, null: false
+    t.boolean "closed", default: false, null: false
     t.index ["title"], name: "index_posts_on_title"
   end
 

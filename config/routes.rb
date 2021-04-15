@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:create]
   resources :rooms, only: [:create, :show, :index]
   resources :articles
+  resources :closed_posts, only: :update
 
   resources :recommend_posts, :index
   resources :new_arrival_posts, :index

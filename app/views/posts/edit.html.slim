@@ -6,3 +6,46 @@
 
   = render 'form'
 
+  - if @post.closed
+    .relay-start-button
+      = link_to 'リレーを開始する', closed_post_path(@post), method: :delete
+  - else
+    .relay-stop-button
+      = link_to 'リレーを停止する', closed_post_path(@post), method: :patch, data: { confirm: "本当にリレーを停止してもよろしいですか？" }
+
+css:
+  .relay-stop-button {
+    margin-top: 5%;
+    text-align: center;
+  }
+
+  .relay-stop-button a {
+    background-color: #cc3333;
+    color: rgb(244, 243, 243);
+    padding: 12px 28px;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+
+  .relay-stop-button a:hover {
+    transition: 0.3s;
+    opacity: 0.7;
+  }
+
+  .relay-start-button {
+    margin-top: 5%;
+    text-align: center;
+  }
+
+  .relay-start-button a {
+    background-color: #009900;
+    color: rgb(244, 243, 243);
+    padding: 12px 28px;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+
+  .relay-start-button a:hover {
+    transition: 0.3s;
+    opacity: 0.7;
+  }

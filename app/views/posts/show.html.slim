@@ -73,13 +73,16 @@
         .micropost-form
           h3 1行投稿
           .novel-form
-            - if user_signed_in?
-              p 文章を作成
-              = form_for [@post, @micropost] do |f|
-                = f.text_field :content, placeholder: "55文字以内で文章を作成"
-                = f.submit '作成', data: { confirm: "投稿しますか？"}
+            - if @post.closed
+              p.novel-post-closed この作品のリレーは作成者によって停止されています
             - else
-              p.not-signin 小説作成に参加するには、#{link_to "サインイン", new_user_session_path}してください
+              - if user_signed_in?
+                p 文章を作成
+                = form_for [@post, @micropost] do |f|
+                  = f.text_field :content, placeholder: "55文字以内で文章を作成"
+                  = f.submit '作成', data: { confirm: "投稿しますか？"}
+              - else
+                p.not-signin 小説作成に参加するには、#{link_to "サインイン", new_user_session_path}してください
         // 著者達に求める展開
         .post-order
           - if user_signed_in?
@@ -123,7 +126,7 @@
                   .free-post-star
                     / p = link_to post_micropost_micropost_stars_path(post_id: @post.id, micropost_id: micropost.id), method: :post do
                     i.far.fa-star.fa-lg.star-color
-                    p.star-p 12
+                    p.star-p 仮
                     / TODO: 本来の姿
                     / p.star-p = micropost_star_count(micropost)
           - else
@@ -370,13 +373,19 @@ css:
     font-size: .75rem;
   }
 
+  .novel-post-closed {
+    margin: 8% 3%;
+    color: #ff6666;
+    font-size: 0.95rem;
+  }
+
   .not-signin a {
     text-decoration: underline;
     color: #69b3fd;
   }
 
   .post-order {
-    margin-top: 5%;
+    margin-top: 12%;
     margin-bottom: 2%;
   }
 

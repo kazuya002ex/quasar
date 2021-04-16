@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     flash[:notice] = text
   end
 
+  def error(text: 'error')
+    flash[:alert] = text
+  end
+
   def authenticate_admin!
     unless current_user.is_admin?
       flash[:alert] = 'アクセス権限がありません'

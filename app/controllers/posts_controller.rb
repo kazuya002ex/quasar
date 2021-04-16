@@ -34,20 +34,23 @@ class PostsController < ApplicationController
       success(text: '小説を作成しました')
       redirect_to @post
     else
-      flash[:alert] = @free_comment.errors.full_messages[0]
+      error(text: @free_comment.errors.full_messages[0])
       render :new
     end
   end
 
   def edit
+    return if authenticate_author!
   end
 
   def update
+    return if authenticate_author!
+
     if @post.update(post_params)
-      success
+      success(text: '小説の内容を編集しました')
       redirect_to @post
     else
-      flash[:alert] = 'not delete post'
+      error(text: '小説の編集に失敗しました')
       render :edit
     end
   end
@@ -57,8 +60,8 @@ class PostsController < ApplicationController
       success
       redirect_to root_path
     else
-      flash[:alert] = 'not delete post'
-      render 'show'
+      error(text: '小説の削除に失敗しました')
+      render :show
     end
   end
 
@@ -80,5 +83,12 @@ class PostsController < ApplicationController
     def browsing_count(post)
       post_browsing = post.browsing + 1
       post.update(browsing: post_browsing)
+    end
+
+    def authenticate_author!
+      unless @post.user == current_user
+        error(text: '作成者では無いため、作品の内容を編集できません')
+        redirect_to @post
+      end
     end
 end

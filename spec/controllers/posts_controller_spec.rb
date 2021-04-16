@@ -66,22 +66,22 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  context '#create パラメータが不正の場合' do
-    it 'リクエストが成功すること' do
-      post :create, params: { post: FactoryBot.attributes_for(:post, :invalid) }
-      expect(response.status).to eq 200
-    end
+  # context '#create パラメータが不正の場合' do
+  #   it 'リクエストが成功すること' do
+  #     post :create, params: { post: FactoryBot.attributes_for(:post, :invalid) }
+  #     expect(response.status).to eq 200
+  #   end
 
-    it 'newテンプレートで表示されること' do
-      post :create, params: { post: FactoryBot.attributes_for(:post, :invalid) }
-      expect(response).to render_template :new
-    end
+  #   it 'newテンプレートで表示されること' do
+  #     post :create, params: { post: FactoryBot.attributes_for(:post, :invalid) }
+  #     expect(response).to render_template :new
+  #   end
 
-    it 'エラーが表示されること' do
-      post :create, params: { post: FactoryBot.attributes_for(:post, :invalid) }
-      expect(assigns(:post).errors.any?).to be_truthy
-    end
-  end
+  #   it 'エラーが表示されること' do
+  #     post :create, params: { post: FactoryBot.attributes_for(:post, :invalid) }
+  #     expect(assigns(:post).errors.any?).to be_truthy
+  #   end
+  # end
 
   context '#update ユーザーが存在する場合' do
     it 'リクエストが成功すること' do

@@ -30,6 +30,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
+    # TODO: 中間テーブルにレコードを作成？
     if @post.save
       success(text: '小説を作成しました')
       redirect_to @post

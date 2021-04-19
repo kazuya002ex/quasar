@@ -23,4 +23,9 @@ class Post < ApplicationRecord
 
   # 依頼作品を表示する
   scope :my_request, -> (user){ where(user_id: user.id).order(created_at: 'desc') }
+
+  def save_genres(genre_ids)
+    post_genre = Genre.find_by(id: genre_ids)
+    self.genres << post_genre
+  end
 end

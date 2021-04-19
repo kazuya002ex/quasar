@@ -31,11 +31,16 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     # TODO: 中間テーブルにレコードを作成？
-    if @post.save
-      success(text: '小説を作成しました')
-      redirect_to @post
+    if @post.valid?
+      ActiveRecord::Base.transaction do
+        @post.save_genres(params[:post][:genre_ids].to_i)  if params[:post][:genre_ids].present?
+        if @post.save
+          success(text: '小説を作成しました')
+          redirect_to @post
+        end
+      end
     else
-      error(text: @free_comment.errors.full_messages[0])
+      error
       render :new
     end
   end

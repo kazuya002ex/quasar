@@ -28,6 +28,9 @@
               i.far.fa-heart.icon-btn.not-like
           li = link_to "#" do
             i.fas.fa-external-link-alt
+    // ジャンルの表示
+    .post-genre
+      p = post_genre(@post)
     // あらすじ
     .post-desc
       h3 あらすじ 
@@ -197,6 +200,15 @@ css:
 
   .post-add-status ul li a:hover {
     color: #0a9dd1;
+  }
+
+  .post-genre p {
+    display: inline-block;
+    color: rgb(244, 244, 244);
+    background-color: #33cccc;
+    padding: 3px 11px;
+    border-radius: 7px;
+    font-size: 0.92rem;
   }
 
   .post-desc {

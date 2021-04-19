@@ -30,25 +30,34 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    if @post.save
-      success
-      redirect_to @post
+    # TODO: 中間テーブルにレコードを作成？
+    if @post.valid?
+      ActiveRecord::Base.transaction do
+        @post.save_genres(params[:post][:genre_ids].to_i)  if params[:post][:genre_ids].present?
+        if @post.save
+          success(text: '小説を作成しました')
+          redirect_to @post
+        end
+      end
     else
-      flash[:alert] = 'not create order'
-      render 'new'
+      error
+      render :new
     end
   end
 
   def edit
+    return if authenticate_author!
   end
 
   def update
+    return if authenticate_author!
+
     if @post.update(post_params)
-      success
+      success(text: '小説の内容を編集しました')
       redirect_to @post
     else
-      flash[:alert] = 'not delete post'
-      render 'edit'
+      error(text: '小説の編集に失敗しました')
+      render :edit
     end
   end
 
@@ -57,8 +66,8 @@ class PostsController < ApplicationController
       success
       redirect_to root_path
     else
-      flash[:alert] = 'not delete post'
-      render 'show'
+      error(text: '小説の削除に失敗しました')
+      render :show
     end
   end
 
@@ -80,5 +89,12 @@ class PostsController < ApplicationController
     def browsing_count(post)
       post_browsing = post.browsing + 1
       post.update(browsing: post_browsing)
+    end
+
+    def authenticate_author!
+      unless @post.user == current_user
+        error(text: '作成者では無いため、作品の内容を編集できません')
+        redirect_to @post
+      end
     end
 end

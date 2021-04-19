@@ -28,6 +28,9 @@
               i.far.fa-heart.icon-btn.not-like
           li = link_to "#" do
             i.fas.fa-external-link-alt
+    // ジャンルの表示
+    .post-genre
+      p = post_genre(@post)
     // あらすじ
     .post-desc
       h3 あらすじ 
@@ -73,13 +76,16 @@
         .micropost-form
           h3 1行投稿
           .novel-form
-            - if user_signed_in?
-              p 文章を作成
-              = form_for [@post, @micropost] do |f|
-                = f.text_field :content, placeholder: "55文字以内で文章を作成"
-                = f.submit '作成', data: { confirm: "投稿しますか？"}
+            - if @post.closed
+              p.novel-post-closed この作品のリレーは作成者によって停止されています
             - else
-              p.not-signin 小説作成に参加するには、#{link_to "サインイン", new_user_session_path}してください
+              - if user_signed_in?
+                p 文章を作成
+                = form_for [@post, @micropost] do |f|
+                  = f.text_field :content, placeholder: "55文字以内で文章を作成"
+                  = f.submit '作成', data: { confirm: "投稿しますか？"}
+              - else
+                p.not-signin 小説作成に参加するには、#{link_to "サインイン", new_user_session_path}してください
         // 著者達に求める展開
         .post-order
           - if user_signed_in?
@@ -110,14 +116,22 @@
           - if @free_comments.present?
             - @free_comments.each do |fc|
               .free-post-contents
-                .free-post-content
+                .free-post-info
                   .free-post-image
                     p.image = image_tag  "no_image.png"
                   .free-post-name
                     p.name = fc.username
-                .free-post-msg
-                  p.post-content = fc.content
-                  p.time = "#{time_ago_in_words(fc.created_at)}前"
+                .free-post-content
+                  .free-post-msg
+                    p.post-content = fc.content
+                    p.time = "#{time_ago_in_words(fc.created_at)}前"
+                  / フリーコメントのスター
+                  .free-post-star
+                    / p = link_to post_micropost_micropost_stars_path(post_id: @post.id, micropost_id: micropost.id), method: :post do
+                    i.far.fa-star.fa-lg.star-color
+                    p.star-p 仮
+                    / TODO: 本来の姿
+                    / p.star-p = micropost_star_count(micropost)
           - else
             p.not-free-post このスペースは誰でも自由に書き込むことが出来ます
     // フリーコメントの作成フォーム
@@ -186,6 +200,15 @@ css:
 
   .post-add-status ul li a:hover {
     color: #0a9dd1;
+  }
+
+  .post-genre p {
+    display: inline-block;
+    color: rgb(244, 244, 244);
+    background-color: #33cccc;
+    padding: 3px 11px;
+    border-radius: 7px;
+    font-size: 0.92rem;
   }
 
   .post-desc {
@@ -362,13 +385,19 @@ css:
     font-size: .75rem;
   }
 
+  .novel-post-closed {
+    margin: 8% 3%;
+    color: #ff6666;
+    font-size: 0.95rem;
+  }
+
   .not-signin a {
     text-decoration: underline;
     color: #69b3fd;
   }
 
   .post-order {
-    margin-top: 5%;
+    margin-top: 12%;
     margin-bottom: 2%;
   }
 
@@ -459,11 +488,11 @@ css:
     margin-bottom: 6%;
   }
 
-  .free-post-content {
+  .free-post-info {
     display: flex;
   }
 
-  .free-post-content img {
+  .free-post-info img {
     width: 47px;
     height: 47px;
   }
@@ -472,6 +501,10 @@ css:
     font-size: 0.82rem;
     padding-top: 8%;
     color: #444;
+  }
+
+  .free-post-content {
+    display: flex;
   }
 
   .free-post-msg {

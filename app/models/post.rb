@@ -8,6 +8,8 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :users, through: :likes
   has_many :free_comments, dependent: :destroy
+  has_many :post_genres, dependent: :destroy
+  has_many :genres, through: :post_genres
 
   validates :title, presence: true, length: { maximum: 32 }
   validates :story, presence: true, length: { maximum: 300 }
@@ -21,4 +23,9 @@ class Post < ApplicationRecord
 
   # 依頼作品を表示する
   scope :my_request, -> (user){ where(user_id: user.id).order(created_at: 'desc') }
+
+  def save_genres(genre_ids)
+    post_genre = Genre.find_by(id: genre_ids)
+    self.genres << post_genre
+  end
 end

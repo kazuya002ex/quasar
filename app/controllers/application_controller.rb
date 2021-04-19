@@ -5,8 +5,12 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def success
-    flash[:notice] = 'success'
+  def success(text: 'success')
+    flash[:notice] = text
+  end
+
+  def error(text: 'error')
+    flash[:alert] = text
   end
 
   def authenticate_admin!

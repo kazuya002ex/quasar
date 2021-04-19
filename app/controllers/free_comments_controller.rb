@@ -14,7 +14,7 @@ class FreeCommentsController < ApplicationController
     @free_comment.post_id = @post.id
 
     if @free_comment.save
-      success
+      success(text: 'コメントを作成しました')
       redirect_to @post
     else
       flash[:alert] = @free_comment.errors.full_messages[0]

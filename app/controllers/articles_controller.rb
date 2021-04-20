@@ -2,8 +2,7 @@
 
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  # TODO: News一覧作成後に制限を解除
-  before_action :authenticate_admin!, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index

@@ -1,7 +1,31 @@
 = provide(:title, "ニュース一覧")
 
 .article-index-top
-  .top-title.title
-    h2 article#index
-  .top-contents
-    / TODO: ここにarticleのeachが入る？
+  .article-main-contents
+    .top-title.title
+      h2 ニュース一覧
+    .top-contents
+      ul
+        - @articles.each do |article|
+          li = link_to article do
+            p.date = article.created_at.strftime("%Y/%m/%d")
+            p class="label #{article.news_type}" = t(article.news_type)
+            p.title = article.title
+
+css:
+  .article-index-top {
+    background-color: rgb(244, 244, 244);
+    padding-top: 5%;
+    padding-bottom: 10%;
+    padding-left: 18%;
+    padding-right: 18%;
+  }
+
+  .article-main-contents {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 580px;
+  }
+

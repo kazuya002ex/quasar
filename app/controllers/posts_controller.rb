@@ -71,11 +71,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # def confirm_new
-  #   @post = current_user.posts.new(post_params)
-  #   render :new unless @post.valid?
-  # end
-
   private
 
     def post_params

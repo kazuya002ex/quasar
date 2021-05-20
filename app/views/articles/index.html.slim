@@ -1,1 +1,132 @@
-h2 article#index
+= provide(:title, "ニュース一覧")
+
+.article-index-top
+  .article-main-contents
+    .top-title.title
+      h2 ニュース一覧
+    .top-article-contents
+      ul
+        - @articles.each do |article|
+          li = link_to article do
+            p.date = article.created_at.strftime("%Y/%m/%d")
+            p class="label #{article.news_type}" = t(article.news_type)
+            p.title = article.title
+
+css:
+  .article-index-top {
+    background-color: rgb(244, 244, 244);
+    padding-top: 5%;
+    padding-bottom: 10%;
+    padding-left: 18%;
+    padding-right: 18%;
+  }
+
+  .article-main-contents {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 580px;
+  }
+
+  .top-title {
+    margin-top: 2%;
+    text-align: center;
+  }
+
+  .top-title h2 {
+    font-size: 1.4rem;
+  }
+
+  .top-article-contents ul {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 80px;
+    padding-right: 20%;
+    width: 100%;
+  }
+
+  .top-article-contents ul li a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 2.5%;
+  }
+
+  .top-article-contents ul li a p {
+    margin-left: 22px;
+    font-size: 1.05rem;
+  }
+
+  .top-article-contents ul li a .date {
+    color: #333;
+  }
+
+  .top-article-contents ul li a .label {
+    font-size: 0.79rem;
+    margin-top: 2px;
+    color: rgb(249, 249, 249);
+  }
+
+  .top-article-contents ul li a .update {
+    background-color: #A16EFF;
+    border-radius: 7px;
+    padding: 2px 4px;
+  }
+
+  .top-article-contents ul li a .notice {
+    background-color: #FF773E;
+    border-radius: 7px;
+    padding: 2px 16px;
+  }
+
+  .top-article-contents ul li a .other {
+    background-color: #5D99FF;
+    border-radius: 7px;
+    padding: 2px 22px;
+  }
+
+  .top-article-contents ul li a .title {
+    margin-top: 0.8px;
+  }
+
+  @media screen and (max-width: 480px) {
+    .article-index-top {
+      padding-top: 9%;
+      padding-bottom: 6%;
+      padding-left: 9%;
+      padding-right: 9%;
+    }
+
+    .article-main-contents {
+      height: 600px;
+    }
+
+    .top-title {
+      margin-top: 6%;
+      margin-bottom: 8%;
+    }
+
+    .top-title h2 {
+      font-size: 1.2rem;
+    }
+
+    .top-article-contents ul {
+      margin-bottom: 12%;
+      margin-left: 12px;
+      padding-right: 0;
+    }
+
+    .top-article-contents ul li a {
+      margin-top: 5%;
+    }
+
+    .top-article-contents ul li a p {
+      margin-left: 44px;
+      font-size: .91rem;
+    }
+
+    .top-article-contents ul li a .label {
+      font-size: 0.7rem;
+    }
+  }

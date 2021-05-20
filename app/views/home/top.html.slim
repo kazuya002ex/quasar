@@ -1,11 +1,11 @@
-= provide(:title, "")
+= provide(:title, "リライア - 1行小説リレーサイト")
 
 section.bg-top
   .top-container
     .top-header
       // headerロゴ
       .top-header-logo
-        h1 = link_to "RELIER", root_path
+        h1 = link_to "リライア", root_path
       // headerリスト
       .top-header-list
         ul
@@ -37,6 +37,8 @@ section.top-container
             p.date = article.created_at.strftime("%Y/%m/%d")
             p class="label #{article.news_type}" = t(article.news_type)
             p.title = article.title
+    .top-article-index-button
+      = link_to 'もっとみる', articles_path
   // おすすめ作品
   .top-ranking-wrapper
     .top-ranking-top
@@ -100,6 +102,7 @@ css:
 
   .top-header-logo h1 a {
     font-size: 1.75rem;
+    font-family: "Sawarabi Mincho";
     color: #fff;
   }
 
@@ -210,6 +213,19 @@ css:
 
   .top-article-contents ul li a .title {
     margin-top: 0.8px;
+  }
+
+  .top-article-index-button {
+    margin-left: 1.2%;
+  }
+
+  .top-article-index-button a {
+    color: #888;
+    font-size: .95rem;
+  }
+
+  .top-article-index-button a:hover {
+    color: #0a9dd1;
   }
 
   .top-ranking-top {
@@ -382,6 +398,11 @@ css:
       margin-top: 2%;
       border-bottom: #ddd solid 1px;
       width: 100%;
+    }
+
+    .top-article-index-button {
+      margin-top: 3%;
+      margin-left: 68%;
     }
 
     .top-ranking-title {

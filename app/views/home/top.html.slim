@@ -37,6 +37,8 @@ section.top-container
             p.date = article.created_at.strftime("%Y/%m/%d")
             p class="label #{article.news_type}" = t(article.news_type)
             p.title = article.title
+    .top-article-index-button
+      = link_to 'もっとみる', articles_path
   // おすすめ作品
   .top-ranking-wrapper
     .top-ranking-top
@@ -213,6 +215,19 @@ css:
     margin-top: 0.8px;
   }
 
+  .top-article-index-button {
+    margin-left: 1.2%;
+  }
+
+  .top-article-index-button a {
+    color: #888;
+    font-size: .95rem;
+  }
+
+  .top-article-index-button a:hover {
+    color: #0a9dd1;
+  }
+
   .top-ranking-top {
     display: flex;
     justify-content: space-between;
@@ -383,6 +398,11 @@ css:
       margin-top: 2%;
       border-bottom: #ddd solid 1px;
       width: 100%;
+    }
+
+    .top-article-index-button {
+      margin-top: 3%;
+      margin-left: 68%;
     }
 
     .top-ranking-title {

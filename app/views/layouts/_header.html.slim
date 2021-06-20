@@ -7,6 +7,7 @@ header
         li = link_to "マイページ", user_path(current_user)
         li = link_to "設定", config_path
         li = link_to "ヘルプ", help_path
+        / TODO: ver1.4リリースのタイミングで消す
         li = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
       - else
         li = link_to "サインイン", new_user_session_path

@@ -26,4 +26,6 @@ Rails.application.routes.draw do
 
   # 静的ページ
   get '/lp', to: 'static#lp'
+  get '/config', to: 'static#conf'
+  get '/help', to: 'static#help'
 end

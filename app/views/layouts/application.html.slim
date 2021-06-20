@@ -13,8 +13,7 @@ html
     link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet"
     link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet"
   body
-    - unless current_page?(root_path)
-      = render 'layouts/header'
+    = render 'layouts/header'
 
     p.notice
       = notice

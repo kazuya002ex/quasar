@@ -5,9 +5,13 @@ header
     ul
       - if user_signed_in?
         li = link_to "マイページ", user_path(current_user)
-        li = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
+        li = link_to "設定", '#'
+        li = link_to "ヘルプ", '#'
+        / li = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
       - else
         li = link_to "サインイン", new_user_session_path
+        li = link_to "はじめての方へ", '#'
+        li = link_to "ヘルプ", '#'
 
 css:
   header {

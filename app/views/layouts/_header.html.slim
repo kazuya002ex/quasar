@@ -1,7 +1,7 @@
 header
   .header-logo
     h1 = link_to "リライア", root_path
-  .header-list
+  .pc-header-list
     ul
       - if user_signed_in?
         li = link_to "マイページ", user_path(current_user)
@@ -13,6 +13,8 @@ header
         li = link_to "サインイン", new_user_session_path
         li = link_to "はじめての方へ", lp_path
         li = link_to "ヘルプ", help_path
+  .sp-header-list
+    = image_tag 'bars.png', width: '44px', height: '44px'
 
 css:
   header {
@@ -29,13 +31,30 @@ css:
     font-family: "Sawarabi Mincho";
   }
 
-  .header-list ul {
+  .pc-header-list ul {
     display: flex;
     margin-top: 4.5%;
   }
 
-  .header-list ul li a{
+  .pc-header-list ul li a{
     font-weight: bold;
     font-size: 0.97rem;
     margin-left: 26px;
+  }
+
+  .sp-header-list {
+    opacity: .8;
+  }
+
+  @media screen and (max-width: 480px) {
+
+    header {
+      margin-top: 2.5%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+    .pc-header-list {
+      display: none;
+    }
   }

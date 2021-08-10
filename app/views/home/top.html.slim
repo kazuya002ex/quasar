@@ -2,23 +2,30 @@
 
 section.bg-top
   .top-container
-    .top-header
-      // headerロゴ
-      .top-header-logo
-        h1 = link_to "リライア", root_path
-      // headerリスト
-      .top-header-list
-        ul
-          - if user_signed_in?
-            li = link_to "マイページ", user_path(current_user)
-            li = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
-          - else
-            li = link_to "サインイン", new_user_session_path
-    // 検索窓
-    .search
-      form
-        input type="search" placeholder="タイトル名、ジャンルで検索"
-        input value="検索" type="submit"
+    .top-slide-contents
+      // TODO: eachをかける
+      = image_tag 'books.jpg'
+      = image_tag 'lp-top.jpg'
+      = image_tag 'books.jpg'
+
+    // NOTE: 旧トップ
+    / .top-header
+    /   // headerロゴ
+    /   .top-header-logo
+    /     h1 = link_to "リライア", root_path
+    /   // headerリスト
+    /   .top-header-list
+    /     ul
+    /       - if user_signed_in?
+    /         li = link_to "マイページ", user_path(current_user)
+    /         li = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか?' }
+    /       - else
+    /         li = link_to "サインイン", new_user_session_path
+    / // 検索窓
+    / .search
+    /   form
+    /     input type="search" placeholder="タイトル名、ジャンルで検索"
+    /     input value="検索" type="submit"
 
 section.top-container
   - unless user_signed_in?
@@ -94,6 +101,32 @@ css:
     margin-right: 8%;
   }
 
+  .top-slide-contents {
+    padding-top: 2.8%;
+    display: flex;
+    overflow: scroll;
+  }
+
+  .top-slide-contents img {
+    width: 740px;
+    height: 390px;
+    transition: .3s;
+  }
+
+  .top-slide-contents img:hover {
+    opacity: .8;
+    transition: .3s;
+  }
+
+  .top-slide-contents:last-child {
+  }
+
+  .top-slide-contents img {
+    padding-right: 3%;
+  }
+
+  /* NOTE: 旧トップ */
+  /*
   .top-header {
     display: flex;
     justify-content: space-between;
@@ -138,9 +171,11 @@ css:
     text-align: center;
   }
 
+  */
+
   .top-newuser-action {
     background-color: rgb(200, 243, 202);
-    margin: 4% 14%;
+    margin: 2.5% 14%;
     text-align: center;
   }
 

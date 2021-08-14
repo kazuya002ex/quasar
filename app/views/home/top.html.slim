@@ -1,12 +1,18 @@
+= javascript_pack_tag 'swiper'
 = provide(:title, "リライア - 1行小説リレーサイト")
 
 section.bg-top
   .top-container
     .top-slide-contents
-      // TODO: eachをかける
-      = image_tag 'books.jpg'
-      = image_tag 'lp-top.jpg'
-      = image_tag 'books.jpg'
+      .swiper-container
+        .swiper-wrapper
+          // TODO: eachをかける
+          .swiper-slide
+            = image_tag 'books.jpg'
+          .swiper-slide
+            = image_tag 'lp-top.jpg'
+          .swiper-slide
+            = image_tag 'books.jpg'
 
     // NOTE: 旧トップ
     / .top-header
@@ -89,6 +95,11 @@ section.top-container
           h3.top-post-title = post.title.truncate(27)
           / p.top-post-story = post.story
           p.top-post-link = link_to "詳細をみる", post
+
+javascript:
+  window.addEventListener('load', (event) => {
+    console.log('ページが完全に読み込まれました');
+  });
 
 css:
   /* icon */

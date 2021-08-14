@@ -3,7 +3,8 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "5.2.1",
-    "@splidejs/splide": "^2.4.21"
+    "@splidejs/splide": "^2.4.21",
+    "swiper": "^6.8.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.11.2"

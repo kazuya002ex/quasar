@@ -19,4 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
     navigation: false,
     simulateTouch: true,
     slidesPerView: 1.21,
-})
+  })
+});

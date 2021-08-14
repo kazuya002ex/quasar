@@ -1,6 +1,5 @@
 script src="https://unpkg.com/swiper/swiper-bundle.js"
 script src="https://unpkg.com/swiper/swiper-bundle.min.js"
-/ = javascript_pack_tag "swiper"
 = provide(:title, "リライア - 1行小説リレーサイト")
 
 section.bg-top
@@ -15,6 +14,7 @@ section.bg-top
             = image_tag 'lp-top.jpg'
           .swiper-slide
             = image_tag 'books.jpg'
+        .swiper-pagination
 
     // NOTE: 旧トップ
     / .top-header
@@ -102,9 +102,9 @@ javascript:
   document.addEventListener('DOMContentLoaded', () => {
     const swiper = new Swiper('.swiper-container', {
       loop: true,
-      spaceBetween: 4.084,
+      speed: 700,
       autoplay: {
-        delay: 3000,
+        delay: 4000,
         disableOnInteraction: false,
       },
       centeredSlides: true,
@@ -117,11 +117,27 @@ javascript:
       },
       navigation: false,
       simulateTouch: true,
-      slidesPerView: 1.21,
+      slidesPerView: 1.5,
     })
   });
 
 css:
+  /* swiper */
+  .swiper-container {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1310px) {
+    .swiper-wrapper .swiper-slide {
+      padding: 0 10px;
+    }
+  }
+
+  .swiper-container .swiper-wrapper {
+    padding-bottom: 40px;
+  }
+
+
   /* icon */
   .fas {
     padding: 2% 0;
@@ -139,10 +155,12 @@ css:
   }
 
   .top-slide-contents img {
+    width: 100%;
     width: 740px;
     height: 390px;
     transition: .3s;
     padding-right: 3%;
+    border-radius: 6px;
   }
 
   .top-slide-contents img:hover {

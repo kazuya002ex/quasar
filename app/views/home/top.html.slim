@@ -1,4 +1,6 @@
-= javascript_pack_tag 'swiper'
+script src="https://unpkg.com/swiper/swiper-bundle.js"
+script src="https://unpkg.com/swiper/swiper-bundle.min.js"
+/ = javascript_pack_tag "swiper"
 = provide(:title, "リライア - 1行小説リレーサイト")
 
 section.bg-top
@@ -97,8 +99,26 @@ section.top-container
           p.top-post-link = link_to "詳細をみる", post
 
 javascript:
-  window.addEventListener('load', (event) => {
-    console.log('ページが完全に読み込まれました');
+  document.addEventListener('DOMContentLoaded', () => {
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      spaceBetween: 4.084,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      centeredSlides: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        type: 'bullets',
+      },
+      navigation: false,
+      simulateTouch: true,
+      slidesPerView: 1.21,
+    })
   });
 
 css:

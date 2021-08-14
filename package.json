@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "5.2.1",
     "@splidejs/splide": "^2.4.21",
+    "sass": "^1.37.5",
     "swiper": "^6.8.1"
   },
   "devDependencies": {
